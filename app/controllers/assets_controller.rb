@@ -4,6 +4,7 @@ class AssetsController < ApplicationController
   # GET /assets or /assets.json
   def index
     @assets = Asset.all
+    puts @assets
   end
 
   # GET /assets/1 or /assets/1.json

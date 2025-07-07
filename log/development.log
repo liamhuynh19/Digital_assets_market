@@ -212,3 +212,414 @@ Started GET "/assets" for 127.0.0.1 at 2025-07-04 17:28:18 +0700
 Started GET "/assets" for 127.0.0.1 at 2025-07-04 17:28:18 +0700
 Started GET "/assets" for 127.0.0.1 at 2025-07-04 17:28:19 +0700
 Started GET "/assets" for 127.0.0.1 at 2025-07-04 17:28:19 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'development', "updated_at" = '2025-07-07 02:36:13.988970' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5033.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5039.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (66.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (463.0ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (55.5ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (18.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250704094338) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-07 02:37:29.716198', '2025-07-07 02:37:29.716208') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '68ae54645b2c738c3821d99bed6e76003ff9cf98', '2025-07-07 02:37:29.734897', '2025-07-07 02:37:29.734904') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (30.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-07-07 02:37:29.796054' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'development', "updated_at" = '2025-07-07 02:37:47.367957' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/assets" for ::1 at 2025-07-07 09:38:33 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/asset" for ::1 at 2025-07-07 09:38:37 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/asset"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:38:42 +0700
+Started GET "/posts" for ::1 at 2025-07-07 09:38:45 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/posts"):
+  
+Started GET "/rails" for ::1 at 2025-07-07 09:38:51 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/rails"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:38:56 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:38:56 +0700
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mAsset Create (0.8ms)[0m  [1m[32mINSERT INTO "assets" ("tite", "creator", "description", "published_date", "created_at", "updated_at") VALUES ('first asset', NULL, NULL, NULL, '2025-07-07 02:40:27.201643', '2025-07-07 02:40:27.201643') RETURNING "id" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Started GET "/assets" for ::1 at 2025-07-07 09:40:31 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:40:32 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:40:33 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:40:33 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:40:33 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:40:33 +0700
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-07 09:40:37 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:40:40 +0700
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-07 09:40:40 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:40:42 +0700
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-07 09:40:42 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:40:42 +0700
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-07 09:40:42 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:40:42 +0700
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-07 09:40:42 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:40:42 +0700
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-07 09:40:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:43:41 +0700
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-07 09:43:41 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 09:45:37 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:46:07 +0700
+Started GET "/up" for ::1 at 2025-07-07 09:46:18 +0700
+Processing by Rails::HealthController#show as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/up" for ::1 at 2025-07-07 09:47:59 +0700
+Processing by Rails::HealthController#show as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets" for ::1 at 2025-07-07 09:48:02 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:48:02 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:48:42 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:48:44 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:48:45 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:48:45 +0700
+Started GET "/assets.json" for ::1 at 2025-07-07 09:49:02 +0700
+Started GET "/assets" for ::1 at 2025-07-07 09:49:08 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5029.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5035.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (52.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (478.3ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (15.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250704094338) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-07 02:51:20.282837', '2025-07-07 02:51:20.282845') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '68ae54645b2c738c3821d99bed6e76003ff9cf98', '2025-07-07 02:51:20.300683', '2025-07-07 02:51:20.300690') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (24.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-07-07 02:51:20.355547' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'development', "updated_at" = '2025-07-07 02:51:44.665039' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (58.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (21.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (470.6ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250704094338) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-07 02:52:52.142234', '2025-07-07 02:52:52.142246') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '68ae54645b2c738c3821d99bed6e76003ff9cf98', '2025-07-07 02:52:52.157846', '2025-07-07 02:52:52.157853') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (64.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (17.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market_test" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (492.0ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (471.8ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market_test" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (17.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250704094338) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-07 02:54:20.392328', '2025-07-07 02:54:20.392338') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '68ae54645b2c738c3821d99bed6e76003ff9cf98', '2025-07-07 02:54:20.410451', '2025-07-07 02:54:20.410459') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (50.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250704094338) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-07 02:54:20.550740', '2025-07-07 02:54:20.550747') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (3.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-07-07 02:54:20.562661' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '68ae54645b2c738c3821d99bed6e76003ff9cf98', '2025-07-07 02:54:20.572996', '2025-07-07 02:54:20.573003') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/assets" for ::1 at 2025-07-07 10:12:39 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/favicon.ico" for ::1 at 2025-07-07 10:12:39 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/assets" for ::1 at 2025-07-07 10:12:40 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:08 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:22 +0700
+Started GET "/assets.json" for ::1 at 2025-07-07 10:13:23 +0700
+Started GET "/assets.json" for ::1 at 2025-07-07 10:13:26 +0700
+Started GET "/up" for ::1 at 2025-07-07 10:13:30 +0700
+Processing by Rails::HealthController#show as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets" for ::1 at 2025-07-07 10:13:33 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:35 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:35 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:35 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:35 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:36 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:36 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:36 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:36 +0700
+Started GET "/assets" for ::1 at 2025-07-07 10:13:36 +0700
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreatePosts (20250707031631)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250707031631') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/posts" for ::1 at 2025-07-07 10:17:06 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (16.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 21.8ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | GC: 1.1ms)
+Completed 200 OK in 92ms (Views: 10.9ms | ActiveRecord: 19.8ms (1 query, 0 cached) | GC: 31.6ms)
+
+
+Started GET "/assets/application-8b441ae0.css" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/assets/application-bfcdf840.js" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/assets/turbo.min-3a2e143f.js" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-07-07 10:17:07 +0700
+Started GET "/posts/new" for ::1 at 2025-07-07 10:17:21 +0700
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 8.0ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 9.7ms | ActiveRecord: 4.1ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/posts" for ::1 at 2025-07-07 10:17:47 +0700
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Post 1", "creator"=>"Creator 1", "description"=>"Post 1 descritpion", "published_date"=>"2025-07-07"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "creator", "description", "published_date", "created_at", "updated_at") VALUES ('Post 1', 'Creator 1', 'Post 1 descritpion', '2025-07-07', '2025-07-07 03:17:47.245696', '2025-07-07 03:17:47.245696') RETURNING "id" /*action='create',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT /*action='create',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 13ms (ActiveRecord: 4.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1" for ::1 at 2025-07-07 10:17:47 +0700
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-07 10:17:53 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/1" for ::1 at 2025-07-07 10:17:56 +0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 1.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+

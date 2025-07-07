@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_04_094338) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_07_031631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "assets", force: :cascade do |t|
     t.string "tite"
+    t.string "creator"
+    t.text "description"
+    t.date "published_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
     t.string "creator"
     t.text "description"
     t.date "published_date"
