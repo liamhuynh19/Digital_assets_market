@@ -1372,3 +1372,2793 @@ Completed 200 OK in 98ms (Views: 19.6ms | ActiveRecord: 24.5ms (1 query, 0 cache
   [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/reviews" for ::1 at 2025-07-09 09:18:23 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20250709015610_create_categories.rb
+db/migrate/20250709015745_create_carts.rb
+db/migrate/20250709020246_create_orders.rb
+db/migrate/20250709020552_create_products.rb
+db/migrate/20250709020735_create_cart_items.rb
+db/migrate/20250709020831_create_order_items.rb
+db/migrate/20250709021555_create_reviews.rb
+db/migrate/20250709021643_create_tags.rb
+db/migrate/20250709021725_create_product_tags.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (8.0.2) lib/active_record/migration.rb:667:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-09 09:18:23 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 9 pending migrations:
+
+db/migrate/20250709015610_create_categories.rb
+db/migrate/20250709015745_create_carts.rb
+db/migrate/20250709020246_create_orders.rb
+db/migrate/20250709020552_create_products.rb
+db/migrate/20250709020735_create_cart_items.rb
+db/migrate/20250709020831_create_order_items.rb
+db/migrate/20250709021555_create_reviews.rb
+db/migrate/20250709021643_create_tags.rb
+db/migrate/20250709021725_create_product_tags.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateCategories (20250709015610)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (67.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709015610') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (23.0ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateCarts (20250709015745)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_ea59a35211"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709015745') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateOrders (20250709020246)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (49.4ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint NOT NULL, "status" character varying, "total_amount" decimal, "payment_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709020246') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateProducts (20250709020552)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (48.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "user_id" bigint NOT NULL, "name" character varying, "description" text, "price" decimal, "file_url" character varying, "average_rating" decimal, "category_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709020552') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateCartItems (20250709020735)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" bigserial primary key, "cart_id" bigint NOT NULL, "product_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_6cdb1f0139"
+FOREIGN KEY ("cart_id")
+  REFERENCES "carts" ("id")
+, CONSTRAINT "fk_rails_681a180e84"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_cart_id" ON "cart_items" ("cart_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_product_id" ON "cart_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709020735') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateOrderItems (20250709020831)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (48.5ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" bigserial primary key, "order_id" bigint NOT NULL, "product_id" bigint NOT NULL, "price_at_purchase" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+, CONSTRAINT "fk_rails_f1a29ddd47"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709020831') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateReviews (20250709021555)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" bigint NOT NULL, "product_id" bigint NOT NULL, "order_item_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_bedd9094d4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+, CONSTRAINT "fk_rails_8ab60c56f9"
+FOREIGN KEY ("order_item_id")
+  REFERENCES "order_items" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_product_id" ON "reviews" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_order_item_id" ON "reviews" ("order_item_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709021555') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateTags (20250709021643)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (37.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709021643') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateProductTags (20250709021725)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (22.6ms)[0m  [1m[35mCREATE TABLE "product_tags" ("id" bigserial primary key, "product_id" bigint NOT NULL, "tag_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_a402a4c881"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+, CONSTRAINT "fk_rails_ecabaad74a"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (27.1ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_product_id" ON "product_tags" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_tag_id" ON "product_tags" ("tag_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709021725') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/reviews" for ::1 at 2025-07-09 09:18:36 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Processing by ReviewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (51.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" /*action='index',application='DigitalAssetsMarket',controller='reviews'*/[0m
+  ↳ app/views/reviews/index.html.erb:8
+  Rendered reviews/index.html.erb within layouts/application (Duration: 103.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 105.8ms | GC: 0.0ms)
+Completed 200 OK in 116ms (Views: 50.4ms | ActiveRecord: 56.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+Migrating to AddDeviseToUsers (20250709025609)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateProductTags (20250709021725)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5.0ms)[0m  [1m[35mDROP TABLE "product_tags" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250709021725' /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+Migrating to CreateProductTags (20250709021725)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "product_tags" ("id" bigserial primary key, "product_id" bigint NOT NULL, "tag_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_a402a4c881"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+, CONSTRAINT "fk_rails_ecabaad74a"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_product_id" ON "product_tags" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_tag_id" ON "product_tags" ("tag_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709021725') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+Migrating to AddDeviseToUsers (20250709025609)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "email" TYPE character varying, ALTER COLUMN "email" SET DEFAULT '', ALTER COLUMN "email" SET NOT NULL /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250709025609') RETURNING "version" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4376807599021120725) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/posts" for ::1 at 2025-07-09 10:12:09 +0700
+  
+NoMethodError (undefined method `devise' for User:Class):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/favicon.ico" for ::1 at 2025-07-09 10:12:09 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/posts" for ::1 at 2025-07-09 10:17:45 +0700
+  
+NoMethodError (undefined method `devise' for User:Class):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/posts" for ::1 at 2025-07-09 10:18:50 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (17.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 33.9ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | GC: 1.6ms)
+Completed 200 OK in 60ms (Views: 17.8ms | ActiveRecord: 23.5ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 10:22:31 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 7.5ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 10:22:32 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 10:22:32 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 6.4ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 10:22:33 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.4ms | GC: 8.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 8.2ms)
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 8.2ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 10:22:33 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.7ms)
+Completed 200 OK in 20ms (Views: 5.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 10:31:44 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (16.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 21.3ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | GC: 0.5ms)
+Completed 200 OK in 32ms (Views: 6.7ms | ActiveRecord: 18.8ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 10:31:45 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 10:31:48 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/turbo.min-3a2e143f.js" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/assets/application-8b441ae0.css" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/assets/application-bfcdf840.js" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-07-09 10:31:48 +0700
+Started GET "/users/sign_in" for ::1 at 2025-07-09 10:33:03 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.1ms)
+Completed 200 OK in 22ms (Views: 6.7ms | ActiveRecord: 3.4ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-07-09 10:49:09 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2025-07-09 10:50:06 +0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='DigitalAssetsMarket',controller='registrations'*/[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'sample@gmail.com' LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='registrations'*/[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "role", "status", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (NULL, 'sample@gmail.com', NULL, NULL, '2025-07-09 03:50:06.472912', '2025-07-09 03:50:06.472912', '$2a$12$.k6lm2o7chZ5owgmqVyPbeDCHL0.KSZoW7TjpSVXfXg/aLQjciUgy', NULL, NULL, NULL) RETURNING "id" /*action='create',application='DigitalAssetsMarket',controller='registrations'*/[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT /*action='create',application='DigitalAssetsMarket',controller='registrations'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 221ms (ActiveRecord: 8.0ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 10:50:06 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/layouts/application.html.erb:26
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2025-07-09 10:50:16 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/" for ::1 at 2025-07-09 10:50:35 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/layouts/application.html.erb:26
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 3.3ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2025-07-09 10:50:39 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/" for ::1 at 2025-07-09 10:55:20 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/layouts/application.html.erb:26
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2025-07-09 10:55:22 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 15ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/" for ::1 at 2025-07-09 10:57:06 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/layouts/application.html.erb:26
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.2ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2025-07-09 13:46:21 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (24.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 48ms (ActiveRecord: 27.8ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/" for ::1 at 2025-07-09 13:46:27 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/layouts/application.html.erb:26
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 3.4ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2025-07-09 13:47:53 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 12ms (ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/" for ::1 at 2025-07-09 13:47:56 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/layouts/application.html.erb:26
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-07-09 13:47:58 +0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='DigitalAssetsMarket',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 26ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 13:47:58 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-07-09 13:48:23 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.3ms)
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2025-07-09 13:48:25 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 17ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/" for ::1 at 2025-07-09 13:48:27 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2025-07-09 13:48:28 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 13ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/" for ::1 at 2025-07-09 13:48:29 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 1.4ms)
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-07-09 13:48:30 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.3ms)
+Completed 200 OK in 18ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 13:48:31 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 4.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 13:48:33 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 13:48:33 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 2.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/%20users" for ::1 at 2025-07-09 13:48:44 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/%20users"):
+  
+Started GET "/users" for ::1 at 2025-07-09 13:48:50 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/_user.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 3.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/sessions" for ::1 at 2025-07-09 13:50:01 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+Started GET "/users/password" for ::1 at 2025-07-09 13:50:29 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"password"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=password):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/users/passwords" for ::1 at 2025-07-09 13:50:32 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"passwords"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = NULL LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=passwords):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/users/password/new" for ::1 at 2025-07-09 13:50:49 +0700
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.9ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 1.6ms)
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-07-09 13:50:52 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.5ms)
+Completed 200 OK in 27ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-07-09 13:50:56 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-07-09 13:50:56 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.5ms)
+Completed 200 OK in 28ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/cancel" for ::1 at 2025-07-09 13:51:39 +0700
+Processing by Devise::RegistrationsController#cancel as HTML
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-07-09 13:51:39 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2025-07-09 13:52:12 +0700
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.4ms | GC: 0.2ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.2ms)
+Completed 200 OK in 26ms (Views: 6.7ms | ActiveRecord: 2.2ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 14:03:12 +0700
+  
+ActionController::RoutingError (uninitialized constant HomeController)
+Caused by: ActionDispatch::MissingController (uninitialized constant HomeController)
+Caused by: NameError (uninitialized constant HomeController)
+
+Information for: ActionController::RoutingError (uninitialized constant HomeController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant HomeController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant HomeController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:32 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:36 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:37 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:38 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:52 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:53 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:53 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:54 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:54 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:54 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:54 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:03:54 +0700
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:04:08 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  
+ActionController::RoutingError (uninitialized constant PostController)
+Caused by: ActionDispatch::MissingController (uninitialized constant PostController)
+Caused by: NameError (uninitialized constant PostController)
+
+Information for: ActionController::RoutingError (uninitialized constant PostController):
+  
+
+Information for cause: ActionDispatch::MissingController (uninitialized constant PostController):
+  
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:102:in `rescue in controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:98:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: NameError (uninitialized constant PostController):
+  
+activesupport (8.0.2) lib/active_support/inflector/methods.rb:290:in `constantize'
+activesupport (8.0.2) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:99:in `controller_class_for'
+actionpack (8.0.2) lib/action_dispatch/http/request.rb:91:in `controller_class'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:61:in `controller'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:48:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.16) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.16) lib/rack/etag.rb:29:in `call'
+rack (3.1.16) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.16) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/" for ::1 at 2025-07-09 14:04:16 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (16.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 29.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | GC: 6.9ms)
+Completed 200 OK in 60ms (Views: 20.4ms | ActiveRecord: 23.5ms (1 query, 0 cached) | GC: 6.9ms)
+
+
+Started GET "/products/new" for ::1 at 2025-07-09 14:08:19 +0700
+Processing by ProductsController#new as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-07-09 14:08:19 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.1ms)
+Completed 200 OK in 21ms (Views: 7.3ms | ActiveRecord: 2.6ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 14:11:20 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 6.9ms | ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 14:30:04 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (16.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 18.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 19.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 14:30:08 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-09 14:30:29 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/hlty/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/hlty/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2025-07-09 14:31:33 +0700
+Processing by ProductsController#new as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-07-09 14:31:33 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.3ms)
+Completed 200 OK in 18ms (Views: 4.7ms | ActiveRecord: 3.5ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2025-07-09 14:32:15 +0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = 1 LIMIT 1 /*action='edit',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+Completed 401 Unauthorized in 13ms (ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-07-09 14:32:15 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-07-09 14:32:31 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='DigitalAssetsMarket',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/_post.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
