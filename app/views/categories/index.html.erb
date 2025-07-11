@@ -1,0 +1,37 @@
+<% content_for :title, "Category" %>
+
+<div class="container mt-5">
+  
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Category</h1>
+    <% if policy(Category).new? %>
+    <%= link_to "New Catogory", new_category_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name || "—" %></td>
+            <td><%= category.description %></td>
+            <td class="text-center">
+              <%= link_to "Show", category, class: "btn btn-outline-primary btn-sm me-1" %>
+              <%= link_to "Edit", edit_category_path(category), class: "btn btn-outline-secondary btn-sm me-1" %>
+              <%= link_to "Delete", category, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
