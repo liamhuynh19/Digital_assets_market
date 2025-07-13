@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
   # GET /products or /products.json
   def index
-    @products = policy_scope(Product)
+    @products = policy_scope(Product).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   # GET /products/1 or /products/1.json
@@ -15,11 +15,13 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @categories = Category.all
     authorize @product
   end
 
   # GET /products/1/edit
   def edit
+    @categories = Category.all
     authorize @product
   end
 

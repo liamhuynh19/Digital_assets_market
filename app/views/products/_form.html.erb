@@ -37,7 +37,12 @@
 
   <div class="mb-3">
     <%= form.label :category_id, class: "form-label" %>
-    <%= form.text_field :category_id, class: "form-control" %>
+    <%= form.collection_select :category_id, 
+                             Category.all, 
+                             :id, 
+                             :name, 
+                             { prompt: "Select a category" }, 
+                             { class: "form-select" } %>
   </div>
 
   <div class="d-grid">
