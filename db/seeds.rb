@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+#
+# Create default users
+users = [
+  { email: "admin@gmail.com",  password: "admin123",  role: "admin" },
+  { email: "buyer@gmail.com",  password: "buyer123",  role: "buyer" },
+  { email: "seller@gmail.com", password: "seller123", role: "seller" }
+]
+
+users.each do |attrs|
+  user = User.find_or_initialize_by(email: attrs[:email])
+  user.password = attrs[:password]
+  user.role = attrs[:role]
+  user.save!
+end

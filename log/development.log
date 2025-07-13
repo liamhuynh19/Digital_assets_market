@@ -14400,3 +14400,1195 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 26ms (Views: 4.2ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.7ms)
 
 
+Started GET "/" for ::1 at 2025-07-13 13:13:30 +0700
+  
+ActiveRecord::NoDatabaseError (We could not find your database: digital_assets_market. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+)
+Caused by: PG::ConnectionBad (connection to server at "::1", port 5432 failed: FATAL:  database "digital_assets_market" does not exist
+)
+
+Information for: ActiveRecord::NoDatabaseError (We could not find your database: digital_assets_market. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+  
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:63:in `rescue in new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:939:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:951:in `reconnect'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:667:in `block in reconnect!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:666:in `reconnect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `block in verify!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:761:in `verify!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:779:in `connect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:985:in `block in with_raw_connection'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:984:in `with_raw_connection'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1142:in `quoted_scope'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1119:in `data_source_sql'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:55:in `block in create_table'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in `with_connection'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:54:in `create_table'
+activerecord (8.0.2) lib/active_record/migration.rb:1431:in `initialize'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `new'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `open'
+activerecord (8.0.2) lib/active_record/migration.rb:763:in `block (2 levels) in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (8.0.2) lib/active_record/migration.rb:762:in `block in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `each'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:740:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: PG::ConnectionBad (connection to server at "::1", port 5432 failed: FATAL:  database "digital_assets_market" does not exist
+):
+  
+pg (1.5.9) lib/pg/connection.rb:709:in `async_connect_or_reset'
+pg (1.5.9) lib/pg/connection.rb:844:in `connect_to_hosts'
+pg (1.5.9) lib/pg/connection.rb:772:in `new'
+pg (1.5.9) lib/pg.rb:63:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:58:in `new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:939:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:951:in `reconnect'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:667:in `block in reconnect!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:666:in `reconnect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `block in verify!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:761:in `verify!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:779:in `connect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:985:in `block in with_raw_connection'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:984:in `with_raw_connection'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1142:in `quoted_scope'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1119:in `data_source_sql'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:55:in `block in create_table'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in `with_connection'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:54:in `create_table'
+activerecord (8.0.2) lib/active_record/migration.rb:1431:in `initialize'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `new'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `open'
+activerecord (8.0.2) lib/active_record/migration.rb:763:in `block (2 levels) in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (8.0.2) lib/active_record/migration.rb:762:in `block in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `each'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:740:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2025-07-13 13:13:30 +0700
+  
+ActiveRecord::NoDatabaseError (We could not find your database: digital_assets_market. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+)
+Caused by: PG::ConnectionBad (connection to server at "::1", port 5432 failed: FATAL:  database "digital_assets_market" does not exist
+)
+
+Information for: ActiveRecord::NoDatabaseError (We could not find your database: digital_assets_market. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+  
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:63:in `rescue in new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:939:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:951:in `reconnect'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:667:in `block in reconnect!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:666:in `reconnect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `block in verify!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:761:in `verify!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:779:in `connect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:985:in `block in with_raw_connection'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:984:in `with_raw_connection'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1142:in `quoted_scope'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1119:in `data_source_sql'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:55:in `block in create_table'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in `with_connection'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:54:in `create_table'
+activerecord (8.0.2) lib/active_record/migration.rb:1431:in `initialize'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `new'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `open'
+activerecord (8.0.2) lib/active_record/migration.rb:763:in `block (2 levels) in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (8.0.2) lib/active_record/migration.rb:762:in `block in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `each'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:740:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: PG::ConnectionBad (connection to server at "::1", port 5432 failed: FATAL:  database "digital_assets_market" does not exist
+):
+  
+pg (1.5.9) lib/pg/connection.rb:709:in `async_connect_or_reset'
+pg (1.5.9) lib/pg/connection.rb:844:in `connect_to_hosts'
+pg (1.5.9) lib/pg/connection.rb:772:in `new'
+pg (1.5.9) lib/pg.rb:63:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:58:in `new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:939:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:951:in `reconnect'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:667:in `block in reconnect!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:666:in `reconnect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `block in verify!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:761:in `verify!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:779:in `connect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:985:in `block in with_raw_connection'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:984:in `with_raw_connection'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1142:in `quoted_scope'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1119:in `data_source_sql'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:55:in `block in create_table'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in `with_connection'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:54:in `create_table'
+activerecord (8.0.2) lib/active_record/migration.rb:1431:in `initialize'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `new'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `open'
+activerecord (8.0.2) lib/active_record/migration.rb:763:in `block (2 levels) in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (8.0.2) lib/active_record/migration.rb:762:in `block in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `each'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:740:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.16) lib/rack/method_override.rb:28:in `call'
+rack (3.1.16) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.16) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (63.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (15.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market_test" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (156.7ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (199.5ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market_test" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (28.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "cart_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" bigserial primary key, "cart_id" bigint NOT NULL, "product_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_cart_id" ON "cart_items" ("cart_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_product_id" ON "cart_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "order_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" bigserial primary key, "order_id" bigint NOT NULL, "product_id" bigint NOT NULL, "price_at_purchase" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint NOT NULL, "status" character varying, "total_amount" decimal, "payment_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "product_tags" ("id" bigserial primary key, "product_id" bigint NOT NULL, "tag_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_product_id" ON "product_tags" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_tag_id" ON "product_tags" ("tag_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "user_id" bigint NOT NULL, "name" character varying, "description" text, "price" decimal, "file_url" character varying, "average_rating" decimal, "category_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" bigint NOT NULL, "product_id" bigint NOT NULL, "order_item_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_order_item_id" ON "reviews" ("order_item_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_product_id" ON "reviews" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "role" character varying, "status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6)) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5.8ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_6cdb1f0139"
+FOREIGN KEY ("cart_id")
+  REFERENCES "carts" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_681a180e84"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "carts" ADD CONSTRAINT "fk_rails_ea59a35211"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_f1a29ddd47"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "orders" ADD CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_a402a4c881"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_ecabaad74a"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_8ab60c56f9"
+FOREIGN KEY ("order_item_id")
+  REFERENCES "order_items" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_bedd9094d4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250709025609) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250709021725),
+(20250709021643),
+(20250709021555),
+(20250709020831),
+(20250709020735),
+(20250709020552),
+(20250709020246),
+(20250709015745),
+(20250709015610),
+(20250708101939),
+(20250707031631); /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-13 06:50:31.957282', '2025-07-13 06:50:31.957285') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '909d7dc8a5c3a1af2241fb80b648fa3e2e337cfa', '2025-07-13 06:50:31.963062', '2025-07-13 06:50:31.963065') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (38.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "cart_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" bigserial primary key, "cart_id" bigint NOT NULL, "product_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_cart_id" ON "cart_items" ("cart_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_product_id" ON "cart_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "order_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" bigserial primary key, "order_id" bigint NOT NULL, "product_id" bigint NOT NULL, "price_at_purchase" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint NOT NULL, "status" character varying, "total_amount" decimal, "payment_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "product_tags" ("id" bigserial primary key, "product_id" bigint NOT NULL, "tag_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_product_id" ON "product_tags" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_tag_id" ON "product_tags" ("tag_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "user_id" bigint NOT NULL, "name" character varying, "description" text, "price" decimal, "file_url" character varying, "average_rating" decimal, "category_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" bigint NOT NULL, "product_id" bigint NOT NULL, "order_item_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_order_item_id" ON "reviews" ("order_item_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_product_id" ON "reviews" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "role" character varying, "status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6)) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_6cdb1f0139"
+FOREIGN KEY ("cart_id")
+  REFERENCES "carts" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_681a180e84"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "carts" ADD CONSTRAINT "fk_rails_ea59a35211"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_f1a29ddd47"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "orders" ADD CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_a402a4c881"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_ecabaad74a"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_8ab60c56f9"
+FOREIGN KEY ("order_item_id")
+  REFERENCES "order_items" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_bedd9094d4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250709025609) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250709021725),
+(20250709021643),
+(20250709021555),
+(20250709020831),
+(20250709020735),
+(20250709020552),
+(20250709020246),
+(20250709015745),
+(20250709015610),
+(20250708101939),
+(20250707031631); /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-13 06:50:32.216520', '2025-07-13 06:50:32.216525') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-07-13 06:50:32.223415' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '909d7dc8a5c3a1af2241fb80b648fa3e2e337cfa', '2025-07-13 06:50:32.226253', '2025-07-13 06:50:32.226256') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Started GET "/" for ::1 at 2025-07-13 13:50:46 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Processing by ProductsController#index as HTML
+Completed 401 Unauthorized in 111ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-07-13 13:50:46 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 0.0ms)
+Completed 200 OK in 148ms (Views: 22.8ms | ActiveRecord: 26.2ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/assets/application-231c63cf.css" for ::1 at 2025-07-13 13:50:46 +0700
+Started GET "/assets/application-e98745be.js" for ::1 at 2025-07-13 13:50:46 +0700
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-07-13 13:50:46 +0700
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-07-13 13:50:46 +0700
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-07-13 13:50:46 +0700
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-07-13 13:50:47 +0700
+Started GET "/assets/turbo.min-3a2e143f.js" for ::1 at 2025-07-13 13:50:47 +0700
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-07-13 13:50:47 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (74.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (53.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digital_assets_market_test" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (124.6ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (106.5ms)[0m  [1m[35mCREATE DATABASE "digital_assets_market_test" ENCODING = 'unicode' /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (20.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "cart_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" bigserial primary key, "cart_id" bigint NOT NULL, "product_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_cart_id" ON "cart_items" ("cart_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_product_id" ON "cart_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "order_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" bigserial primary key, "order_id" bigint NOT NULL, "product_id" bigint NOT NULL, "price_at_purchase" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint NOT NULL, "status" character varying, "total_amount" decimal, "payment_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "product_tags" ("id" bigserial primary key, "product_id" bigint NOT NULL, "tag_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_product_id" ON "product_tags" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_tag_id" ON "product_tags" ("tag_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "user_id" bigint NOT NULL, "name" character varying, "description" text, "price" decimal, "file_url" character varying, "average_rating" decimal, "category_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" bigint NOT NULL, "product_id" bigint NOT NULL, "order_item_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_order_item_id" ON "reviews" ("order_item_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_product_id" ON "reviews" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "role" character varying, "status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6)) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_6cdb1f0139"
+FOREIGN KEY ("cart_id")
+  REFERENCES "carts" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_681a180e84"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "carts" ADD CONSTRAINT "fk_rails_ea59a35211"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_f1a29ddd47"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "orders" ADD CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_a402a4c881"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_ecabaad74a"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_8ab60c56f9"
+FOREIGN KEY ("order_item_id")
+  REFERENCES "order_items" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_bedd9094d4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250709025609) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250709021725),
+(20250709021643),
+(20250709021555),
+(20250709020831),
+(20250709020735),
+(20250709020552),
+(20250709020246),
+(20250709015745),
+(20250709015610),
+(20250708101939),
+(20250707031631); /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-13 07:25:47.225257', '2025-07-13 07:25:47.225260') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '909d7dc8a5c3a1af2241fb80b648fa3e2e337cfa', '2025-07-13 07:25:47.230193', '2025-07-13 07:25:47.230195') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[35mSQL (23.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "assets" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "assets" ("id" bigserial primary key, "tite" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "cart_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" bigserial primary key, "cart_id" bigint NOT NULL, "product_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_cart_id" ON "cart_items" ("cart_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_cart_items_on_product_id" ON "cart_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "order_items" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "order_items" ("id" bigserial primary key, "order_id" bigint NOT NULL, "product_id" bigint NOT NULL, "price_at_purchase" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_order_id" ON "order_items" ("order_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_order_items_on_product_id" ON "order_items" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint NOT NULL, "status" character varying, "total_amount" decimal, "payment_status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "creator" character varying, "description" text, "published_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "product_tags" ("id" bigserial primary key, "product_id" bigint NOT NULL, "tag_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_product_id" ON "product_tags" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_product_tags_on_tag_id" ON "product_tags" ("tag_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "user_id" bigint NOT NULL, "name" character varying, "description" text, "price" decimal, "file_url" character varying, "average_rating" decimal, "category_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "user_id" bigint NOT NULL, "product_id" bigint NOT NULL, "order_item_id" bigint NOT NULL, "rating" integer, "comment" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_order_item_id" ON "reviews" ("order_item_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_product_id" ON "reviews" ("product_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_reviews_on_user_id" ON "reviews" ("user_id") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "role" character varying, "status" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6)) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_6cdb1f0139"
+FOREIGN KEY ("cart_id")
+  REFERENCES "carts" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "cart_items" ADD CONSTRAINT "fk_rails_681a180e84"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "carts" ADD CONSTRAINT "fk_rails_ea59a35211"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_e3cb28f071"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "order_items" ADD CONSTRAINT "fk_rails_f1a29ddd47"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "orders" ADD CONSTRAINT "fk_rails_f868b47f6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_a402a4c881"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "product_tags" ADD CONSTRAINT "fk_rails_ecabaad74a"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_8ab60c56f9"
+FOREIGN KEY ("order_item_id")
+  REFERENCES "order_items" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_bedd9094d4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250709025609) /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250709021725),
+(20250709021643),
+(20250709021555),
+(20250709020831),
+(20250709020735),
+(20250709020552),
+(20250709020246),
+(20250709015745),
+(20250709015610),
+(20250708101939),
+(20250707031631); /*application='DigitalAssetsMarket'*/[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-13 07:25:47.428903', '2025-07-13 07:25:47.428904') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-07-13 07:25:47.431571' WHERE "ar_internal_metadata"."key" = 'environment' /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '909d7dc8a5c3a1af2241fb80b648fa3e2e337cfa', '2025-07-13 07:25:47.433671', '2025-07-13 07:25:47.433672') RETURNING "key" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "role", "status", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (NULL, 'admin@gmail.com', 'admin', NULL, '2025-07-13 07:25:47.950106', '2025-07-13 07:25:47.950106', '$2a$12$WlefCSNch3N9.PpQzjGXtut.Qf3JOVP/mNNja1LGxwcwa.yAel.Iy', NULL, NULL, NULL) RETURNING "id" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'buyer@gmail.com' LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'buyer@gmail.com' LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "role", "status", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (NULL, 'buyer@gmail.com', 'buyer', NULL, '2025-07-13 07:25:48.390043', '2025-07-13 07:25:48.390043', '$2a$12$iLKgZW5xkF26pivfTdnz3uTwhEebmQHtJIbNuZfQpIdxt3ER8qNCG', NULL, NULL, NULL) RETURNING "id" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'seller@gmail.com' LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Exists? (4.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'seller@gmail.com' LIMIT 1 /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "role", "status", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (NULL, 'seller@gmail.com', 'seller', NULL, '2025-07-13 07:25:48.827409', '2025-07-13 07:25:48.827409', '$2a$12$MEvPyF9ywovvN7mzAMJZtezs4g23SPLtD9lGUYi17cjCPb8OSulvW', NULL, NULL, NULL) RETURNING "id" /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT /*application='DigitalAssetsMarket'*/[0m
+  [1m[36mUser Load (52.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='DigitalAssetsMarket'*/[0m
+Started POST "/users/sign_in" for ::1 at 2025-07-13 14:26:21 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='DigitalAssetsMarket'*/[0m
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 98ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | GC: 0.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.6ms)
+Completed 200 OK in 538ms (Views: 19.7ms | ActiveRecord: 22.7ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-07-13 14:26:32 +0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@gmail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 493ms (ActiveRecord: 4.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-13 14:26:32 +0700
+Processing by ProductsController#index as TURBO_STREAM
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:26
+  Rendered products/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 3.8ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2025-07-13 14:26:40 +0700
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/views/categories/index.html.erb:23
+  Rendered categories/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 66ms (Views: 4.0ms | ActiveRecord: 11.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories/new" for ::1 at 2025-07-13 14:26:42 +0700
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered categories/new.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 5.2ms | ActiveRecord: 10.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2025-07-13 14:27:01 +0700
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Picture", "description"=>"Picture"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mCategory Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Picture' LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mCategory Create (4.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ('Picture', 'Picture', '2025-07-13 07:27:01.626335', '2025-07-13 07:27:01.626335') RETURNING "id" /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 69ms (ActiveRecord: 12.2ms (3 queries, 0 cached) | GC: 10.5ms)
+
+
+Started GET "/categories/1" for ::1 at 2025-07-13 14:27:01 +0700
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='categories'*/[0m
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:54:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered categories/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.3ms)
+Completed 200 OK in 50ms (Views: 4.0ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/categories" for ::1 at 2025-07-13 14:28:26 +0700
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/views/categories/index.html.erb:23
+  Rendered categories/index.html.erb within layouts/application (Duration: 19.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | GC: 0.0ms)
+Completed 200 OK in 94ms (Views: 14.6ms | ActiveRecord: 27.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories/new" for ::1 at 2025-07-13 14:28:28 +0700
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 4.3ms | GC: 0.0ms)
+  Rendered categories/new.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 183ms (Views: 9.6ms | ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2025-07-13 14:28:28 +0700
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/views/categories/index.html.erb:23
+  Rendered categories/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 102ms (Views: 6.1ms | ActiveRecord: 4.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2025-07-13 14:28:37 +0700
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Video", "description"=>"video"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mCategory Exists? (7.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Video' LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mCategory Create (2.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ('Video', 'video', '2025-07-13 07:28:37.915716', '2025-07-13 07:28:37.915716') RETURNING "id" /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 62ms (ActiveRecord: 19.4ms (3 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/categories/2" for ::1 at 2025-07-13 14:28:37 +0700
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='categories'*/[0m
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:54:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered categories/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 2.6ms | ActiveRecord: 3.7ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/categories" for ::1 at 2025-07-13 14:45:32 +0700
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/views/categories/index.html.erb:23
+  Rendered categories/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 210ms (Views: 8.0ms | ActiveRecord: 19.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories/new" for ::1 at 2025-07-13 14:46:15 +0700
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered categories/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 81ms (Views: 6.0ms | ActiveRecord: 19.4ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/categories" for ::1 at 2025-07-13 14:46:28 +0700
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Normal", "description"=>"normal"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mCategory Exists? (4.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Normal' LIMIT 1 /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mCategory Create (3.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES ('Normal', 'normal', '2025-07-13 07:46:28.839610', '2025-07-13 07:46:28.839610') RETURNING "id" /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT /*action='create',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:36:in `block in create'
+Redirected to http://localhost:3000/categories/3
+Completed 302 Found in 81ms (ActiveRecord: 19.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories/3" for ::1 at 2025-07-13 14:46:28 +0700
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='categories'*/[0m
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1 /*action='show',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/controllers/categories_controller.rb:54:in `set_category'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/_category.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered categories/show.html.erb within layouts/application (Duration: 7.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.0ms)
+Completed 200 OK in 73ms (Views: 12.2ms | ActiveRecord: 2.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2025-07-13 14:46:31 +0700
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/views/categories/index.html.erb:23
+  Rendered categories/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 2.5ms | ActiveRecord: 3.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-07-13 14:46:33 +0700
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:26
+  Rendered products/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 2.7ms | ActiveRecord: 4.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-07-13 14:51:00 +0700
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:26
+  Rendered products/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.4ms)
+Completed 200 OK in 79ms (Views: 6.0ms | ActiveRecord: 18.9ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/users" for ::1 at 2025-07-13 14:51:01 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/layouts/application.html.erb:37
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 49ms (Views: 4.2ms | ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2025-07-13 14:51:02 +0700
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /*action='index',application='DigitalAssetsMarket',controller='categories'*/[0m
+  ↳ app/views/categories/index.html.erb:23
+  Rendered categories/index.html.erb within layouts/application (Duration: 8.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.0ms)
+Completed 200 OK in 54ms (Views: 4.8ms | ActiveRecord: 6.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2025-07-13 14:51:02 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/layouts/application.html.erb:37
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 3.4ms | ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-07-13 14:51:03 +0700
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:26
+  Rendered products/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 1.4ms | ActiveRecord: 3.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2025-07-13 14:51:58 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/layouts/application.html.erb:37
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 10.1ms | ActiveRecord: 6.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2025-07-13 14:51:59 +0700
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/users/index.html.erb:25
+  Rendered users/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='users'*/[0m
+  ↳ app/views/layouts/application.html.erb:37
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.9ms)
+Completed 200 OK in 48ms (Views: 4.0ms | ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2025-07-13 14:51:59 +0700
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='DigitalAssetsMarket',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:26
+  Rendered products/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 1.4ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
