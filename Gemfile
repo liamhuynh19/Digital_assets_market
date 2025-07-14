@@ -62,6 +62,9 @@ group :development, :test do
   gem "ruby-lsp", require: false
   gem "rubocop", require: false
   gem "rubocop-rails"
+  gem "tailwindcss-rails", "~> 3.3.1"
+  gem "stimulus-rails"
+  gem "simplecov", require: false
 end
 
 group :development do

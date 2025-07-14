@@ -69,4 +69,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  # require 'simplecov'
+  require 'simplecov'
+  SimpleCov.start 'rails' do
+    add_filter '/spec/'
+    add_group 'Controllers', 'app/controllers'
+    add_group 'Models', 'app/models'
+    add_group 'Services', 'app/services'
+    add_group 'Helpers', 'app/helpers'
+  end
+  require 'spec_helper'
 end
