@@ -1,0 +1,15 @@
+<div class="dropdown">
+  <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+    <%= current_user.email %>
+  </a>
+  <ul class="dropdown-menu text-small shadow">
+    <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
+    <li><hr class="dropdown-divider"></li>
+    <li>
+      <%= link_to "Sign out", destroy_user_session_path, 
+          method: :delete, 
+          class: "dropdown-item", 
+          data: { turbo_method: :delete } %>
+    </li>
+  </ul>
+</div>

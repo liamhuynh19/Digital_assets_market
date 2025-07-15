@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
   # GET /products or /products.json
   def index
-    @products = policy_scope(Product).order(created_at: :desc).page(params[:page]).per(12)
+    @products = policy_scope(Product).order(created_at: :desc).page(params[:page]).per(8)
   end
 
   # GET /products/1 or /products/1.json
@@ -67,13 +67,13 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.expect(product: [ :name, :description, :price, :file_url, :average_rating, :category_id ])
-    end
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.expect(product: [ :name, :description, :price, :file_url, :average_rating, :category_id ])
+  end
 end
