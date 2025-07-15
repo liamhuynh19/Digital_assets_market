@@ -1,16 +1,50 @@
-<h2 class="mb-4 text-center">Forgot your password?</h2>
+<div class="devise-container">
+  <div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0">
+          <div class="card-body p-5">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold">Reset Password</h2>
+              <p class="text-muted">Enter your email to receive instructions</p>
+            </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "card p-4 shadow-sm", style: "max-width: 400px; margin: auto;"  }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <% if resource.errors.any? %>
+                <div class="alert alert-danger mb-3">
+                  <h4 class="h6">Please correct the following:</h4>
+                  <ul class="mb-0">
+                    <% resource.errors.full_messages.uniq.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
 
-  <div class="mb-3">
-    <%= f.label :email , class: "form-label"%><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              <div class="form-floating mb-4">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+                    class: "form-control #{resource.errors[:email].any? ? 'is-invalid' : ''}", 
+                    placeholder: "name@example.com" %>
+                <%= f.label :email %>
+                <% if resource.errors[:email].any? %>
+                  <div class="invalid-feedback"><%= resource.errors[:email].join(", ") %></div>
+                <% end %>
+              </div>
+
+              <div class="d-grid mb-3">
+                <%= f.submit "Send Instructions", class: "btn btn-primary py-2" %>
+              </div>
+            <% end %>
+
+            <div class="text-center">
+              <p class="text-muted">
+                Remember your password? 
+                <%= link_to "Sign in", new_session_path(resource_name), class: "text-primary text-decoration-none" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="d-grid">
-    <%= f.submit "Send me reset password instructions", class: "btn btn-primary"%>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

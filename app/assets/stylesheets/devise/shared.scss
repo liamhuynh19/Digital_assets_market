@@ -1,0 +1,27 @@
+body.devise-page {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.devise-container {
+  .card {
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .form-floating > label {
+    padding-left: 1.25rem;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(to right, #2686a3, #764ba2);
+    border: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+  }
+}

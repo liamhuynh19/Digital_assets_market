@@ -25,6 +25,8 @@ gem "pundit"
 
 gem "kaminari"
 
+gem "sass-rails"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -63,7 +65,6 @@ group :development, :test do
   gem "rubocop", require: false
   gem "rubocop-rails"
   gem "tailwindcss-rails", "~> 3.3.1"
-  gem "stimulus-rails"
   gem "simplecov", require: false
 end
 
