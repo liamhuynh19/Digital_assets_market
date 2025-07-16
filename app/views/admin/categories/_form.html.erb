@@ -1,0 +1,26 @@
+<%= form_with(model: category, local: true, html: { class: "card p-4 shadow-sm", style: "max-width: 600px; margin: auto;" }) do |form| %>
+  <% if category.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h4>
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+  
+  <div class="d-grid">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

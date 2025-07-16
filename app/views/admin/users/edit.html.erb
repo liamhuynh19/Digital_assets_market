@@ -1,0 +1,13 @@
+<% content_for :title, "Edit User" %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="mb-0">Edit user</h1>
+        <%= link_to "Back to users", admin_users_path, class: "btn btn-outline-primary" %>
+      </div>
+      <%= render "form", user: @user %>
+    </div>
+  </div>
+</div>
