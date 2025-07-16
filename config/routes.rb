@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :reviews
   resources :products
-  resources :posts
   resources :categories
   get "profile", to: "users#profile", as: :user_profile
   patch "profile", to: "users#update_profile", as: :update_user_profile
