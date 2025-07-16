@@ -39,4 +39,10 @@ class ProductPolicy < ApplicationPolicy
   def destroy?
     user.present? && (user.role == "admin" || user.role == "seller" && record.user == user)
   end
+
+   private
+
+  def controller
+    @controller ||= Pundit::PolicyFinder.new(scope).controller
+  end
 end

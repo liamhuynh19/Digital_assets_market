@@ -2,18 +2,24 @@ class Admin::ProductsController < ApplicationController
   before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @products = Product.all
+    authorize [ :admin, Product ]
+    @products = policy_scope([ :admin, Product ])
   end
 
   def show
+    @product = Product.find(params[:id])
+    authorize [ :admin, @product ]
   end
 
   def new
     @product = Product.new
+    authorize [ :admin, @product ]
   end
 
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
+    authorize [ :admin, @product ]
     if @product.save
       redirect_to admin_product_path(@product), notice: "Product was successfully created."
     else
@@ -25,6 +31,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
+    authorize [ :admin, @product ]
     if @product.update(product_params)
       redirect_to admin_product_path(@product), notice: "Product was successfully updated."
     else
@@ -33,6 +40,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
+    authorize [ :admin, @product ]
     @product.destroy
     redirect_to admin_products_path, notice: "Product was successfully deleted."
   end
