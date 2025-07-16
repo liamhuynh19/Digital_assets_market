@@ -3,7 +3,7 @@
     <%= current_user.email %>
   </a>
   <ul class="dropdown-menu text-small shadow">
-    <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
+    <li><%= link_to "Profile", user_profile_path, class: "dropdown-item" %></li>
     <li><hr class="dropdown-divider"></li>
     <li>
       <%= link_to "Sign out", destroy_user_session_path, 

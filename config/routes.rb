@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :products
   resources :posts
   resources :categories
-  resources :users
+  get "profile", to: "users#profile", as: :user_profile
+  patch "profile", to: "users#update_profile", as: :update_user_profile
 
   get "cart", to: "carts#show", as: :cart
 
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    root "dashboard#index"
     get "dashboard", to: "dashboard#index"
     resources :products
     resources :users
