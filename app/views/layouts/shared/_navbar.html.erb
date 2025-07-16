@@ -1,49 +1,85 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Digital Assets Market</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to "Products", products_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Users", users_path, class: "nav-link" %>
-        </li>
-        <% if current_user && current_user.role == 'admin'%>
-        <li class="nav-item">
-          <%= link_to "Categories", categories_path, class: "nav-link" %>
-        </li>
+<nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+          <i class="fas fa-store-alt me-2"></i>
+          Digital Assets Market
         <% end %>
-      </ul>
-      <% if user_signed_in? %>
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-              <%= current_user.email %>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li>
-                <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
-              </li>
-              <li>
-                <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      <% else %>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-</nav>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto align-items-center">
+            <li class="nav-item me-3">
+              <%= link_to products_path, class: "nav-link d-flex align-items-center" do %>
+                <i class="fas fa-th-large me-1"></i> Browse
+              <% end %>
+            </li>
+            
+            <li class="nav-item">
+              <form class="d-flex position-relative">
+                <input class="form-control search-bar" type="search" placeholder="Search for assets...">
+                <button class="btn position-absolute end-0 top-50 translate-middle-y me-2" type="submit">
+                  <i class="fas fa-search text-muted"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item dropdown me-3">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="cart-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                  <% if @cart&.cart_items&.any? %>
+                    <span class="cart-badge"><%= @cart.cart_items.sum(:quantity) %></span>
+                  <% end %>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end cart-dropdown">
+                <% if @cart&.cart_items&.any? %>
+                  <% @cart.cart_items.each do |item| %>
+                    <div class="cart-item">
+                      <%= image_tag item.product.file_url.presence || asset_path("place_holder.jpg"), 
+                          class: "cart-item-image" %>
+                      <div class="cart-item-details">
+                        <div class="fw-bold"><%= item.product.name %></div>
+                        <div class="text-muted small">
+                          $<%= number_with_precision(item.product.price, precision: 2) %> x <%= item.quantity %>
+                        </div>
+                      </div>
+                      <%= button_to remove_from_cart_cart_path(@cart, item.product), 
+                          method: :delete,
+                          class: "btn btn-link text-danger p-0 ms-2",
+                          form: { style: "display: inline;" } do %>
+                        <i class="fas fa-times"></i>
+                      <% end %>
+                    </div>
+                  <% end %>
+                  
+                  <div class="cart-total d-flex justify-content-between">
+                    <span>Total:</span>
+                    <span>$<%= number_with_precision(@cart.total_price, precision: 2) %></span>
+                  </div>
+                  
+                  <div class="cart-actions d-grid gap-2 mt-3">
+                    <%= link_to "View Cart", cart_path, class: "btn btn-primary" %>
+                    <%= link_to "Checkout", "#", class: "btn btn-primary" %>
+                  </div>
+                <% else %>
+                  <div class="text-center py-4">
+                    <i class="fas fa-shopping-cart fa-2x mb-3 text-muted"></i>
+                    <p class="mb-0">Your cart is empty</p>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <%= render 'layouts/shared/user_menu' %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
