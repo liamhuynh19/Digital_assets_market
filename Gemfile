@@ -59,7 +59,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-  gem "rspec-rails"
+  gem "rspec-rails", "~> 6.0.0"
   gem "factory_bot_rails"
   gem "shoulda-matchers", require: false
   gem "ruby-lsp", require: false
@@ -67,6 +67,7 @@ group :development, :test do
   gem "rubocop-rails"
   gem "tailwindcss-rails", "~> 3.3.1"
   gem "simplecov", require: false
+  gem "rails-controller-testing"
 end
 
 group :development do
