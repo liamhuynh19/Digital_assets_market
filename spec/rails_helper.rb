@@ -77,6 +77,7 @@ RSpec.configure do |config|
     add_group 'Models', 'app/models'
     add_group 'Services', 'app/services'
     add_group 'Helpers', 'app/helpers'
+    add_group 'Policies', 'app/policies'
   end
   require 'spec_helper'
 end
