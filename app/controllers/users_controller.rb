@@ -2,12 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: %i[  profile edit update  ]
 
-  # GET /users or /users.json
-
-
-  # GET /users/1 or /users/1.json
-
-
   def profile
   end
 

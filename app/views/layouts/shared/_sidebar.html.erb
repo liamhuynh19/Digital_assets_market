@@ -1,9 +1,13 @@
   <!-- Sidebar -->
     <div class="admin-sidebar p-3 d-flex flex-column">
       <div class="admin-brand">
-        <%= link_to admin_products_path, class: "d-flex align-items-center" do %>
+        <%= link_to admin_products_path, class: "d-flex align-items-center" do %> 
           <i class="fas fa-chart-line me-2"></i>
-          Admin Dashboard
+            <% if current_user.admin? %>
+              Admin Dashboard
+            <% else %>
+              Seller Dashboard
+            <% end %>
         <% end %>
       </div>
 
@@ -18,16 +22,13 @@
             <i class="fas fa-tags"></i> Categories
           <% end %>
         </li>
+        <% if policy(:admin).index? %>
         <li>
           <%= link_to admin_users_path, class: "nav-link #{current_page?(admin_users_path) ? 'active' : ''}" do %>
             <i class="fas fa-users"></i> Users
           <% end %>
         </li>
-        <li>
-          <%= link_to reviews_path, class: "nav-link #{current_page?(reviews_path) ? 'active' : ''}" do %>
-            <i class="fas fa-star"></i> Reviews
-          <% end %>
-        </li>
+        <% end %>
       </ul>
 
       <div class="user-menu">

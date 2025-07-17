@@ -1,3 +1,3 @@
-class Order < ApplicationRecord
-  belongs_to :user
-end
+# class Order < ApplicationRecord
+#   belongs_to :user
+# end

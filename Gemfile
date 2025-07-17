@@ -61,6 +61,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
   gem "rspec-rails"
   gem "factory_bot_rails"
+  gem "shoulda-matchers", require: false
   gem "ruby-lsp", require: false
   gem "rubocop", require: false
   gem "rubocop-rails"

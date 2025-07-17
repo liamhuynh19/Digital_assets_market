@@ -19,30 +19,4 @@ class ProductPolicy < ApplicationPolicy
   def show?
     true
   end
-
-  def create?
-    user.present? && (user.role == "admin" || user.role == "seller")
-  end
-
-  def new?
-    create?
-  end
-
-  def update?
-    user.present? && (user.role == "admin" || user.role == "seller" && record.user == user)
-  end
-
-  def edit?
-    update?
-  end
-
-  def destroy?
-    user.present? && (user.role == "admin" || user.role == "seller" && record.user == user)
-  end
-
-   private
-
-  def controller
-    @controller ||= Pundit::PolicyFinder.new(scope).controller
-  end
 end

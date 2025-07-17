@@ -3,9 +3,6 @@
 <div class="container mt-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="mb-0">Products</h1>
-    <% if policy(Product).new? %>
-      <%= link_to "New Product", new_product_path, class: "btn btn-primary" %>
-    <% end %>
   </div>
 
   <div class="row mb-4">

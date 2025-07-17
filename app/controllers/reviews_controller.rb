@@ -58,13 +58,13 @@ class ReviewsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_review
-      @review = Review.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_review
+    @review = Review.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def review_params
-      params.expect(review: [ :user_id, :product_id, :order_item_id, :rating, :comment ])
-    end
+  # Only allow a list of trusted parameters through.
+  def review_params
+    params.expect(review: [ :user_id, :product_id, :order_item_id, :rating, :comment ])
+  end
 end

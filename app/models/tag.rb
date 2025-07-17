@@ -1,2 +1,2 @@
-class Tag < ApplicationRecord
-end
+# class Tag < ApplicationRecord
+# end

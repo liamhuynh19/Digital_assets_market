@@ -12,6 +12,14 @@ class User < ApplicationRecord
 
   has_one :cart, dependent: :destroy
 
+  def admin?
+    role == "admin"
+  end
+
+  def seller?
+    role == "seller"
+  end
+
   private
   def set_default_role
     self.role ||= "buyer"

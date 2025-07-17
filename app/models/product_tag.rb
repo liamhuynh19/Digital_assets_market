@@ -1,4 +1,4 @@
-class ProductTag < ApplicationRecord
-  belongs_to :product
-  belongs_to :tag
-end
+# class ProductTag < ApplicationRecord
+#   belongs_to :product
+#   belongs_to :tag
+# end

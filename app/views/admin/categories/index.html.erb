@@ -6,9 +6,10 @@
       <h1 class="gradient-text mb-0">Categories Management</h1>
       <p class="text-muted">Manage your digital assets categories</p>
     </div>
-    
+    <% if current_user.admin? %>
     <%= link_to new_admin_category_path, class: "btn btn-primary" do %>
       <i class="fas fa-plus"></i> New Category
+    <% end %>
     <% end %>
   </div>
 
@@ -46,16 +47,19 @@
                 </td>
                 <td>
                   <div class="d-flex gap-2">
+                    <% if policy([:admin, category]).update? %>
                     <%= link_to edit_admin_category_path(category), 
                         class: "btn btn-sm btn-light",
                         title: "Edit" do %>
                       <i class="fa-solid fa-pen-to-square"></i>
+                    <% end %>
                     <% end %>
                     <%= link_to admin_category_path(category),
                         class: "btn btn-sm btn-light",
                         title: "View" do %>
                       <i class="fa-solid fa-eye"></i>
                     <% end %>
+                    <% if policy([:admin, category]).destroy? %>
                     <%= button_to admin_category_path(category),
                         method: :delete,
                         class: "btn btn-sm btn-danger",
@@ -64,6 +68,7 @@
                           turbo_confirm: "Are you sure? This will not delete the products in this category." 
                         } do %>
                       <i class="fa-solid fa-trash-can"></i>
+                    <% end %>
                     <% end %>
                   </div>
                 </td>
