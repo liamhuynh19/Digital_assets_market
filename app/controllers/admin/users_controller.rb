@@ -17,6 +17,8 @@ class Admin::UsersController < ApplicationController
     if @user.save
       redirect_to admin_user_path(@user), notice: "User was successfully created."
     else
+      Rails.logger.debug "User save failed with errors: #{@user.errors.full_messages}"
+
       render :new
     end
   end
@@ -44,6 +46,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :role)
+    params.expect(user: [ :name, :email, :role, :password ])
   end
 end

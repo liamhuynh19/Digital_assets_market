@@ -31,18 +31,16 @@ module Admin
       user.present? && (user.role == "admin" || user.role == "seller")
     end
 
+    def new?
+      create?
+    end
+
     def update?
       user.present? && (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
     end
 
     def destroy?
       user.present? && (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
-    end
-
-    private
-
-    def user_is_owner?
-      record.user_id == user.id
     end
   end
 end

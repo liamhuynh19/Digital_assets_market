@@ -31,6 +31,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
+    puts product_params
     authorize [ :admin, @product ]
     if @product.update(product_params)
       redirect_to admin_product_path(@product), notice: "Product was successfully updated."
