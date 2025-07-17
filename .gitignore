@@ -10,6 +10,9 @@
 /test/version_tmp/
 /tmp/
 /log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
 
 # Used by dotenv library to load environment variables.
 # .env
