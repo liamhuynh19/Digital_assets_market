@@ -65,7 +65,7 @@ group :development, :test do
   gem "ruby-lsp", require: false
   gem "rubocop", require: false
   gem "rubocop-rails"
-  gem "tailwindcss-rails", "~> 3.3.1"
+  gem "tailwindcss-rails", "~> 4.3.0"
   gem "simplecov", require: false
   gem "rails-controller-testing"
 end
