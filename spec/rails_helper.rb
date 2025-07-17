@@ -6,6 +6,19 @@ require 'rspec/rails'
 require 'factory_bot_rails'
 require 'devise'
 require 'pundit/rspec'
+require 'simplecov'
+
+SimpleCov.start 'rails' do
+  add_filter '/spec/'
+  add_filter '/config/'
+  add_filter '/vendor/'
+
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+  add_group 'Helpers', 'app/helpers'
+  add_group 'Libraries', 'lib'
+  add_group 'Policies', 'app/policies'
+end
 
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
