@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Admin::ProductPolicy do
   let(:admin) { create(:user, role: 'admin') }
-  let(:seller) { create(:user, name: "Seller", role: 'seller') }
-  let(:other_seller) { create(:user, name: "Other Seller", role: 'seller') }
+  let(:seller) { create(:user, role: 'seller') }
+  let(:other_seller) { create(:user,  role: 'seller') }
   let(:buyer) { create(:user, role: 'buyer') }
   let(:product) { create(:product, user: seller) }
-  let(:other_product) { create(:product, name: "Other Product", user: other_seller) }
+  let(:other_seller_product) { create(:product, user: other_seller) }
 
   describe '#index?' do
     it "denies access to buyers" do
@@ -35,7 +35,7 @@ RSpec.describe Admin::ProductPolicy do
       policy = described_class.new(admin, product)
       expect(policy.show?).to be true
 
-      policy = described_class.new(admin, other_product)
+      policy = described_class.new(admin, other_seller_product)
       expect(policy.show?).to be true
     end
 
@@ -43,7 +43,7 @@ RSpec.describe Admin::ProductPolicy do
       policy = described_class.new(seller, product)
       expect(policy.show?).to be true
 
-      policy = described_class.new(seller, other_product)
+      policy = described_class.new(seller, other_seller_product)
       expect(policy.show?).to be false
     end
   end
@@ -66,20 +66,17 @@ RSpec.describe Admin::ProductPolicy do
   end
 
   describe "Scope" do
-    let!(:seller_product) { create(:product, user: seller) }
-    let!(:other_seller_product) { create(:product, user: other_seller) }
-
     context "when user is admin" do
       it "shows all products" do
         scope = described_class::Scope.new(admin, Product).resolve
-        expect(scope).to include(seller_product, other_seller_product)
+        expect(scope).to include(product, other_seller_product)
       end
     end
 
     context "when user is seller" do
       it "shows only their products" do
         scope = described_class::Scope.new(seller, Product).resolve
-        expect(scope).to include(seller_product)
+        expect(scope).to include(product)
         expect(scope).not_to include(other_seller_product)
       end
     end

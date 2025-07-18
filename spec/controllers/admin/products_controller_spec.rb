@@ -1,12 +1,8 @@
 # require 'rails_helper'
 
 # RSpec.describe Admin::ProductsController, type: :controller do
-#   before(:all) do
-#     Devise.mappings[:user] = Devise.add_mapping(:user, {
-#       class_name: 'User',
-#       module: :devise
-#     })
-#   end
+#   include Devise::Test::ControllerHelpers
+
 #   let(:admin) { create(:user, role: 'admin') }
 #   let(:seller) { create(:user, role: 'seller') }
 #   let(:buyer) { create(:user, role: 'buyer') }
@@ -20,15 +16,13 @@
 #       file_url: 'http://example.com/file.pdf'
 #     }
 #   }
-#   before(:each) do
-#       @request.env["devise.mapping"] = Devise.mappings[:user]
-#     end
+
 #   describe 'GET #index' do
 #     context 'when user is admin' do
-#       before { sign_in admin }
+#       before { sign_in admin, scope: :user }
 
 #       it 'assigns all products as @products' do
-#         get :index, params: {} # Add empty params hash
+#         get :index, params: {}
 #         expect(assigns(:products)).to include(product)
 #         expect(response).to be_successful
 #       end
@@ -37,7 +31,7 @@
 
 #   describe 'GET #show' do
 #     context 'when user is admin' do
-#       before { sign_in admin }
+#       before { sign_in admin, scope: :user }
 
 #       it 'assigns the requested product as @product' do
 #         get :show, params: { id: product.id }
@@ -49,7 +43,7 @@
 
 #   describe 'GET #new' do
 #     context 'when user is admin' do
-#       before { sign_in admin }
+#       before { sign_in admin, scope: :user }
 
 #       it 'assigns a new product as @product' do
 #         get :new
@@ -61,7 +55,7 @@
 
 #   describe 'POST #create' do
 #     context 'when user is admin' do
-#       before { sign_in admin }
+#       before { sign_in admin, scope: :user }
 
 #       context 'with valid params' do
 #         it 'creates a new Product' do
@@ -92,7 +86,7 @@
 
 #   describe 'GET #edit' do
 #     context 'when user is admin' do
-#       before { sign_in admin }
+#       before { sign_in admin, scope: :user }
 
 #       it 'assigns the requested product as @product' do
 #         get :edit, params: { id: product.id }
@@ -104,7 +98,7 @@
 
 #   describe 'PUT #update' do
 #     context 'when user is admin' do
-#       before { sign_in admin }
+#       before { sign_in admin, scope: :user }
 
 #       context 'with valid params' do
 #         let(:new_attributes) { { name: 'Updated Name' } }
@@ -132,7 +126,7 @@
 
 #   describe 'DELETE #destroy' do
 #     context 'when user is admin' do
-#       before { sign_in admin }
+#       before { sign_in admin, scope: :user }
 
 #       it 'destroys the requested product' do
 #         product_to_delete = create(:product)

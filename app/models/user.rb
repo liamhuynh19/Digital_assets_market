@@ -11,6 +11,7 @@ class User < ApplicationRecord
   before_validation :set_default_role
 
   has_one :cart, dependent: :destroy
+  has_many :products
 
   def admin?
     role == "admin"

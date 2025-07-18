@@ -12,6 +12,7 @@ class ApplicationPolicy
     def initialize(user, scope)
       @user = user
       @scope = scope
+      raise Pundit::NotAuthorizedError, "must be logged in" unless user
     end
 
     def resolve
