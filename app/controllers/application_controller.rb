@@ -12,6 +12,17 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_in_path_for(resource)
+    case resource.role
+    when "admin", "seller"
+      admin_products_path
+    when "buyer"
+      products_path
+    else
+      super
+    end
+  end
+
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
     redirect_to(request.referer || root_path)
