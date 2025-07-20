@@ -1,15 +1,24 @@
 <div class="dropdown">
-  <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+  <button class="btn dropdown-toggle d-flex align-items-center" 
+          type="button" 
+          id="userMenuDropdown" 
+          data-bs-toggle="dropdown" 
+          aria-expanded="false">
+    <i class="fas fa-user-circle me-2"></i>
     <%= current_user.email %>
-  </a>
-  <ul class="dropdown-menu text-small shadow">
-    <li><%= link_to "Profile", user_profile_path, class: "dropdown-item" %></li>
+  </button>
+  
+  <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userMenuDropdown">
+    <li><%= link_to user_profile_path, class: "dropdown-item" do %>
+      <i class="fas fa-user me-2"></i>Profile
+    <% end %></li>
     <li><hr class="dropdown-divider"></li>
     <li>
-      <%= link_to "Sign out", destroy_user_session_path, 
-          method: :delete, 
+      <%= link_to destroy_user_session_path, 
           class: "dropdown-item", 
-          data: { turbo_method: :delete } %>
+          data: { turbo_method: :delete } do %>
+        <i class="fas fa-sign-out-alt me-2"></i>Sign out
+      <% end %>
     </li>
   </ul>
 </div>

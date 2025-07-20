@@ -1,4 +1,3 @@
-  <!-- Sidebar -->
     <div class="admin-sidebar p-3 d-flex flex-column">
       <div class="admin-brand">
         <%= link_to admin_products_path, class: "d-flex align-items-center" do %> 
@@ -31,7 +30,9 @@
         <% end %>
       </ul>
 
-      <div class="user-menu">
-        <%= render 'layouts/shared/user_menu' %>
+      <div class="user-menu mt-auto">
+        <div class="nav-item dropdown">
+          <%= render 'layouts/shared/user_menu' %>
+        </div>
       </div>
     </div>
