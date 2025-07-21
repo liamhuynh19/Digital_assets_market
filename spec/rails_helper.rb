@@ -68,6 +68,10 @@ RSpec.configure do |config|
     Warden.test_reset!
   end
 
+  config.before(:each, type: :controller) do
+    Rails.application.reload_routes!
+  end
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
