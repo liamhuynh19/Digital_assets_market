@@ -2,20 +2,22 @@
 
 <div class="container mt-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="mb-0">Products</h1>
+    <h1 class="mb-0 fw-bold gradient-text display-5">Products</h1>
+    <%= link_to "Add Product", new_product_path, class: "btn btn-success btn-lg shadow-sm d-none d-md-block" if user_signed_in? && current_user.seller? %>
   </div>
 
   <div class="row mb-4">
     <div class="col-12">
-      <div class="d-flex justify-content-between align-items-center">
-        <h2 class="gradient-text">Digital Assets</h2>
-        <div class="filters d-flex gap-2">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2 class="gradient-text mb-0">Digital Assets</h2>
+        <div class="filters d-flex gap-2 align-items-center glass-filter-bar p-2 rounded-4 shadow-sm">
           <select class="form-select form-select-sm glass-select">
             <option>Latest</option>
             <option>Most Popular</option>
             <option>Price: Low to High</option>
             <option>Price: High to Low</option>
           </select>
+          <input type="search" class="form-control form-control-sm glass-select" placeholder="Search products...">
         </div>
       </div>
     </div>
@@ -24,32 +26,31 @@
   <div class="row g-4">
     <% @products.each do |product| %>
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="card product-card h-100">
+        <div class="card product-card h-100 border-0 shadow-lg">
           <div class="card-image-wrapper">
             <%= image_tag product.file_url.presence || asset_path("place_holder.jpg"), class: "card-img-top product-image" %>
             <div class="card-overlay">
-              <div class="overlay-buttons">
-                <%= link_to product_path(product), class: "btn btn-light btn-sm glass-button" do %>
+              <div class="overlay-buttons d-flex flex-column gap-2">
+                <%= link_to product_path(product), class: "btn btn-light btn-sm glass-button w-100" do %>
                   <i class="fas fa-eye"></i> View
                 <% end %>
                 <%= button_to cart_add_to_cart_path(@cart, product), 
-                    class: "btn btn-primary btn-sm glass-button ms-2",
+                    class: "btn btn-primary btn-sm glass-button w-100",
                     form: { class: "d-inline-block" },
                     data: { turbo: true } do %>
                   <i class="fas fa-cart-plus"></i> Add to Cart
                 <% end %>
-                
               </div>
             </div>
           </div>
           
-          <div class="card-body">
-            <h5 class="card-title mb-1"><%= product.name %></h5>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1 fw-semibold"><%= product.name %></h5>
             <p class="text-muted small mb-2">
               <i class="fas fa-tag me-1"></i>
               <%= product.category&.name %>
             </p>
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center mt-auto">
               <div class="price-tag">
                 <span class="price">$<%= number_with_precision(product.price, precision: 2) %></span>
               </div>
@@ -67,45 +68,54 @@
       </div>
     <% end %>
   </div>
-
-  
 </div>
 
 <% content_for :styles do %>
   <style>
     .gradient-text {
-      background: linear-gradient(45deg, #2686a3, #764ba2);
+      background: linear-gradient(90deg, #2686a3, #764ba2 80%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .glass-filter-bar {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(200,200,200,0.2);
     }
 
     .glass-select {
       backdrop-filter: blur(10px);
       background: rgba(255, 255, 255, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      min-width: 140px;
     }
 
     .product-card {
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border-radius: 15px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s cubic-bezier(.4,2,.3,1);
+      border-radius: 18px;
       overflow: hidden;
+      position: relative;
     }
 
     .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 32px rgba(76, 110, 245, 0.13);
+      z-index: 2;
     }
 
     .card-image-wrapper {
       position: relative;
       overflow: hidden;
-      padding-top: 75%;
+      padding-top: 70%;
+      background: linear-gradient(135deg, #e0e7ef 0%, #f8fafc 100%);
     }
 
     .product-image {
@@ -115,7 +125,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s cubic-bezier(.4,2,.3,1);
+      border-bottom: 1px solid #f0f0f0;
     }
 
     .card-overlay {
@@ -124,12 +135,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(40, 40, 60, 0.55);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(.4,2,.3,1);
+      z-index: 2;
     }
 
     .product-card:hover .card-overlay {
@@ -137,29 +149,40 @@
     }
 
     .product-card:hover .product-image {
-      transform: scale(1.1);
+      transform: scale(1.08) rotate(-1deg);
     }
 
     .glass-button {
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
+      transition: all 0.2s;
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
     .glass-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 5px 15px rgba(76, 110, 245, 0.13);
     }
 
     .price-tag {
-      background: linear-gradient(45deg, #2686a3, #764ba2);
-      padding: 5px 10px;
+      background: linear-gradient(90deg, #2686a3, #764ba2 80%);
+      padding: 6px 16px;
       border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(76, 110, 245, 0.07);
+      min-width: 70px;
+      text-align: center;
     }
 
     .price {
-      color: white;
-      font-weight: 600;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .rating i {
+      font-size: 1rem;
     }
   </style>
 <% end %>
