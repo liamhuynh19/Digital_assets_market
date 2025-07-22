@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :reviews
   resources :products
   resources :categories
+  resources :orders, only: [ :index, :show, :create ] do
+    resources :order_items, only: [ :create, :update, :destroy ]
+  end
+
   get "profile", to: "users#profile", as: :user_profile
   patch "profile", to: "users#update_profile", as: :update_user_profile
 

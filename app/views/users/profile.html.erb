@@ -5,6 +5,7 @@
         <div class="card-body text-center">
           <h5 class="my-3"><%= @user.name.presence || @user.email %></h5>
           <p class="text-muted mb-1"><%= @user.role.titleize %></p>
+          <%= link_to "My Orders", orders_path, class: "btn btn-primary mt-3" %>
         </div>
       </div>
     </div>
