@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :carts, only: [] do
     post "add/:product_id", to: "carts#add_item", as: :add_to_cart
-    delete "remove_product/:product_id", to: "carts#remove_item", as: :remove_from_cart
+    delete "remove_item/:id", to: "carts#remove_item", as: :remove_from_cart
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Reveal health status on /up that returns 20

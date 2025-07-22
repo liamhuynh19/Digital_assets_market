@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-custom shadow-sm bg-white">
       <div class="container">
         <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
           <i class="fas fa-store-alt me-2"></i>
@@ -28,28 +28,32 @@
           </ul>
 
           <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item dropdown me-3">
+            <li class="nav-item dropdown me-3 position-relative">
               <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <div class="cart-icon">
-                  <i class="fas fa-shopping-cart"></i>
+                <div class="cart-icon position-relative">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
                   <% if @cart&.cart_items&.any? %>
-                    <span class="cart-badge"><%= @cart.cart_items.sum(:quantity) %></span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style="font-size:0.75rem; min-width:1.5em;">
+                      <%= @cart.cart_items.count %>
+                    </span>
                   <% end %>
                 </div>
               </a>
-              <div class="dropdown-menu dropdown-menu-end cart-dropdown">
+              <div class="dropdown-menu dropdown-menu-end cart-dropdown p-3 shadow rounded-4" style="min-width: 320px;">
                 <% if @cart&.cart_items&.any? %>
+                  <% total_price = 0 %>
                   <% @cart.cart_items.each do |item| %>
-                    <div class="cart-item">
-                      <%= image_tag item.product.file_url.presence || asset_path("place_holder.jpg"), 
-                          class: "cart-item-image" %>
-                      <div class="cart-item-details">
+                    <% total_price += item.product.price %>
+                    <div class="cart-item d-flex align-items-center mb-2 pb-2 border-bottom">
+                      <%= image_tag item.product.file_url.presence || asset_path("place_holder.jpg"),
+                          class: "cart-item-image rounded me-2", width: 40, height: 40 %>
+                      <div class="flex-grow-1">
                         <div class="fw-bold"><%= item.product.name %></div>
                         <div class="text-muted small">
-                          $<%= number_with_precision(item.product.price, precision: 2) %> x <%= item.quantity %>
+                          $<%= number_with_precision(item.product.price, precision: 2) %>
                         </div>
                       </div>
-                      <%= button_to remove_from_cart_cart_path(@cart, item.product), 
+                      <%= button_to cart_remove_from_cart_path(@cart, item),
                           method: :delete,
                           class: "btn btn-link text-danger p-0 ms-2",
                           form: { style: "display: inline;" } do %>
@@ -57,15 +61,13 @@
                       <% end %>
                     </div>
                   <% end %>
-                  
-                  <div class="cart-total d-flex justify-content-between">
-                    <span>Total:</span>
-                    <span>$<%= number_with_precision(@cart.total_price, precision: 2) %></span>
+                  <div class="d-flex justify-content-between align-items-center mt-3 border-top pt-2">
+                    <span class="fw-bold">Total:</span>
+                    <span class="fw-bold text-primary">$<%= number_with_precision(total_price, precision: 2) %></span>
                   </div>
-                  
                   <div class="cart-actions d-grid gap-2 mt-3">
-                    <%= link_to "View Cart", cart_path, class: "btn btn-primary" %>
-                    <%= link_to "Checkout", "#", class: "btn btn-primary" %>
+                    <%= link_to "View Cart", cart_path, class: "btn btn-primary btn-sm" %>
+                    <%= link_to "Checkout", "#", class: "btn btn-success btn-sm" %>
                   </div>
                 <% else %>
                   <div class="text-center py-4">
