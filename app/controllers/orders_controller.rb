@@ -20,11 +20,14 @@ class OrdersController < ApplicationController
     total_amount = params[:order][:total_amount] || 0
 
     @order = Order.new(user: current_user, total_amount: total_amount)
+    @cart = current_user.cart
 
     if @order.save
       product_ids.each do |pid|
         @order.order_items.create(product_id: pid)
+        @cart.cart_items.find_by(product_id: pid).destroy
       end
+
       redirect_to @order, notice: "Order was successfully created."
     else
       redirect_to cart_path, alert: "Failed to create order. Please try again."

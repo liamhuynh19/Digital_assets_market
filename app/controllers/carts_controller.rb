@@ -7,7 +7,7 @@ class CartsController < ApplicationController
   end
 
   def add_item
-    FirstWorkerJob.perform_later("Adding item to cart")
+    # FirstWorkerJob.perform_later("Adding item to cart")
     @cart = current_user.cart
     product = Product.find(params[:product_id])
 
