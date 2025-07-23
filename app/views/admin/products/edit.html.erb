@@ -1,12 +1,7 @@
-<% content_for :title, "Editing product" %>
-
-<h1>Editing product</h1>
-
-<%= render "form", product: @product %>
-
-<br>
-
-<div>
-  <%= link_to "Show this product", @product %> |
-  <%= link_to "Back to products", admin_products_path %>
+<div class="card-body">
+  <div class="position-absolute" style="top: 20px; right: 20px; z-index: 2;">
+    <%= link_to "Show this product", admin_product_path(@product), class: "btn btn-outline-primary me-2" %>
+    <%= link_to "Back to products", admin_products_path, class: "btn btn-outline-secondary" %>
+  </div>
+  <%= render "form", product: @product %>
 </div>

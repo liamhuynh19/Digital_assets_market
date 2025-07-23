@@ -1,5 +1,28 @@
-<%= render @product %>
-
-<div>
-  <%= link_to "Back to products", products_path %>
+<div class="container my-5">
+  <%= link_to "Back to products", products_path, class: "btn btn-secondary position-absolute", style: "top: 20px; right: 20px; z-index: 2;" %>
+  <div class="card shadow" style="max-width: 700px; margin: auto; position: relative;">
+    <% if @product.asset.attached? %>
+      <div>
+        <% if @product.asset.content_type.start_with?('image/') %>
+          <%= image_tag @product.asset, class: "card-img-top", style: "height: 400px; object-fit: cover;" %>
+        <% elsif @product.asset.content_type.start_with?('video/') %>
+          <%= video_tag url_for(@product.asset), controls: true, autoplay: true, class: "card-img-top", style: "height: 400px; object-fit: cover;", disablePictureInPicture: true, controlsList: "nodownload" %>
+        <% else %>
+          <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 400px; background: #eee;">
+            <%= link_to "Download file", url_for(@product.asset), class: "btn btn-outline-primary" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="card-body">
+      <h2 class="card-title mb-3"><%= @product.name %></h2>
+      <p class="card-text"><%= @product.description %></p>
+      <ul class="list-group list-group-flush mb-3">
+        <li class="list-group-item"><strong>Price:</strong> $<%= @product.price %></li>
+        <li class="list-group-item"><strong>Category:</strong> <%= @product.category&.name %></li>
+        <li class="list-group-item"><strong>Average rating:</strong> <%= @product.average_rating %></li>
+        <li class="list-group-item"><strong>Uploaded by:</strong> <%= @product.user&.email %></li>
+      </ul>
+    </div>
+  </div>
 </div>
