@@ -9,15 +9,15 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  # after_commit :process_video_thumbnail, on: [ :create, :update ], if: :video?
+  # after_commit :process_image_thumbnail, on: [ :create ], if: :image?
 
-  # def video?
-  #   asset.content_type.start_with?("video/")
+  # def image?
+  #   asset.attached? && asset.content_type.start_with?("image/")
   # end
 
   # private
 
-  # def process_video_thumbnail
-  #   AssetUploadJob.perform_later(id)
-  # end
+  def process_image_thumbnail
+    ImageThumbnailJob.perform_later(id)
+  end
 end

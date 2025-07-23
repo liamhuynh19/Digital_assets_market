@@ -22,7 +22,12 @@ class Admin::ProductsController < ApplicationController
     authorize [ :admin, @product ]
     if @product.save
       if params[:product][:asset].present?
-        AssetUploadJob.perform_later(@product.id)
+        case params[:product][:asset].content_type
+        when "image/jpeg", "image/png", "image/gif"
+          process_image_thumbnail
+        else
+          AssetUploadJob.perform_later(@product.id)
+        end
       end
       redirect_to admin_product_path(@product), notice: "Product was successfully created."
     else
@@ -37,7 +42,12 @@ class Admin::ProductsController < ApplicationController
     authorize [ :admin, @product ]
     if @product.update(product_params)
       if params[:product][:asset].present?
-        AssetUploadJob.perform_later(@product.id)
+        case params[:product][:asset].content_type
+        when "image/jpeg", "image/png", "image/gif"
+          @product.process_image_thumbnail
+        else
+          AssetUploadJob.perform_later(@product.id)
+        end
       end
       redirect_to admin_product_path(@product), notice: "Product was successfully updated."
     else
