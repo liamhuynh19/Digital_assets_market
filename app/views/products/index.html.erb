@@ -28,7 +28,7 @@
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card product-card h-100 border-0 shadow-lg">
           <div class="card-image-wrapper">
-            <%= image_tag product.file_url.presence || asset_path("place_holder.jpg"), class: "card-img-top product-image" %>
+            <%= image_tag product.thumbnail.presence || asset_path("place_holder.jpg") , class: "card-img-top product-image" %>
             <div class="card-overlay">
               <div class="overlay-buttons d-flex flex-column gap-2">
                 <%= link_to product_path(product), class: "btn btn-light btn-sm glass-button w-100" do %>

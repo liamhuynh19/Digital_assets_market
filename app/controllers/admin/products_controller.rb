@@ -21,6 +21,9 @@ class Admin::ProductsController < ApplicationController
     @product.user = current_user
     authorize [ :admin, @product ]
     if @product.save
+      if params[:product][:asset].present?
+        AssetUploadJob.perform_later(@product.id)
+      end
       redirect_to admin_product_path(@product), notice: "Product was successfully created."
     else
       render :new
@@ -33,6 +36,9 @@ class Admin::ProductsController < ApplicationController
   def update
     authorize [ :admin, @product ]
     if @product.update(product_params)
+      if params[:product][:asset].present?
+        AssetUploadJob.perform_later(@product.id)
+      end
       redirect_to admin_product_path(@product), notice: "Product was successfully updated."
     else
       render :edit

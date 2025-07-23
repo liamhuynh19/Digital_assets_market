@@ -32,7 +32,7 @@
             <% @products.each do |product| %>
               <tr>
                 <td>
-                  <%= image_tag product.file_url.presence || asset_path("place_holder.jpg"), 
+                  <%= image_tag product.thumbnail.presence || asset_path("place_holder.jpg"), 
                       class: "img-thumbnail", style: "width: 50px; height: 50px; object-fit: cover;" %>
                 </td>
                 <td>

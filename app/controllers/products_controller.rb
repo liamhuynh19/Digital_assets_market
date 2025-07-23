@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   # before_action :set_product, only: %i[ show ]
   # GET /products or /products.json
   def index
-    @products = policy_scope(Product).order(created_at: :desc).page(params[:page]).per(8)
+    @products = policy_scope(Product).order(created_at: :desc).page(params[:page]).per(6)
   end
 
   # GET /products/1 or /products/1.json
