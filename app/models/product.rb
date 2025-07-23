@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  has_one_attached :asset
+
   belongs_to :user
   belongs_to :category
   has_many :reviews, dependent: :destroy

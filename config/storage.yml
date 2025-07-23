@@ -32,3 +32,11 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+minio:
+  service: S3
+  access_key_id: minio_admin
+  secret_access_key: minio_password
+  endpoint: http://localhost:9000
+  bucket: rails-uploads
+  region: us-east-1
+  force_path_style: true

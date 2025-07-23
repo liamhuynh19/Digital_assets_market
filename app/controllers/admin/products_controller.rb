@@ -52,6 +52,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def product_params
-    params.expect(product: [ :name, :description, :price, :file_url, :category_id ])
+    params.expect(product: [ :name, :description, :price, :file_url, :category_id, :asset ])
   end
 end
