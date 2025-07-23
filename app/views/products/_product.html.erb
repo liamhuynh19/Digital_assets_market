@@ -9,6 +9,18 @@
     <%= product.name %>
   </p>
 
+  <% if product.asset.attached? %>
+    <p>
+      <% if product.asset.content_type.start_with?('image/') %>
+        <%= image_tag product.asset %>
+      <% elsif product.asset.content_type.start_with?('video/') %>
+        <%= video_tag url_for(product.asset), controls: true, width: 320 %>
+      <% else %>
+        <%= link_to "Download file", url_for(product.asset) %>
+      <% end %>
+    </p>
+  <% end %>
+
   <p>
     <strong>Description:</strong>
     <%= product.description %>
