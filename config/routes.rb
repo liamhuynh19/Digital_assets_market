@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :products
   resources :categories
   resources :orders, only: [ :index, :show, :create ] do
+    patch "mark_as_paid", to: "orders#mark_as_paid", as: :mark_as_paid
     resources :order_items, only: [ :create, :update, :destroy ]
   end
 

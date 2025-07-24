@@ -1,30 +1,46 @@
 <h2 class="mb-4"><i class="fas fa-box"></i> My Orders</h2>
 
 <% if @orders.any? %>
-  <table class="table table-hover shadow-sm rounded">
-    <thead class="table-dark">
-      <tr>
-        <th>Order ID</th>
-        <th>Status</th>
-        <th>Total Price</th>
-        <th>Ordered At</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @orders.each do |order| %>
+  <div class="table-responsive">
+    <table class="table table-hover align-middle shadow-sm rounded overflow-hidden">
+      <thead class="table-light">
         <tr>
-          <td><%= order.id %></td>
-          <td><%= order.status %></td>
-          <td>$<%= number_with_precision(order.total_amount, precision: 2) %></td>
-          <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
-          <td>
-            <%= link_to "View", order_path(order), class: "btn btn-sm btn-outline-primary" %>
-          </td>
+          <th>Order ID</th>
+          <th>Status</th>
+          <th>Total Price</th>
+          <th>Ordered At</th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <% status_class =
+            case order.status
+            when 'paid' then 'success'
+            when 'pending' then 'warning'
+            when 'failed' then 'danger'
+            else 'secondary'
+            end
+          %>
+          <tr class="bg-white">
+            <td class="fw-bold text-primary">#<%= order.id %></td>
+            <td>
+              <span class="badge bg-<%= status_class %> text-uppercase px-3 py-2"><%= order.status %></span>
+            </td>
+            <td>
+              <span class="fw-semibold text-success"><%= number_to_currency(order.total_amount) %></span>
+            </td>
+            <td>
+              <span class="text-muted"><%= order.created_at.strftime("%b %d, %Y %H:%M") %></span>
+            </td>
+            <td>
+              <%= link_to "View", order_path(order), class: "btn btn-sm btn-outline-primary px-3" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% else %>
   <div class="alert alert-info mt-4">
     <i class="fas fa-info-circle"></i> You have no orders yet.

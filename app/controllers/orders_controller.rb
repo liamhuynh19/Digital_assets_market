@@ -23,13 +23,15 @@ class OrdersController < ApplicationController
     @cart = current_user.cart
 
     if @order.save
-      product_ids.each do |pid|
-        @order.order_items.create(product_id: pid)
-        @cart.cart_items.find_by(product_id: pid).destroy
+      products = Product.where(id: product_ids)
+      products.each do |product|
+        @order.order_items.create!(product_id: product.id, price_at_purchase: product.price)
+        @cart.cart_items.find_by(product_id: product.id).destroy!
       end
 
       redirect_to @order, notice: "Order was successfully created."
     else
+      raise ActiveRecord::Rollback
       redirect_to cart_path, alert: "Failed to create order. Please try again."
     end
   end
@@ -40,6 +42,16 @@ class OrdersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def mark_as_paid
+    @order = Order.find(params[:order_id])
+    @order.update(status: "paid")
+
+    redirect_to @order, notice: "Your order has been paid successfully."
+
+  rescue ActiveRecord::RecordNotFound
+    redirect_to orders_path, alert: "Order not found."
   end
 
   def destroy
@@ -54,6 +66,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:product_id, :quantity, :total_price)
+    params.expect(order: [ :total_amount, :status ])
   end
 end
