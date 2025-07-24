@@ -13,6 +13,13 @@
           </div>
         <% end %>
       </div>
+      <% if @product.purchased_by?(current_user) && @product.asset.attached? %>
+        <%= link_to download_product_path(@product),
+            class: "btn position-absolute text-white fw-bold glass-button",
+            style: "top: 20px; right: 20px; z-index: 3; background: linear-gradient(90deg, #6f42c1 0%, #487ecf 100%); border: none; backdrop-filter: blur(8px); opacity: 0.5;" do %>
+          <i class="fas fa-download"></i> Download
+        <% end %>
+      <% end %>
     <% end %>
     <div class="card-body">
       <h2 class="card-title mb-3"><%= @product.name %></h2>

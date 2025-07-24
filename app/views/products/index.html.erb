@@ -33,13 +33,20 @@
                 <%= link_to product_path(product), class: "btn btn-light btn-sm glass-button w-100" do %>
                   <i class="fas fa-eye"></i> View
                 <% end %>
-                <% unless product.purchased_by?(current_user)%>
-                <%= button_to cart_add_to_cart_path(@cart, product), 
-                    class: "btn btn-primary btn-sm glass-button w-100",
-                    form: { class: "d-inline-block" },
-                    data: { turbo: true } do %>
-                  <i class="fas fa-cart-plus"></i> Add to Cart
-                <% end %>
+                <% if product.purchased_by?(current_user) && product.asset.present? %>
+                  <%= link_to download_product_path(product),
+                      class: "btn btn-primary btn-sm glass-button w-100 text-white fw-bold",
+                      style: "background: linear-gradient(90deg, #6f42c1 0%, #487ecf 100%); border: none; backdrop-filter: blur(8px); opacity: 0.7;" do %>
+                    <i class="fas fa-download"></i> Download
+                  <% end %>
+                <% else %>
+                  <%= button_to cart_add_to_cart_path(@cart, product), 
+                      class: "btn btn-success btn-sm glass-button w-100 text-white fw-bold",
+                      style: "background: linear-gradient(90deg, #43e97b 0%, #023a30ff 100%); border: none; backdrop-filter: blur(8px); opacity: 0.7;",
+                      form: { class: "d-inline-block" },
+                      data: { turbo: true } do %>
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                  <% end %>
                 <% end %>
               </div>
             </div>

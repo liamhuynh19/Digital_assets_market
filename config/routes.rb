@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :reviews
-  resources :products
+  resources :products do
+    member do
+      get :download, to: "products#download", as: :download
+    end
+  end
   resources :categories
   resources :orders, only: [ :index, :show, :create ] do
     patch "mark_as_paid", to: "orders#mark_as_paid", as: :mark_as_paid

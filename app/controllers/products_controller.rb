@@ -11,6 +11,21 @@ class ProductsController < ApplicationController
     authorize @product
   end
 
+  def download
+    product = Product.find(params[:id])
+    unless product.purchased_by?(current_user)
+      redirect_to product_path(product), alert: "You must purchase this product to download it."
+      nil
+    end
+    if product.asset.attached?
+      # redirect_to rails_blob_url(product.asset, disposition: "attachment")
+
+      send_data product.asset.download, filename: product.asset.filename.to_s, type: product.asset.content_type, disposition: "attachment"
+    else
+      redirect_to product_path(product), alert: "No asset available for download."
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   # def set_product
