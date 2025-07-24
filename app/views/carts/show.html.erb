@@ -1,49 +1,56 @@
-<h2 class="mb-4"><i class="fas fa-shopping-cart"></i> My Cart</h2>
-
-<% if @cart_items.any? %>
-  <table class="table table-hover align-middle shadow-sm rounded">
-    <thead class="table-dark">
-      <tr>
-        <th>Product</th>
-        <th>Description</th>
-        <th class="text-end">Price</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% total_price = 0 %>
-      <% @cart_items.each do |item| %>
-        <% total_price += item.product.price %>
-        <tr>
-          <td class="d-flex align-items-center gap-2">
-            <%= image_tag(item.product.file_url.presence || asset_path("place_holder.jpg"), width: 60, height: 60, class: "rounded shadow-sm") %>
-            <span class="fw-bold"><%= item.product.name %></span>
-          </td>
-          <td class="text-muted"><%= truncate(item.product.description, length: 60) %></td>
-          <td class="text-end text-success fw-semibold">
-            $<%= number_with_precision(item.product.price, precision: 2) %>
-          </td>
-          <td>
-            <%= button_to "Remove", cart_remove_from_cart_path(@cart, item), method: :delete, class: "btn btn-outline-danger btn-sm" %>
-          </td>
-        </tr>
+<div class="container my-5">
+  <div class="card shadow-lg border-0" style="max-width: 900px; margin: auto;">
+    <div class="card-header text-white d-flex justify-content-between align-items-center" style="background-color: #487ecf;">
+      <h2 class="mb-0" style="color: #fff; background: transparent;">
+        <i class="fas fa-shopping-cart"></i> My Cart
+      </h2>
+    </div>
+    <div class="card-body">
+      <% if @cart_items.any? %>
+        <ul class="list-group mb-4">
+          <% total_price = 0 %>
+          <% @cart_items.each do |item| %>
+            <% total_price += item.product.price %>
+            <li class="list-group-item d-flex align-items-center border-0 border-bottom">
+              <% if item.product.thumbnail.attached? %>
+                <div class="me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 8px; overflow: hidden;">
+                  <%= image_tag item.product.thumbnail, style: "max-width: 100%; max-height: 100%; object-fit: contain;" %>
+                </div>
+              <% else %>
+                <div class="me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 8px; overflow: hidden;">
+                  <%= image_tag asset_path("place_holder.jpg"), width: 60, height: 60, class: "rounded shadow-sm" %>
+                </div>
+              <% end %>
+              <div class="flex-grow-1">
+                <div class="fw-bold"><%= item.product.name %></div>
+                <div class="text-muted small"><%= truncate(item.product.description, length: 60) %></div>
+              </div>
+              <div class="fw-bold text-success ms-3">$<%= number_with_precision(item.product.price, precision: 2) %></div>
+              <div class="ms-3">
+                <%= button_to "Remove", cart_remove_from_cart_path(@cart, item), method: :delete, class: "btn btn-outline-danger btn-sm" %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="alert alert-info mt-4">
+          <i class="fas fa-info-circle"></i> Your cart is empty.
+        </div>
       <% end %>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="2" class="text-end fw-bold">Total:</td>
-        <td class="text-end fw-bold text-primary">
-          $<%= number_with_precision(total_price, precision: 2) %>
-        </td>
-        <td></td>
-      </tr>
-    </tfoot>
-  </table>
-  <div class="d-flex justify-content-end mt-3">
-    <%= button_to "Purchase All", orders_path, method: :post, params: { order: { product_ids: @cart_items.map { |item| item.product_id }, total_amount: total_price } }, class: "btn btn-success btn-lg" %>
+    </div>
+    <% if @cart_items.any? %>
+      <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+        <div>
+          <%= link_to root_path, class: "btn btn-outline-secondary" do %>
+            <i class="fa fa-arrow-left me-2"></i>Continue Shopping
+          <% end %>
+        </div>
+        <div class="d-flex align-items-center">
+          <strong class="me-2">Total:</strong>
+          <span class="fs-5 text-primary me-3">$<%= number_with_precision(total_price, precision: 2) %></span>
+          <%= button_to "Purchase All", orders_path, method: :post, params: { order: { product_ids: @cart_items.map { |item| item.product_id }, total_amount: total_price } }, class: "btn btn-success px-4 ms-2 btn-lg" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% else %>
-  <div class="alert alert-info mt-4">
-    <i class="fas fa-info-circle"></i> Your cart is empty.
-  </div>
-<% end %>
+</div>

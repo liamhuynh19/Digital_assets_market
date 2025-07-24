@@ -20,7 +20,7 @@ class CartsController < ApplicationController
 
     if @cart.add_item(product)
       flash[:notice] = "Product added to cart."
-      redirect_to cart_path
+      redirect_back(fallback_location: root_path)
     else
       flash[:alert] = "Product is already in the cart."
       redirect_to cart_path
@@ -35,7 +35,7 @@ class CartsController < ApplicationController
 
     if cart_item.destroy
       flash[:notice] = "Product removed from cart successfully."
-      redirect_to cart_path
+      redirect_back(fallback_location: root_path)
     else
       flash[:alert] = "Failed to remove product from cart."
       redirect_to cart_path
