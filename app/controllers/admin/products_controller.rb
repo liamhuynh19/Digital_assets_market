@@ -24,7 +24,7 @@ class Admin::ProductsController < ApplicationController
       if params[:product][:asset].present?
         case params[:product][:asset].content_type
         when "image/jpeg", "image/png", "image/gif"
-          process_image_thumbnail
+          @product.process_image_thumbnail
         else
           AssetUploadJob.perform_later(@product.id)
         end

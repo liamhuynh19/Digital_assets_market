@@ -15,8 +15,6 @@ class Product < ApplicationRecord
   #   asset.attached? && asset.content_type.start_with?("image/")
   # end
 
-  # private
-
   def process_image_thumbnail
     ImageThumbnailJob.perform_later(id)
   end
