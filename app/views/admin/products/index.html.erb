@@ -49,12 +49,10 @@
                   <div class="fw-semibold">$<%= number_with_precision(product.price, precision: 2) %></div>
                 </td>
                 <td>
-                  <% if product.created_at > 7.days.ago %>
-                    <span class="badge bg-success">New</span>
-                  <% end %>
-                  <% if product.average_rating && product.average_rating >= 4.5 %>
-                    <span class="badge bg-warning text-dark">Featured</span>
-                  <% end %>
+                  <span class="badge rounded-pill 
+                    <%= product.status == "published" ? 'bg-success' : 'bg-secondary' %>">
+                    <%= product.status.capitalize %>
+                  </span>
                 </td>
                 <td>
                   <div><%= product.created_at.strftime("%B %d, %Y") %></div>

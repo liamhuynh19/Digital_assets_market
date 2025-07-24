@@ -7,9 +7,9 @@ class ProductPolicy < ApplicationPolicy
 
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all.where(status: "published")
+    end
   end
 
   def index?
@@ -17,6 +17,10 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.published?
+  end
+
+  def download?
+    record.published?
   end
 end

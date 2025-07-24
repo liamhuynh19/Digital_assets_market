@@ -14,6 +14,7 @@ class AssetUploadJob < ApplicationJob
       product.thumbnail.attach(io: File.open(temp_thumbnail_path), filename: "#{product.id}_thumbnail.jpg", content_type: "image/jpeg")
       puts "Thumbnail created and attached for product ##{product.id}"
       File.delete(temp_thumbnail_path) if File.exist?(temp_thumbnail_path)
+      product.update(status: "uploaded")
     end
 
   rescue StandardError => e
