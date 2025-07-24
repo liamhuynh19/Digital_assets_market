@@ -33,11 +33,13 @@
                 <%= link_to product_path(product), class: "btn btn-light btn-sm glass-button w-100" do %>
                   <i class="fas fa-eye"></i> View
                 <% end %>
+                <% unless product.purchased_by?(current_user)%>
                 <%= button_to cart_add_to_cart_path(@cart, product), 
                     class: "btn btn-primary btn-sm glass-button w-100",
                     form: { class: "d-inline-block" },
                     data: { turbo: true } do %>
                   <i class="fas fa-cart-plus"></i> Add to Cart
+                <% end %>
                 <% end %>
               </div>
             </div>

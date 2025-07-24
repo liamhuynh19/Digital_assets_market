@@ -20,4 +20,10 @@ class Product < ApplicationRecord
   def process_image_thumbnail
     ImageThumbnailJob.perform_later(id)
   end
+
+  def purchased_by?(user)
+    OrderItem.joins(:order)
+    .where(product_id: id, orders: { user_id: user.id, status: "paid" })
+    .exists?
+  end
 end
