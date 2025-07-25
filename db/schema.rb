@@ -121,6 +121,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_24_092445) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file_url"
     t.string "status"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"

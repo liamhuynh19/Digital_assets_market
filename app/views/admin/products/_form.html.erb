@@ -55,11 +55,6 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :file_url, class: "form-label fw-bold" %>
-    <%= form.text_field :file_url, class: "form-control", placeholder: "External file URL (optional)" %>
-  </div>
-
-  <div class="mb-3">
     <%= form.label :category_id, class: "form-label fw-bold" %>
     <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "Select a category" }, { class: "form-select" } %>
   </div>

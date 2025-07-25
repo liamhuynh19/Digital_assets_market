@@ -17,7 +17,6 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Average rating", with: @product.average_rating
     fill_in "Category", with: @product.category_id
     fill_in "Description", with: @product.description
-    fill_in "File url", with: @product.file_url
     fill_in "Name", with: @product.name
     fill_in "Price", with: @product.price
     fill_in "User", with: @product.user_id
@@ -34,7 +33,6 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in "Average rating", with: @product.average_rating
     fill_in "Category", with: @product.category_id
     fill_in "Description", with: @product.description
-    fill_in "File url", with: @product.file_url
     fill_in "Name", with: @product.name
     fill_in "Price", with: @product.price
     fill_in "User", with: @product.user_id

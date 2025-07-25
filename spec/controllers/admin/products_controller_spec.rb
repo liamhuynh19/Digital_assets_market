@@ -12,8 +12,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
       name: 'Test Product',
       description: 'Test Description',
       price: 99.99,
-      category_id: create(:category).id,
-      file_url: 'http://example.com/file.pdf'
+      category_id: create(:category).id
     }
   }
 

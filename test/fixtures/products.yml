@@ -5,7 +5,6 @@ one:
   name: MyString
   description: MyText
   price: 9.99
-  file_url: MyString
   average_rating: 9.99
   category: one
 
@@ -14,6 +13,5 @@ two:
   name: MyString
   description: MyText
   price: 9.99
-  file_url: MyString
   average_rating: 9.99
   category: two
