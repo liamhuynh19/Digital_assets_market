@@ -1,6 +1,9 @@
 class Product < ApplicationRecord
   has_one_attached :asset
   has_one_attached :thumbnail
+  has_one_attached :video_hd
+  has_one_attached :video_full_hd
+  has_one_attached :video_4k
 
   belongs_to :user
   belongs_to :category
