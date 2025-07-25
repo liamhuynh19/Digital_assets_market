@@ -39,6 +39,10 @@ module Admin
       user.present? && (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
     end
 
+    def publish?
+      record.allow_to_publish? &&  (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
+    end
+
     def destroy?
       user.present? && (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
     end

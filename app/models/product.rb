@@ -15,9 +15,9 @@ class Product < ApplicationRecord
   # def image?
   #   asset.attached? && asset.content_type.start_with?("image/")
   # end
-  STATUSES = %w[draft, processing, uploaded, published].freeze
+  STATUSES = %w[draft processing uploaded published].freeze
 
-  validates :status, presence: true, inclusion: { in: STATUSES }
+  validates :status, inclusion: { in: STATUSES }
   after_initialize :set_default_status
 
   def set_default_status
@@ -26,6 +26,10 @@ class Product < ApplicationRecord
 
   def published?
     status == "published"
+  end
+
+  def allow_to_publish?
+    status == "uploaded"
   end
 
   def process_image_thumbnail

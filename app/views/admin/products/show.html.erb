@@ -24,15 +24,30 @@
         <div class="col-md-6">
           <p><strong>Category:</strong> <%= @product.category&.name %></p>
           <p><strong>Average rating:</strong> <%= @product.average_rating %></p>
+          <p>
+            <strong>Status:</strong>
+            <span class="badge 
+              <%= case @product.status
+                  when "published" then "bg-success"
+                  when "processing" then "bg-warning text-dark"
+                  when "draft" then "bg-secondary"
+                  else "bg-light text-dark"
+                  end %>">
+              <%= @product.status.capitalize %>
+            </span>
+          </p>
         </div>
         <div class="col-md-6">
           <p><strong>Uploaded by:</strong> <%= @product.user&.email %></p>
           <p><strong>ID:</strong> <%= @product.id %></p>
         </div>
       </div>
-      <div class="d-flex">
+      <div class="d-flex mb-3">
         <%= link_to "Edit", edit_admin_product_path(@product), class: "btn btn-outline-primary me-2" %>
         <%= button_to "Delete", admin_product_path(@product), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+        <% if policy([:admin, @product]).publish? && @product.status == "uploaded" %>
+          <%= button_to "Publish Product", publish_admin_product_path(@product), method: :post, class: "btn btn-success ms-2" %>
+        <% end %>
       </div>
     </div>
   </div>

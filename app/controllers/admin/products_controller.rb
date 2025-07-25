@@ -17,10 +17,17 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
+    update_params =
+      if params[:product][:asset].present?
+        product_params.merge(status: "processing")
+      else
+        product_params
+      end
+
     @product = Product.new(product_params)
     @product.user = current_user
     authorize [ :admin, @product ]
-    if @product.save
+    if @product.save(update_params)
       if params[:product][:asset].present?
         case params[:product][:asset].content_type
         when "image/jpeg", "image/png", "image/gif"
@@ -40,7 +47,20 @@ class Admin::ProductsController < ApplicationController
 
   def update
     authorize [ :admin, @product ]
-    if @product.update(product_params)
+
+    if @product.status == "processing" && params[:product][:asset].present?
+      puts "Cannot update product while it is processing a file upload."
+      return  redirect_to edit_admin_product_path(@product), alert: "Failed to publish product. Only products with status 'uploaded' can be published."
+    end
+
+    update_params =
+    if params[:product][:asset].present?
+      product_params.merge(status: "processing")
+    else
+      product_params
+    end
+
+    if @product.update(update_params)
       if params[:product][:asset].present?
         case params[:product][:asset].content_type
         when "image/jpeg", "image/png", "image/gif"
@@ -52,6 +72,17 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_product_path(@product), notice: "Product was successfully updated."
     else
       render :edit
+    end
+  end
+
+  def publish
+    @product = Product.find(params[:id])
+    authorize [ :admin, @product ]
+
+    if @product.status == "uploaded" && @product.update(status: "published")
+      redirect_back fallback_location: admin_products_path, notice: "Product was successfully published."
+    else
+      redirect_back fallback_location: admin_products_path, alert: "Failed to publish product. Only products with status 'uploaded' can be published."
     end
   end
 
@@ -68,6 +99,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def product_params
-    params.expect(product: [ :name, :description, :price, :file_url, :category_id, :asset ])
+    params.expect(product: [ :name, :description, :price, :category_id, :status, :asset ])
   end
 end

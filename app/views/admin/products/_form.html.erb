@@ -17,7 +17,7 @@
     <%= form.text_field :name, class: "form-control", placeholder: "Enter product name" %>
   </div>
 
-  <% if product.asset.attached? %>
+  <% if product.persisted? && product.asset.attached? %>
     <div class="mb-3">
       <label class="form-label fw-bold">Current Asset</label>
       <div class="border rounded p-2 mb-2 bg-light">

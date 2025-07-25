@@ -20,6 +20,7 @@ class ImageThumbnailJob < ApplicationJob
         filename: "#{product.id}_thumbnail.jpg",
         content_type: "image/jpeg"
       )
+      product.update(status: "uploaded")
     end
   end
 end

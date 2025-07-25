@@ -50,7 +50,12 @@
                 </td>
                 <td>
                   <span class="badge rounded-pill 
-                    <%= product.status == "published" ? 'bg-success' : 'bg-secondary' %>">
+                    <%=  case product.status
+                    when "published" then "bg-success"
+                    when "processing" then "bg-warning text-dark"
+                    when "draft" then "bg-secondary"
+                    else "bg-light text-dark"
+                    end %>">
                     <%= product.status.capitalize %>
                   </span>
                 </td>
@@ -76,6 +81,15 @@
                         form: { class: 'd-inline' },
                         data: { turbo_confirm: "Are you sure you want to delete this product?" } do %>
                       <i class="fas fa-trash"></i>
+                    <% end %>
+                    <% if policy([:admin, product]).publish? && product.status == "uploaded" %>
+                      <%= button_to publish_admin_product_path(product),
+                          method: :post,
+                          class: "btn btn-sm btn-success",
+                          form: { class: 'd-inline' },
+                          data: { turbo_confirm: "Publish this product?" } do %>
+                        <i class="fas fa-upload"></i>
+                      <% end %>
                     <% end %>
                   </div>
                 </td>

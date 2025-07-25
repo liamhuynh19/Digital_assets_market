@@ -42,7 +42,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root "users#index"
     get "dashboard", to: "dashboard#index"
-    resources :products
+    resources :products do
+      member do
+        post :publish, to: "products#publish", as: :publish
+      end
+    end
     resources :users
     resources :categories
   end
