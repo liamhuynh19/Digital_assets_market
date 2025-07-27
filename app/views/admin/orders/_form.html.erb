@@ -1,0 +1,70 @@
+<%= form_with(model: [:admin, order], local: true, html: { class: "card p-4 shadow-sm" }) do |form| %>
+  <% if order.errors.any? %>
+    <div class="alert alert-danger mb-4">
+      <h5><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h5>
+      <ul class="mb-0">
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h2 class="mb-4"><%= order.persisted? ? "Edit Order" : "New Order" %></h2>
+
+  <div class="mb-3">
+    <%= form.label :user_id, "Customer", class: "form-label fw-bold" %>
+    <%= form.collection_select :user_id, User.all, :id, :email, 
+        { prompt: "Select a customer" }, 
+        { class: "form-select" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :status, class: "form-label fw-bold" %>
+    <%= form.select :status, 
+        Order::STATUSES, 
+        { prompt: "Select status" }, 
+        { class: "form-select" } %>
+  </div>
+
+  <h4 class="mt-4 mb-3">Order Items</h4>
+  
+  <div id="order-items">
+    <%= form.fields_for :order_items do |item_form| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <%= item_form.label :product_id, "Product", class: "form-label" %>
+              <%= item_form.collection_select :product_id, 
+                  Product.all, :id, :name, 
+                  { prompt: "Select a product" }, 
+                  { class: "form-select product-select" } %>
+            </div>
+            
+            <div class="col-md-3 mb-3">
+              <%= item_form.label :price, class: "form-label" %>
+              <%= item_form.number_field :price, 
+                  class: "form-control",
+                  step: "0.01",
+                  min: 0 %>
+            </div>
+          </div>
+          
+          <% if item_form.present? %>
+            <div class="text-end">
+              <%= item_form.check_box :_destroy %>
+              <%= item_form.label :_destroy, "Remove this item" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="d-flex justify-content-between mt-4">
+    <%= link_to "Add Item", "#", class: "btn btn-outline-primary", id: "add-item-button" %>
+    <%= form.submit order.persisted? ? "Update Order" : "Create Order", 
+        class: "btn btn-primary" %>
+  </div>
+<% end %>

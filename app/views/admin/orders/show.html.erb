@@ -1,0 +1,74 @@
+<div class="container my-5">
+  <%= link_to "Back to orders", admin_orders_path, class: "btn btn-secondary position-absolute", style: "top: 20px; right: 20px;" %>
+  
+  <div class="card shadow-lg border-0" style="max-width: 900px; margin: auto;">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">Order #<%= @order.id %></h2>
+      <span class="badge bg-light text-dark fs-5">
+        <%= @order.status.capitalize %>
+      </span>
+    </div>
+
+    <div class="card-body">
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h5 class="mb-3">Order Details</h5>
+          <p><strong>Date:</strong> <%= @order.created_at.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>Status:</strong> 
+            <span class="badge 
+              <%= case @order.status
+                  when "completed" then "bg-success"
+                  when "processing" then "bg-warning text-dark"
+                  when "cancelled" then "bg-danger"
+                  else "bg-secondary"
+                  end %>">
+              <%= @order.status.capitalize %>
+            </span>
+          </p>
+          <p><strong>Total Amount:</strong> $<%= number_with_precision(@order.total_amount, precision: 2) %></p>
+        </div>
+        
+        <div class="col-md-6">
+          <h5 class="mb-3">Customer Information</h5>
+          <p><strong>Name:</strong> <%= @order.user.name %></p>
+          <p><strong>Email:</strong> <%= @order.user.email %></p>
+          <p><strong>Member since:</strong> <%= @order.user.created_at.strftime("%B %Y") %></p>
+        </div>
+      </div>
+
+      <h5 class="mb-3">Order Items</h5>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @order.order_items.each do |item| %>
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                   
+                    <div>
+                      <h6 class="mb-0"><%= item.product.name %></h6>
+                      <small class="text-muted"><%= truncate(item.product.description, length: 50) %></small>
+                    </div>
+                  </div>
+                </td>
+                <td>$<%= number_with_precision(item.price_at_purchase, precision: 2) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="text-end"><strong>Total:</strong></td>
+              <td class="text-end"><strong>$<%= number_with_precision(@order.total_amount, precision: 2) %></strong></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

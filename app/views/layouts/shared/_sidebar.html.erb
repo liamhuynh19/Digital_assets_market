@@ -1,4 +1,4 @@
-    <div class="admin-sidebar p-3 d-flex flex-column">
+<div class="admin-sidebar p-3 d-flex flex-column">
       <div class="admin-brand">
         <%= link_to admin_products_path, class: "d-flex align-items-center" do %> 
           <i class="fas fa-chart-line me-2"></i>
@@ -28,6 +28,12 @@
           <% end %>
         </li>
         <% end %>
+        
+        <li class="nav-item">
+          <%= link_to admin_orders_path, class: "nav-link #{current_page?(admin_orders_path) ? 'active' : ''}" do %>
+            <i class="fas fa-shopping-cart"></i> Orders
+          <% end %>
+        </li>
       </ul>
 
       <div class="user-menu mt-auto">
