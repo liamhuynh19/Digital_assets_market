@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :orders, only: [ :index, :show, :create ] do
     patch "mark_as_paid", to: "orders#mark_as_paid", as: :mark_as_paid
+    patch "cancel", to: "orders#cancel", as: :cancel
     resources :order_items, only: [ :create, :update, :destroy ]
   end
 
@@ -49,7 +50,11 @@ Rails.application.routes.draw do
     end
     resources :users
     resources :categories
-    resources :orders
+    resources :orders do
+      member do
+        resources :order_items, only: [ :create, :update, :destroy ]
+      end
+    end
   end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)

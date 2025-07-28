@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_order, only: [ :show, :edit, :update ]
 
   def index
     @orders = Order.all.where(user: current_user)
@@ -54,9 +54,15 @@ class OrdersController < ApplicationController
     redirect_to orders_path, alert: "Order not found."
   end
 
-  def destroy
-    @order.destroy
-    redirect_to orders_url, notice: "Order was successfully destroyed."
+  def cancel
+    @order = Order.find(params[:order_id])
+    @order.update(status: "cancelled")
+    puts @orders
+
+    redirect_to orders_path, notice: "Your order has been cancelled successfully."
+
+  rescue ActiveRecord::RecordNotFound
+    redirect_to orders_path, alert: "Order not found."
   end
 
   private

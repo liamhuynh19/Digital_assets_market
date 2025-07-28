@@ -56,6 +56,9 @@
         <% if @order.status != "paid" %>
           <%= button_to "Pay Now", order_mark_as_paid_path(@order), method: :patch, class: "btn btn-success px-4 ms-2" %>
         <% end %>
+        <% if @order.status != "cancelled" && @order.status != "paid" %>
+          <%= button_to "Cancel Order", order_cancel_path(@order), method: :patch, class: "btn btn-danger px-4 ms-2", data: { confirm: "Are you sure you want to cancel this order?" } %>
+        <% end %>
       </div>
     </div>
   </div>

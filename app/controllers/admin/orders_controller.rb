@@ -16,6 +16,15 @@ class Admin::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    total = 0
+    @order.order_items.each do |item|
+      product = Product.find(item.product_id)
+      item.price_at_purchase = product.price if product
+      total += item.price_at_purchase
+    end
+
+    @order.total_amount = total
+
     if @order.save
       redirect_to admin_order_path(@order), notice: "Order was successfully created."
     else

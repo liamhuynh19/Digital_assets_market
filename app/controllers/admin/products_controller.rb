@@ -27,7 +27,9 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     authorize [ :admin, @product ]
-    if @product.save(update_params)
+    @product.assign_attributes(update_params)
+
+    if @product.save
       if params[:product][:asset].present?
         case params[:product][:asset].content_type
         when "image/jpeg", "image/png", "image/gif"
