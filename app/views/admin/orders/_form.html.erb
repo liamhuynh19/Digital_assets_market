@@ -1,4 +1,6 @@
 <%= form_with(model: [:admin, order], local: true, html: { class: "card p-4 shadow-sm" }) do |form| %>
+  <% readonly = order.status == "paid" %>
+
   <% if order.errors.any? %>
     <div class="alert alert-danger mb-4">
       <h5><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h5>
@@ -20,16 +22,23 @@
     <% else %>
       <%= form.collection_select :user_id, User.all.where(role: "buyer"), :id, :email, 
           { prompt: "Select a customer" }, 
-          { class: "form-select" } %>
+          { class: "form-select", disabled: readonly } %>
     <% end %>
   </div>
 
   <div class="mb-3">
     <%= form.label :status, class: "form-label fw-bold" %>
-    <%= form.select :status, 
-        Order::STATUSES.reject { |s| s == "paid" },
-        { prompt: "Select status" }, 
-        { class: "form-select" } %>
+    <% if readonly %>
+      <div class="form-control-plaintext">
+        <span class="badge bg-success"><%= order.status.capitalize %></span>
+      </div>
+      <%= form.hidden_field :status %>
+    <% else %>
+      <%= form.select :status, 
+          Order::STATUSES.reject { |s| s == "paid" },
+          { prompt: "Select status" }, 
+          { class: "form-select" } %>
+    <% end %>
   </div>
 
   <h4 class="mt-4 mb-3">Order Items</h4>
@@ -46,12 +55,16 @@
         <%= form.fields_for :order_items do |item_fields| %>
           <tr>
             <td>
-              <%= item_fields.collection_select :product_id, Product.all.where(status: "published"), :id, :name, { prompt: "Select product" }, class: "form-select" %>
+              <%= item_fields.collection_select :product_id, Product.all.where(status: "published"), :id, :name, { prompt: "Select product" }, class: "form-select", disabled: readonly %>
             </td>
-
             <td>
-              <%= item_fields.check_box :_destroy %>
-              <span class="text-muted">Remove</span>
+              $<%= Product.find_by(id: item_fields.object.product_id)&.price || "0.00" %>
+            </td>
+            <td>
+              <% unless readonly %>
+                <%= item_fields.check_box :_destroy %>
+                <span class="text-muted">Remove</span>
+              <% end %>
             </td>
           </tr>
         <% end %>
@@ -59,39 +72,12 @@
     </table>
   </div>
 
-  <div class="mb-3">
-    <%= link_to "Add Item", "#", id: "add-item", class: "btn btn-outline-success" %>
-  </div>
-
-  <div class="d-flex justify-content-end mt-4">
-    <%= form.submit order.persisted? ? "Update Order" : "Create Order", class: "btn btn-primary" %>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const addItemBtn = document.getElementById("add-item");
-      addItemBtn.addEventListener("click", function(e) {
-        e.preventDefault();
-        const tbody = document.querySelector("table.table-hover tbody");
-        const index = tbody.querySelectorAll("tr").length;
-
-        const newRow = document.createElement("tr");
-        newRow.innerHTML = `
-          <td>
-            <select name="order[order_items_attributes][${index}][product_id]" class="form-select">
-              <option value="">Select product</option>
-              <% Product.all.where(status: "published").each do |product| %>
-                <option value="<%= product.id %>"><%= product.name %></option>
-              <% end %>
-            </select>
-          </td>
-          <td>
-            <input type="checkbox" name="order[order_items_attributes][${index}][_destroy]" />
-            <span class="text-muted">Remove</span>
-          </td>
-        `;
-        tbody.appendChild(newRow);
-      });
-    });
-  </script>
+  <% unless readonly %>
+    <div class="mb-3">
+      <%= link_to "Add Item", "#", id: "add-item", class: "btn btn-outline-success" %>
+    </div>
+    <div class="d-flex justify-content-end mt-4">
+      <%= form.submit order.persisted? ? "Update Order" : "Create Order", class: "btn btn-primary" %>
+    </div>
+  <% end %>
 <% end %>
