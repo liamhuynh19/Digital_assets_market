@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :rack_mini_profiler_authorize_request?
   include Pundit::Authorization
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -46,5 +46,9 @@ class ApplicationController < ActionController::Base
   def set_cart
     return unless current_user
     @cart = current_user.cart || current_user.create_cart
+  end
+
+  def rack_mini_profiler_authorize_request?
+    Rack::MiniProfiler.authorize_request
   end
 end
