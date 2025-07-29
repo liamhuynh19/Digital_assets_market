@@ -40,6 +40,10 @@ Rails.application.routes.draw do
     delete "signout" => "devise/sessions#destroy"
   end
 
+  namespace :api do
+    resources :products, only: [ :index, :show ]
+  end
+
   namespace :admin do
     root "users#index"
     get "dashboard", to: "dashboard#index"

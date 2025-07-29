@@ -41,12 +41,6 @@ class ProductsController < ApplicationController
     else
       redirect_to product_path(product), alert: "Requested video is not available."
     end
-    # if product.asset.attached?
-    #   #redirect_to rails_blob_url(product.asset, disposition: "attachment")
-    #   send_data product.asset.download, filename: product.asset.filename.to_s, type: product.asset.content_type, disposition: "attachment"
-    # else
-    #   redirect_to product_path(product), alert: "No asset available for download."
-    # end
   end
 
   private
