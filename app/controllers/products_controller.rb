@@ -2,7 +2,18 @@ class ProductsController < ApplicationController
   # before_action :set_product, only: %i[ show ]
   # GET /products or /products.json
   def index
-    @products = policy_scope(Product).where(status: "published").order(created_at: :desc).page(params[:page]).per(6)
+    @products = policy_scope(Product).
+    where(status: "published")
+    .yield_self { |scope|
+      if params[:query].present?
+        scope.where("name ILIKE ?", "%#{params[:query]}%")
+      else
+        scope
+      end
+    }
+    .order(order_params)
+    .page(params[:page])
+    .per(params[:per_page] || 6)
   end
 
   # GET /products/1 or /products/1.json
@@ -48,4 +59,10 @@ class ProductsController < ApplicationController
   # def set_product
   #   @product = Product.find(params[:id])
   # end
+  def order_params
+    allowed = %w[name created_at price]
+    sort = params[:sort].presence_in(allowed) || "created_at"
+    direction = params[:direction] == "asc" ? "asc" : "desc"
+    "#{sort} #{direction}"
+  end
 end

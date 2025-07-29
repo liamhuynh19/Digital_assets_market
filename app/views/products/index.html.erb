@@ -11,12 +11,41 @@
       <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <h2 class="gradient-text mb-0"></h2>
         <div class="filters d-flex gap-2 align-items-center glass-filter-bar p-2 rounded-4 shadow-sm">
-          <select class="form-select form-select-sm glass-select">
-            <option>Latest</option>
-            <option>Most Popular</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-          </select>
+          <%= form_with url: products_path, method: :get, local: true, class: "d-flex align-items-center gap-2" do %>
+            <%= select_tag :sort, options_for_select([
+                ['Latest', 'created_at'],
+                ['Name: A to Z', 'name'],
+                ['Name: Z to A', 'name'],
+                ['Price: Low to High', 'price'],
+                ['Price: High to Low', 'price']
+              ], params[:sort]),
+              class: "form-select form-select-sm glass-select",
+              id: "sort-select" %>
+            <%= hidden_field_tag :direction, params[:direction], id: "direction-field" %>
+          <% end %>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              const sortSelect = document.getElementById("sort-select");
+              const directionField = document.getElementById("direction-field");
+              sortSelect.addEventListener("change", function() {
+                switch(sortSelect.value) {
+                  case "created_at":
+                    directionField.value = "desc";
+                    break;
+                  case "name":
+                    directionField.value = (sortSelect.selectedIndex === 1) ? "asc" : "desc";
+                    break;
+                  case "price":
+                    directionField.value = (sortSelect.selectedIndex === 3) ? "asc" : "desc";
+                    break;
+                  default:
+                    directionField.value = "desc";
+                }
+                sortSelect.form.submit();
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
@@ -75,6 +104,12 @@
         </div>
       </div>
     <% end %>
+  </div>
+
+  <div class="d-flex justify-content-center mt-4">
+    <nav aria-label="Product pagination">
+      <%= paginate @products, params: { sort: params[:sort], direction: params[:direction], per_page: params[:per_page], query: params[:query] } %>
+    </nav>
   </div>
 </div>
 
@@ -191,6 +226,36 @@
 
     .rating i {
       font-size: 1rem;
+    }
+
+    .pagination {
+      background: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(76, 110, 245, 0.07);
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .pagination .page-item.active .page-link {
+      background: linear-gradient(90deg, #2686a3, #764ba2 80%);
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(76, 110, 245, 0.13);
+    }
+    .pagination .page-link {
+      color: #764ba2;
+      border: none;
+      background: transparent;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+    .pagination .page-link:hover {
+      background: #f0f0f0;
+      color: #2686a3;
+    }
+    .pagination .page-item.disabled .page-link {
+      color: #bbb;
+      background: transparent;
     }
   </style>
 <% end %>

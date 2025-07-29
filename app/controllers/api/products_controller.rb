@@ -11,11 +11,26 @@ class Api::ProductsController < ApplicationController
       Product.includes([ :asset_attachment, :thumbnail_attachment, :video_hd_attachment,
       :video_4k_attachment, :video_full_hd_attachment, :user,  :category ])
       .where(status: "published")
-      .order(created_at: :desc)
+      .yield_self { |scope|
+        if params[:query].present?
+          scope.where("name ILIKE ?", "%#{params[:query]}%")
+        else
+          scope
+        end
+      }
+      .order(order_params)
       .page(params[:page])
       .per(params[:per_page] || 6)
       authorize @products
     end
     puts "Index action took #{time.real} seconds"
+  end
+
+  private
+  def order_params
+    allowed = %w[name created_at price]
+    sort = params[:sort].presence_in(allowed) || "created_at"
+    direction = params[:direction] == "asc" ? "asc" : "desc"
+    "#{sort} #{direction}"
   end
 end
