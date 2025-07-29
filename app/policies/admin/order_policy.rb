@@ -3,7 +3,7 @@ module Admin
     class Scope < ApplicationPolicy::Scope
       def resolve
         if user.role == "admin"
-          scope.all
+          scope.includes([ :user, :order_items ]).all
         elsif user.role == "seller"
           scope.joins(:order_items)
                .joins("JOIN products ON order_items.product_id = products.id")

@@ -2,7 +2,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :set_category, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @categories = Category.all
+    @categories = Category.includes(:products).all
   end
 
   def show

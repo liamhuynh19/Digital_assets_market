@@ -55,6 +55,6 @@ class Admin::OrdersController < ApplicationController
   end
 
   def set_order
-    @order = Order.includes(:order_items, :user).find(params[:id])
+    @order = Order.includes([ order_items: :product ], :user).find(params[:id])
   end
 end

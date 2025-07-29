@@ -10,9 +10,9 @@ module Admin
       # NOTE: Be explicit about which records you allow access to!
       def resolve
         if user.role == "admin"
-          scope.all
+          scope.includes([ :category, :thumbnail_attachment ]).all
         elsif user.role == "seller"
-          scope.where(user_id: user.id)
+          scope.includes([ :category, :thumbnail_attachment ]).where(user_id: user.id)
         else
           scope.none
         end

@@ -50,7 +50,7 @@
                     <%= order.status.capitalize %>
                   </span>
                 </td>
-                <td><%= order.order_items.count %> items</td>
+                <td><%= order.order_items.length %> items</td>
                 <td>
                   <div><%= order.created_at.strftime("%B %d, %Y") %></div>
                   <small class="text-muted"><%= time_ago_in_words(order.created_at) %> ago</small>
