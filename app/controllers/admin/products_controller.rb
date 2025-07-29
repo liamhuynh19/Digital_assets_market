@@ -51,8 +51,7 @@ class Admin::ProductsController < ApplicationController
     authorize [ :admin, @product ]
 
     if @product.status == "processing" && params[:product][:asset].present?
-      puts "Cannot update product while it is processing a file upload."
-      return  redirect_to edit_admin_product_path(@product), alert: "Failed to publish product. Only products with status 'uploaded' can be published."
+      return  redirect_to edit_admin_product_path(@product), alert: "Cannot update product while it is processing a file upload."
     end
 
     update_params =
