@@ -42,6 +42,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :products, only: [ :index, :show ]
+    resources :orders, only: [ :create, :index, :show ]
   end
 
   namespace :admin do
