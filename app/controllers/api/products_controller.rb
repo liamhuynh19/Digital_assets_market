@@ -1,5 +1,6 @@
 require "benchmark"
 class Api::ProductsController < ApplicationController
+  # before_action :authenticate_user!, only: [ :index, :show ]
   def index
     # Benchmark.bm(10) do |x| # 10 là độ rộng của cột tên
     #   x.report("Method A:") { 1_000_000.times { "a" + "b" } }
@@ -24,6 +25,11 @@ class Api::ProductsController < ApplicationController
       authorize @products
     end
     puts "Index action took #{time.real} seconds"
+  end
+
+  def show
+    @product = Product.find(params[:id])
+    authorize @product
   end
 
   private
