@@ -2,8 +2,9 @@ class ProductsController < ApplicationController
   # before_action :set_product, only: %i[ show ]
   # GET /products or /products.json
   def index
-    @products = policy_scope(Product).
-    where(status: "published")
+    @products = policy_scope(Product)
+    .includes(:thumbnail_attachment, :asset_attachment, :category)
+    .where(status: "published")
     .yield_self { |scope|
       if params[:query].present?
         scope.where("name ILIKE ?", "%#{params[:query]}%")
