@@ -30,6 +30,8 @@ gem "image_processing"
 gem "streamio-ffmpeg"
 gem "aws-sdk-s3"
 gem "kaminari-bootstrap"
+gem "devise-jwt"
+gem "jwt"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

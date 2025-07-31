@@ -1,6 +1,6 @@
-class Api::OrdersController < ApplicationController
+class Api::OrdersController < Api::BaseController
   # before_action :authenticate_user!
-  skip_before_action :verify_authenticity_token, only: [ :create ]
+  # skip_before_action :verify_authenticity_token, only: [ :create ]
   def create
     product_ids = JSON.parse(params[:product_ids])
 

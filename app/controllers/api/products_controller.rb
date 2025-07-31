@@ -1,5 +1,5 @@
 require "benchmark"
-class Api::ProductsController < ApplicationController
+class Api::ProductsController < Api::BaseController
   # before_action :authenticate_user!, only: [ :index, :show ]
   def index
     # Benchmark.bm(10) do |x| # 10 là độ rộng của cột tên

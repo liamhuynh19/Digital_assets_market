@@ -41,6 +41,11 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    devise_scope :user do
+      post "login", to: "sessions#create"
+    end
+
+
     resources :products, only: [ :index, :show ]
     resources :orders, only: [ :create, :index, :show ]
   end
