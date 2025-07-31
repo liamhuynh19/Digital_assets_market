@@ -25,4 +25,14 @@ class Api::OrdersController < ApplicationController
       render json: { error: "No products selected" }, status: :unprocessable_entity
     end
   end
+
+  def show
+    @order = Order.find(params[:id])
+  end
+
+  def index
+    @orders = Order.includes(:user, order_items: [ product: :category ])
+    .where(user: current_user)
+    .all()
+  end
 end
