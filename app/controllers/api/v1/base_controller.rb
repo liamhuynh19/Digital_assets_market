@@ -1,4 +1,4 @@
-class Api::BaseController < ApplicationController
+class Api::V1::BaseController < ApplicationController
   include JwtAuthenticatable
   skip_before_action :verify_authenticity_token
 end

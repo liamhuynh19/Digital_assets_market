@@ -1,4 +1,4 @@
-class Api::OrdersController < Api::BaseController
+class Api::V1::OrdersController < Api::V1::BaseController
   # before_action :authenticate_user!
   # skip_before_action :verify_authenticity_token, only: [ :create ]
   def create
