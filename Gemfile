@@ -32,6 +32,7 @@ gem "aws-sdk-s3"
 gem "kaminari-bootstrap"
 gem "devise-jwt"
 gem "jwt"
+gem "ransack"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

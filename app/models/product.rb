@@ -44,4 +44,23 @@ class Product < ApplicationRecord
     .where(product_id: id, orders: { user_id: user.id, status: "paid" })
     .exists?
   end
+
+  # Define which attributes can be searched/filtered with Ransack
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name description price status category_id created_at]
+  end
+
+  # Define which associations can be searched/filtered with Ransack
+  def self.ransackable_associations(auth_object = nil)
+    %w[category user]
+  end
+
+  # Define custom ransackers for more complex searches
+  ransacker :created_at_month do
+    Arel.sql("EXTRACT(MONTH FROM created_at)")
+  end
+
+  ransacker :price_range do |parent|
+    Arel.sql("CAST(price AS DECIMAL)")
+  end
 end

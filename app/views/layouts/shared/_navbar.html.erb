@@ -11,15 +11,17 @@
         
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto align-items-center">
-            <li class="nav-item me-3">
-              <%= link_to products_path, class: "nav-link d-flex align-items-center" do %>
-                <i class="fas fa-th-large me-1"></i> Browse
-              <% end %>
-            </li>
+           
             
             <li class="nav-item">
-              <%= form_with url: products_path, method: :get, local: true, class: "d-flex position-relative" do %>
-                <%= text_field_tag :query, params[:query], class: "form-control search-bar", placeholder: "Search for assets..." %>
+              <%= search_form_for(@q || Product.ransack, 
+                  url: products_path, 
+                  class: "d-flex position-relative") do |f| %>
+                <%= f.search_field :name_cont, 
+                    placeholder: "Search for assets...",
+                    class: "form-control search-bar pe-5",
+                    value: params.dig(:q, :name_cont) 
+                %>
                 <button class="btn position-absolute end-0 top-50 translate-middle-y me-2" type="submit">
                   <i class="fas fa-search text-muted"></i>
                 </button>

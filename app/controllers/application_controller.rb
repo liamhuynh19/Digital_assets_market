@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   layout :set_layout
   before_action :set_cart
+  before_action :set_search
 
   private
 
@@ -46,6 +47,10 @@ class ApplicationController < ActionController::Base
   def set_cart
     return unless current_user
     @cart = current_user.cart || current_user.create_cart
+  end
+
+  def set_search
+    @q = Product.ransack(params[:q])
   end
 
   def rack_mini_profiler_authorize_request?

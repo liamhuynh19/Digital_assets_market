@@ -3,49 +3,40 @@
 <div class="container mt-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="mb-0 fw-bold gradient-text display-5">Products</h1>
-    <%= link_to "Add Product", new_product_path, class: "btn btn-success btn-lg shadow-sm d-none d-md-block" if user_signed_in? && current_user.seller? %>
+    <div class="d-flex align-items-center gap-3">
+      <%= search_form_for @q, class: "d-flex align-items-center" do |f| %>
+      <%= f.select :category_id_eq,
+        options_from_collection_for_select(Category.all, :id, :name, params.dig(:q, :category_id_eq)),
+        { include_blank: 'All Categories' },
+        { 
+          class: "form-select form-select-sm glass-select py-1",
+          style: "font-size: 0.875rem; min-width: 120px;",
+          onchange: 'this.form.submit()'
+        } 
+      %>
+        <%= f.select :s,
+          options_for_select([
+            ['Latest', 'created_at desc'],
+            ['Name: A to Z', 'name asc'],
+            ['Name: Z to A', 'name desc'],
+            ['Price: Low to High', 'price asc'],
+            ['Price: High to Low', 'price desc']
+          ], params.dig(:q, :s)),
+          {},
+          { 
+            class: "form-select form-select-sm glass-select py-1",
+            style: "font-size: 0.875rem; min-width: 130px;",
+            onchange: 'this.form.submit()'
+          } 
+        %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="row mb-4">
+      <div class="row mb-4">
     <div class="col-12">
       <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <h2 class="gradient-text mb-0"></h2>
         <div class="filters d-flex gap-2 align-items-center glass-filter-bar p-2 rounded-4 shadow-sm">
-          <%= form_with url: products_path, method: :get, local: true, class: "d-flex align-items-center gap-2" do %>
-            <%= select_tag :sort, options_for_select([
-                ['Latest', 'created_at'],
-                ['Name: A to Z', 'name'],
-                ['Name: Z to A', 'name'],
-                ['Price: Low to High', 'price'],
-                ['Price: High to Low', 'price']
-              ], params[:sort]),
-              class: "form-select form-select-sm glass-select",
-              id: "sort-select" %>
-            <%= hidden_field_tag :direction, params[:direction], id: "direction-field" %>
-          <% end %>
-
-          <script>
-            document.addEventListener("DOMContentLoaded", function() {
-              const sortSelect = document.getElementById("sort-select");
-              const directionField = document.getElementById("direction-field");
-              sortSelect.addEventListener("change", function() {
-                switch(sortSelect.value) {
-                  case "created_at":
-                    directionField.value = "desc";
-                    break;
-                  case "name":
-                    directionField.value = (sortSelect.selectedIndex === 1) ? "asc" : "desc";
-                    break;
-                  case "price":
-                    directionField.value = (sortSelect.selectedIndex === 3) ? "asc" : "desc";
-                    break;
-                  default:
-                    directionField.value = "desc";
-                }
-                sortSelect.form.submit();
-              });
-            });
-          </script>
         </div>
       </div>
     </div>

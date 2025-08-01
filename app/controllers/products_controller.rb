@@ -2,19 +2,21 @@ class ProductsController < ApplicationController
   # before_action :set_product, only: %i[ show ]
   # GET /products or /products.json
   def index
-    @products = policy_scope(Product)
+    @q = policy_scope(Product)
     .includes(:thumbnail_attachment, :asset_attachment, :category)
     .where(status: "published")
-    .yield_self { |scope|
-      if params[:query].present?
-        scope.where("name ILIKE ?", "%#{params[:query]}%")
-      else
-        scope
-      end
-    }
-    .order(order_params)
+    .ransack(params[:q])
+    @products = @q.result
     .page(params[:page])
     .per(params[:per_page] || 6)
+    # .yield_self { |scope|
+    #   if params[:query].present?
+    #     scope.where("name ILIKE ?", "%#{params[:query]}%")
+    #   else
+    #     scope
+    #   end
+    # }
+    # .order(order_params)
   end
 
   # GET /products/1 or /products/1.json
