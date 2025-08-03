@@ -76,6 +76,9 @@ group :development, :test do
   gem "tailwindcss-rails", "~> 3.3.1"
   gem "simplecov", require: false
   gem "rails-controller-testing"
+  gem "rswag-api"
+  gem "rswag-ui"
+  gem "rswag-specs"
 end
 
 group :development do

@@ -1,0 +1,15 @@
+---
+openapi: 3.0.1
+info:
+  title: Digital Assets Market API V1
+  version: v1
+  description: API documentation for Digital Assets Market
+components:
+  securitySchemes:
+    bearer_auth:
+      type: http
+      scheme: bearer
+paths: {}
+servers:
+- url: http://localhost:3000
+  description: Development server
