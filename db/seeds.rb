@@ -21,3 +21,40 @@ users.each do |attrs|
   user.role = attrs[:role]
   user.save!
 end
+
+
+require 'faker'
+
+categories = []
+10.times do
+  categories << Category.create!(
+    name: Faker::Commerce.unique.department,
+    description: Faker::Lorem.paragraph
+  )
+end
+
+300.times do
+  ActiveRecord::Base.transaction do
+    user = User.create!(
+      name: Faker::Name.name,
+      email: Faker::Internet.unique.email,
+      password: 'password',
+      role: 'seller'
+    )
+
+    products = []
+    10_000.times do
+      products << {
+        name: Faker::Commerce.product_name,
+        description: Faker::Lorem.sentence,
+        price: Faker::Commerce.price(range: 1.0..1000.0),
+        status: [ 'draft', 'published', 'uploaded' ].sample,
+        user_id: user.id,
+        category_id: categories.sample.id,
+        created_at: Time.now,
+        updated_at: Time.now
+      }
+    end
+    Product.insert_all(products)
+  end
+end
