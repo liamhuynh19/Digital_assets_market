@@ -48,7 +48,11 @@ Rails.application.routes.draw do
         post "login", to: "sessions#create"
       end
       resources :products, only: [ :index, :show ]
-      resources :orders, only: [ :create, :index, :show ]
+      resources :orders, only: [ :create, :index, :show ] do
+        member do
+          patch "mark_as_paid", to: "orders#mark_as_paid", as: :mark_as_paid
+        end
+      end
     end
   end
 

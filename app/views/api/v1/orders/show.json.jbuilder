@@ -1,6 +1,6 @@
 json.data do
   json.order do
-    json.extract! @order, :id, :total_amount, :created_at, :updated_at
+    json.extract! @order, :id, :status, :total_amount, :created_at, :updated_at
     json.user do
       json.extract! @order.user, :id, :email, :name
     end

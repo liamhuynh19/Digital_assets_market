@@ -35,4 +35,18 @@ class Api::V1::OrdersController < Api::V1::BaseController
     .where(user: current_user)
     .all()
   end
+
+  def mark_as_paid
+    @order = Order.find(params[:id])
+
+
+    if @order && @order.status != "paid" && @order.user == current_user
+      @order.update(status: "paid")
+      render json: { data:  { message: "Order marked as paid" }, status: :ok }
+    else
+      render json: { data:  { error: "Unauthorized action or order has been paid" } }
+    end
+  rescue ActiveRecord::RecordNotFound
+    render json: { data: { error: "Order not found" }, status: :not_found }
+  end
 end
