@@ -93,14 +93,14 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   # Configure allowed hosts
-  config.hosts = [
-    "localhost",
-    "127.0.0.1",
-    "0.0.0.0",
-    IPAddr.new("0.0.0.0/0"),        # Allow all IPv4
-    IPAddr.new("::/0"),             # Allow all IPv6
-    "::1",                          # Allow localhost IPv6
-    ENV["RAILS_DEVELOPMENT_HOSTS"], # Allow hosts from environment variable
-    /.*\.ngrok\.io/                # Allow ngrok tunneling
-  ]
+  config.hosts = nil # This disables host checking completely in development
+
+  # Or use a more specific configuration if needed:
+  # config.hosts << "localhost"
+  # config.hosts << "127.0.0.1"
+  # config.hosts << ".ngrok.io"
+
+  # Disable SSL/TLS verification in development (only for development!)
+  config.action_controller.default_url_options = { protocol: "http" }
+  config.force_ssl = false
 end
