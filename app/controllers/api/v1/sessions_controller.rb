@@ -8,9 +8,8 @@ class Api::V1::SessionsController < Devise::SessionsController
       sign_in user
       token = generate_jwt_token(user)
 
-      puts "Token: #{token}"
-
       render json: {
+        data: {
         token: token,
         user: {
           id: user.id,
@@ -18,8 +17,14 @@ class Api::V1::SessionsController < Devise::SessionsController
           name: user.name
               }
         }
+      }
     else
-      render json: { error: "Invalid email or password" }, status: :unauthorized
+      render json: {
+        data: {
+          error: "Invalid email or password",
+          status: :unauthorized
+          }
+        }
     end
   end
 
@@ -31,6 +36,6 @@ class Api::V1::SessionsController < Devise::SessionsController
 
   def generate_jwt_token(user)
     payload = { user_id: user.id, exp: 24.hours.from_now.to_i }
-    JWT.encode(payload, "digital_asset_secret_key", "HS256")
+    JWT.encode(payload, "digital_asset_secret_key")
   end
 end
