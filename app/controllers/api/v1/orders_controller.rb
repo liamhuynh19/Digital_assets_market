@@ -34,6 +34,8 @@ class Api::V1::OrdersController < Api::V1::BaseController
     @orders = Order.includes(:user, order_items: [ product: :category ])
     .where(user: current_user)
     .all()
+    .page(params[:page])
+    .per(params[:per_page] || 10)
   end
 
   def mark_as_paid
