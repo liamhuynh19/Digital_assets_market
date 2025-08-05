@@ -3,7 +3,7 @@ class Admin::OrdersController < ApplicationController
 
   def index
     authorize [ :admin, Order ]
-    @orders = policy_scope([ :admin, Order ])
+    @orders = policy_scope([ :admin, Order ]).page(params[:page]).per(params[:per_page] || 10)
   end
 
   def new

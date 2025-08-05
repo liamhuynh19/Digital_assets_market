@@ -3,7 +3,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
     authorize [ :admin, Product ]
-    @products = policy_scope([ :admin, Product ])
+    @products = policy_scope([ :admin, Product ]).page(params[:page]).per(params[:per_page] || 10)
   end
 
   def show

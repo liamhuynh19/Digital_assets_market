@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @q = policy_scope(Product)
-    .includes(:thumbnail_attachment, :asset_attachment, :category)
+    .includes(:thumbnail_attachment, :category)
     .where(status: "published")
     .ransack(params[:q])
     @products = @q.result

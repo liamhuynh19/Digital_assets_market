@@ -3,6 +3,7 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = Category.includes(:products).all
+    .page(params[:page]).per(params[:per_page] || 10)
   end
 
   def show
