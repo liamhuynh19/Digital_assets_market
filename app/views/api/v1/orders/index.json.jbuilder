@@ -2,6 +2,7 @@ json.data do
   json.array! @orders do |order|
     json.id order.id
     json.total_amount order.total_amount
+    json.status order.status
     json.created_at order.created_at.iso8601
     json.updated_at order.updated_at.iso8601
 
