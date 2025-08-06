@@ -1,5 +1,5 @@
 class AddProductStatusIndex < ActiveRecord::Migration[8.0]
-  def change
+  def up
     add_index :products, :status, name: 'index_products_on_status'
     add_index :products, [ :status, :name ], name: 'index_products_on_status_and_name'
     add_index :products, [ :status, :created_at ], name: 'index_products_on_status_and_created_at'
