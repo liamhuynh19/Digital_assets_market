@@ -10,12 +10,7 @@ class Api::V1::SessionsController < Devise::SessionsController
 
       render json: {
         data: {
-        token: token,
-        user: {
-          id: user.id,
-          email: user.email,
-          name: user.name
-              }
+          token: token
         }
       }
     else
