@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :reviews, dependent: :destroy
+  has_many :order_items, dependent: :destroy
 
 
   validates :name, presence: true
@@ -40,7 +41,7 @@ class Product < ApplicationRecord
   end
 
   def purchased_by?(user)
-    OrderItem.joins(:order)
+    OrderItem.includes(:order)
     .where(product_id: id, orders: { user_id: user.id, status: "paid" })
     .exists?
   end
