@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, :rack_mini_profiler_authorize_request?
+  before_action :authenticate_user!
+  # , :rack_mini_profiler_authorize_request?
   include Pundit::Authorization
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -53,7 +54,7 @@ class ApplicationController < ActionController::Base
     @q = Product.ransack(params[:q])
   end
 
-  def rack_mini_profiler_authorize_request?
-    Rack::MiniProfiler.authorize_request
-  end
+  # def rack_mini_profiler_authorize_request?
+  #   Rack::MiniProfiler.authorize_request
+  # end
 end
