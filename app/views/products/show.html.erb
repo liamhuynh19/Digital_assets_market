@@ -5,8 +5,16 @@
       <div class="bg-dark">
         <% if @product.asset.content_type.start_with?('image/') %>
           <%= image_tag @product.asset, class: "card-img-top rounded-0", style: "height: 400px; object-fit: cover;" %>
-        <% elsif @product.asset.content_type.start_with?('video/') %>
-          <%= video_tag url_for(@product.asset), 
+        <% elsif @product.asset.content_type.start_with?('video/') && !@product.purchased_by?(current_user) && @product.preview.present? %>
+          <%= video_tag url_for(@product.preview), 
+              controls: true, 
+              autoplay: true, 
+              class: "card-img-top rounded-0", 
+              style: "height: 400px; object-fit: cover;", 
+              disablePictureInPicture: true, 
+              controlsList: "nodownload" %>
+            <% else %>
+              <%= video_tag url_for(@product.asset), 
               controls: true, 
               autoplay: true, 
               class: "card-img-top rounded-0", 
