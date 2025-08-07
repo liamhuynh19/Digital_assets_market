@@ -67,7 +67,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-  gem "rspec-rails", "~> 6.0.0"
+  gem "rspec-rails", "~> 8.0.1"
   gem "factory_bot_rails"
   gem "shoulda-matchers", require: false
   gem "ruby-lsp", require: false
