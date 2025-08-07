@@ -22,7 +22,8 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  cable:
-    adapter: postgresql
-    url: <%= ENV.fetch("DATABASE_URL") %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+cable:
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 5
