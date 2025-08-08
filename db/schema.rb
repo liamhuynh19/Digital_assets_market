@@ -125,7 +125,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_04_080956) do
     t.string "file_url"
     t.string "status"
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["name"], name: "index_products_on_name_gin", opclass: :gin_trgm_ops, using: :gin
     t.index ["status", "created_at"], name: "index_products_on_status_and_created_at"
     t.index ["status", "name"], name: "index_products_on_status_and_name"
     t.index ["status", "price"], name: "index_products_on_status_and_price"
