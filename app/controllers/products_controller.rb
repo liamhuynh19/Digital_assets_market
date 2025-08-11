@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @q = policy_scope(Product)
-    .includes(:thumbnail_attachment, :category, :asset_attachment)
+    .includes(:thumbnail_attachment, :category, :asset_attachment, :reviews)
     .where(status: "published")
     .ransack(params[:q])
     @products = @q.result
@@ -22,6 +22,9 @@ class ProductsController < ApplicationController
   # GET /products/1 or /products/1.json
   def show
     @product = Product.find(params[:id])
+    @review = if user_signed_in?
+      @product.reviews.find_or_initialize_by(user: current_user)
+    end
     authorize @product
   end
 

@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product
-  before_action :set_review, only: [ :edit, :update, :destroy ]
-  before_action :authorize_owner!, only: [ :edit, :update, :destroy ]
+  before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :authorize_owner!, only: [:edit, :update, :destroy]
 
   # GET /reviews or /reviews.json
   def index
@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    # Renders edit.html.erb into turbo frame
   end
 
   # POST /reviews or /reviews.json

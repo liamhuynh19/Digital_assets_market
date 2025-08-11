@@ -2,10 +2,13 @@
 
 <h1>Editing review</h1>
 
-<%= render "form", review: @review %>
+<%# Renders inline into the turbo frame on the product page %>
+<%= turbo_frame_tag "review_form" do %>
+  <%= render "form", review: @review %>
+<% end %>
 
 <br>
 
 <div>
-  <%= link_to "Back to reviews", product_reviews_path %>
+  <%= link_to "Back to product", product_path(@product) %>
 </div>

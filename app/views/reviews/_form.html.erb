@@ -1,12 +1,16 @@
-<%= form_with(model: [@product, @product.reviews.find_or_initialize_by(user: current_user)], local: true) do |f| %>
-  <div class="mb-2">
+<%# prefer local 'review' set by controller; fallback if needed %>
+
+<% review ||= (@product && user_signed_in? ? @product.reviews.find_or_initialize_by(user: current_user) : Review.new) %>
+
+<%= form_with(model: [@product, review], local: true) do |f| %>
+  <div class="mb-2" id="star-rating" data-initial="<%= review.rating || 0 %>">
     <label class="form-label d-block">Your rating</label>
-    <div id="star-rating" class="d-flex gap-1" data-initial="<%= f.object.rating || 0 %>">
+    <div class="d-flex gap-1">
       <% 1.upto(5) do |i| %>
         <button type="button" class="btn btn-sm btn-outline-warning star" data-value="<%= i %>">★</button>
       <% end %>
     </div>
-    <%= f.hidden_field :rating, value: f.object.rating || 0 %>
+    <%= f.hidden_field :rating, value: review.rating || 0 %>
   </div>
 
   <div class="mb-3">
@@ -14,14 +18,17 @@
     <%= f.text_area :comment, rows: 4, class: "form-control" %>
   </div>
 
-  <%= f.submit f.object.persisted? ? "Update Review" : "Submit Review", class: "btn btn-primary" %>
+  <%= f.submit review.persisted? ? "Update Review" : "Submit Review", class: "btn btn-primary" %>
 <% end %>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  function initStarRating() {
     var container = document.getElementById("star-rating");
     if (!container) return;
-    var hidden = container.parentElement.querySelector('input[name="review[rating]"]');
+    if (container.dataset.bound === "1") return;
+    container.dataset.bound = "1";
+
+    var hidden = container.querySelector('input[name="review[rating]"]');
     var initial = parseInt(container.dataset.initial || "0", 10);
 
     function paint(rating) {
@@ -39,5 +46,8 @@
       hidden.value = v;
       paint(v);
     });
-  });
+  }
+  document.addEventListener("turbo:load", initStarRating);
+  document.addEventListener("turbo:frame-load", initStarRating);
+  document.addEventListener("DOMContentLoaded", initStarRating);
 </script>

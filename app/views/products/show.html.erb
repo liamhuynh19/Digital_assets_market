@@ -79,43 +79,52 @@
       <div class="card-body">
         <h2 class="card-title mb-3 fw-bold"><%= @product.name %></h2>
         <p class="card-text text-muted"><%= @product.description %></p>
-        <ul class="list-group list-group-flush mb-3">
-          <li class="list-group-item"><strong>Price:</strong> $<%= @product.price %></li>
-          <li class="list-group-item"><strong>Category:</strong> <%= @product.category&.name %></li>
-          <li class="list-group-item"><strong>Average rating:</strong> <%= @product.average_rating %></li>
-          <li class="list-group-item"><strong>Uploaded by:</strong> <%= @product.user&.email %></li>
-        </ul>
-        <div class="card-body">
-          <h5 class="mb-3">Reviews</h5>
 
-          <% @product.reviews.includes(:user).order(created_at: :desc).each do |review| %>
-            <div class="mb-3 p-3 border rounded">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <strong><%= review.user.email %></strong>
-                  <span class="text-warning ms-2">
-                    <%= "★" * review.rating %><%= "☆" * (5 - review.rating.to_i) %>
-                  </span>
-                </div>
-                <% if review.user_id == current_user&.id %>
-                  <div class="d-flex gap-2">
-                    <%= link_to "Edit", edit_product_review_path(@product, review), class: "btn btn-sm btn-outline-secondary" %>
-                    <%= link_to "Delete", product_review_path(@product, review), data: { turbo_method: :delete, turbo_confirm: "Delete your review?" }, class: "btn btn-sm btn-outline-danger" %>
-                  </div>
-                <% end %>
+        <p class="mb-2"><strong>Average rating:</strong> <%= @product.average_rating %> / 5</p>
+
+        <hr>
+
+        <h5 class="mb-3">Reviews</h5>
+
+        <% @product.reviews.includes(:user).order(created_at: :desc).each do |review| %>
+          <div class="mb-3 p-3 border rounded">
+            <div class="d-flex justify-content-between">
+              <div>
+                <strong><%= review.user.email %></strong>
+                <span class="text-warning ms-2">
+                  <%= "★" * review.rating %><%= "☆" * (5 - review.rating.to_i) %>
+                </span>
               </div>
-              <p class="mb-0 mt-2"><%= review.comment %></p>
+              <% if review.user_id == current_user&.id %>
+                <div class="d-flex gap-2">
+                  <%= link_to "Edit",
+                              edit_product_review_path(@product, review),
+                              data: { turbo_frame: "review_form" },
+                              class: "btn btn-sm btn-outline-secondary" %>
+                  <%= link_to "Delete",
+                              product_review_path(@product, review),
+                              data: { turbo_method: :delete, turbo_confirm: "Delete your review?" },
+                              class: "btn btn-sm btn-outline-danger" %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
+            <p class="mb-0 mt-2"><%= review.comment %></p>
+          </div>
+        <% end %>
 
-          <% if user_signed_in? && @product.purchased_by?(current_user) %>
-            <% if @product.reviews.exists?(user_id: current_user.id) %>
-              <div class="alert alert-info">You have already reviewed this product. You can edit your review above.</div>
-            <% else %>
-              <%= render "reviews/form" %>
+        <% if user_signed_in? && @product.purchased_by?(current_user) %>
+          <hr>
+          <% if @product.reviews.exists?(user_id: current_user.id) %>
+            
+            <%= turbo_frame_tag "review_form" do %>
+           
+              <!-- Click "Edit" above to load the form here -->
             <% end %>
+          <% else %>
+            <h5 id="review-form" class="mb-3"><%= @review&.persisted? ? "Edit your review" : "Write a review" %></h5>
+            <%= render "reviews/form", review: @review %>
           <% end %>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
