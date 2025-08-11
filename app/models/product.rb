@@ -47,6 +47,11 @@ class Product < ApplicationRecord
     .exists?
   end
 
+  def average_rating
+    return 0.0 if reviews.empty?
+    (reviews.average(:rating) || 0).to_f.round(1)
+  end
+
   # Define which attributes can be searched/filtered with Ransack
   def self.ransackable_attributes(auth_object = nil)
     %w[name description price status category_id created_at]

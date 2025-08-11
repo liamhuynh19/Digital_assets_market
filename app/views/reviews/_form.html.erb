@@ -1,42 +1,43 @@
-<%= form_with(model: review) do |form| %>
-  <% if review.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-      <ul>
-        <% review.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: [@product, @product.reviews.find_or_initialize_by(user: current_user)], local: true) do |f| %>
+  <div class="mb-2">
+    <label class="form-label d-block">Your rating</label>
+    <div id="star-rating" class="d-flex gap-1" data-initial="<%= f.object.rating || 0 %>">
+      <% 1.upto(5) do |i| %>
+        <button type="button" class="btn btn-sm btn-outline-warning star" data-value="<%= i %>">★</button>
+      <% end %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= f.hidden_field :rating, value: f.object.rating || 0 %>
   </div>
 
-  <div>
-    <%= form.label :product_id, style: "display: block" %>
-    <%= form.text_field :product_id %>
+  <div class="mb-3">
+    <%= f.label :comment, class: "form-label" %>
+    <%= f.text_area :comment, rows: 4, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :order_item_id, style: "display: block" %>
-    <%= form.text_field :order_item_id %>
-  </div>
-
-  <div>
-    <%= form.label :rating, style: "display: block" %>
-    <%= form.number_field :rating %>
-  </div>
-
-  <div>
-    <%= form.label :comment, style: "display: block" %>
-    <%= form.textarea :comment %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= f.submit f.object.persisted? ? "Update Review" : "Submit Review", class: "btn btn-primary" %>
 <% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var container = document.getElementById("star-rating");
+    if (!container) return;
+    var hidden = container.parentElement.querySelector('input[name="review[rating]"]');
+    var initial = parseInt(container.dataset.initial || "0", 10);
+
+    function paint(rating) {
+      container.querySelectorAll(".star").forEach(function(btn) {
+        var v = parseInt(btn.dataset.value, 10);
+        btn.classList.toggle("btn-warning", v <= rating);
+        btn.classList.toggle("btn-outline-warning", v > rating);
+      });
+    }
+    paint(initial);
+
+    container.addEventListener("click", function(e) {
+      if (!e.target.classList.contains("star")) return;
+      var v = parseInt(e.target.dataset.value, 10);
+      hidden.value = v;
+      paint(v);
+    });
+  });
+</script>

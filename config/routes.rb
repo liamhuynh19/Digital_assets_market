@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  resources :reviews
   resources :products do
     member do
       get :download, to: "products#download", as: :download
     end
+    resources :reviews
   end
   resources :categories
   resources :orders, only: [ :index, :show, :create ] do

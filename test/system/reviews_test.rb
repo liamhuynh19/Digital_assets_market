@@ -15,7 +15,6 @@ class ReviewsTest < ApplicationSystemTestCase
     click_on "New review"
 
     fill_in "Comment", with: @review.comment
-    fill_in "Order item", with: @review.order_item_id
     fill_in "Product", with: @review.product_id
     fill_in "Rating", with: @review.rating
     fill_in "User", with: @review.user_id
@@ -30,7 +29,6 @@ class ReviewsTest < ApplicationSystemTestCase
     click_on "Edit this review", match: :first
 
     fill_in "Comment", with: @review.comment
-    fill_in "Order item", with: @review.order_item_id
     fill_in "Product", with: @review.product_id
     fill_in "Rating", with: @review.rating
     fill_in "User", with: @review.user_id
