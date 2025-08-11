@@ -2,7 +2,7 @@ require "streamio-ffmpeg"
 
 class AssetUploadJob < ApplicationJob
   queue_as :default
-
+  # check commit
   private
 
   def watermark_filter(text = "Digital Assets Market")
