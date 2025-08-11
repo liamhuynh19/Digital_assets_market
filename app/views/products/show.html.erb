@@ -4,7 +4,11 @@
     <% if @product.asset.attached? %>
       <div class="bg-dark">
         <% if @product.asset.content_type.start_with?('image/') %>
-          <%= image_tag @product.asset, class: "card-img-top rounded-0", style: "height: 400px; object-fit: cover;" %>
+          <% if !@product.purchased_by?(current_user) && @product.preview.present?%>          
+            <%= image_tag @product.preview, class: "card-img-top rounded-0", style: "height: 400px; object-fit: cover;" %>
+          <% else %> 
+            <%= image_tag @product.asset, class: "card-img-top rounded-0", style: "height: 400px; object-fit: cover;" %>
+          <% end %>
         <% elsif @product.asset.content_type.start_with?('video/') && !@product.purchased_by?(current_user) && @product.preview.present? %>
           <%= video_tag url_for(@product.preview), 
               controls: true, 
@@ -32,23 +36,21 @@
                 <% if @product.asset.content_type.start_with?('video/') %>
                   <select id="resolution" class="form-select form-select-sm w-auto">
                     <% if @product.video_hd.attached? %>
-                      <option value="<%= download_product_path(@product, resolution: "hd") %>">HD (1080x720)</option>
+                      <option value="hd" selected>HD (1080x720)</option>
                     <% end %>
                     <% if @product.video_full_hd.attached? %>
-                      <option value="<%= download_product_path(@product, resolution: "full_hd") %>">Full HD (1920x1080)</option>
+                      <option value="full_hd" <%= @product.video_hd.attached? ? '' : 'selected' %>>Full HD (1920x1080)</option>
                     <% end %>
                     <% if @product.video_4k.attached? %>
-                      <option value="<%= download_product_path(@product, resolution: "4k") %>">4K (4096x2160)</option>
+                      <option value="4k" <%= (@product.video_hd.attached? || @product.video_full_hd.attached?) ? '' : 'selected' %>>4K (4096x2160)</option>
                     <% end %>
                   </select>
                 <% end %>
-                <a id="download-btn" 
-                   href="<%= download_product_path(@product, resolution: "hd") %>" 
-                   class="btn btn-gradient fw-bold" 
-                   target="_blank" 
-                   style="background: linear-gradient(90deg, #6f42c1 0%, #487ecf 100%); color: #fff;">
+                <button id="download-btn" 
+                        class="btn btn-gradient fw-bold" 
+                        style="background: linear-gradient(90deg, #6f42c1 0%, #487ecf 100%); color: #fff;">
                   <i class="fas fa-download"></i> Download
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -56,13 +58,20 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", function() {
-            var select = document.getElementById("resolution");
-            var btn = document.getElementById("download-btn");
-            if (select) {
-              select.addEventListener("change", function() {
-                btn.href = select.value;
-              });
-            }
+            var downloadBtn = document.getElementById("download-btn");
+            var resolutionSelect = document.getElementById("resolution");
+            
+            downloadBtn.addEventListener("click", function(e) {
+              e.preventDefault();
+              
+              var downloadUrl = "<%= download_product_path(@product) %>";
+              
+              if (resolutionSelect && resolutionSelect.value) {
+                downloadUrl += "?resolution=" + resolutionSelect.value;
+              }
+              
+              window.open(downloadUrl, '_blank');
+            });
           });
         </script>
       <% end %>
