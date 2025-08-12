@@ -1,0 +1,100 @@
+<% content_for :title, "Reviews Management" %>
+
+<div class="container-fluid p-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h1 class="gradient-text mb-0">Reviews Management</h1>
+      <p class="text-muted"><%= @product ? "Manage reviews for #{h @product.name}" : "Manage all product reviews" %></p>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= form_with url: request.path, method: :get, local: true, class: "row g-2 align-items-end" do %>
+      <% if @product %>
+        <%= hidden_field_tag :product_id, @product.id %>
+      <% else %>
+        <div class="col-auto">
+          <%= label_tag :product_id, "Product ID", class: "form-label" %>
+          <%= number_field_tag :product_id, params[:product_id], class: "form-control", min: 1 %>
+        </div>
+      <% end %>
+      <div class="col-auto">
+        <%= label_tag :q, "User email", class: "form-label" %>
+        <%= text_field_tag :q, params[:q], class: "form-control", placeholder: "email contains..." %>
+      </div>
+      <div class="col-auto">
+        <%= label_tag :rating, "Rating", class: "form-label" %>
+        <%= select_tag :rating,
+              options_for_select([["Any", ""], *1.upto(5).map { |r| [r, r] }], params[:rating]),
+              class: "form-select" %>
+      </div>
+      <div class="col-auto">
+        <%= submit_tag "Filter", class: "btn btn-primary" %>
+        <%= link_to "Reset", url_for(only_path: true), class: "btn btn-outline-secondary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="card glass-card">
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Created</th>
+              <th scope="col">User</th>
+              <th scope="col">Product</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Comment</th>
+              <th scope="col" style="width: 150px">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reviews.each do |review| %>
+              <tr>
+                <td>
+                  <div><%= review.created_at.strftime("%B %d, %Y") %></div>
+                  <small class="text-muted"><%= time_ago_in_words(review.created_at) %> ago</small>
+                </td>
+                <td>
+                  <div class="fw-semibold">
+                    <%= review.user.respond_to?(:name) && review.user.name.present? ? review.user.name : review.user.email %>
+                  </div>
+                  <% if review.user.respond_to?(:name) && review.user.name.present? %>
+                    <small class="text-muted"><%= review.user.email %></small>
+                  <% end %>
+                </td>
+                <td><%= link_to review.product.name, admin_product_path(review.product) %></td>
+                <td>
+                  <span class="text-warning">
+                    <%= "★" * review.rating.to_i %><%= "☆" * (5 - review.rating.to_i) %>
+                  </span>
+                </td>
+                <td><%= truncate(review.comment.to_s, length: 120) %></td>
+                <td>
+                  <div class="d-flex gap-2">
+                    <%= link_to edit_admin_review_path(review),
+                        class: "btn btn-sm btn-primary",
+                        title: "Edit" do %>
+                      <i class="fas fa-edit"></i>
+                    <% end %>
+                    <%= link_to admin_review_path(review),
+                        data: { turbo_method: :delete, turbo_confirm: "Delete this review?" },
+                        class: "btn btn-sm btn-danger",
+                        title: "Delete" do %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end mt-3">
+    <%= paginate @reviews, params: request.query_parameters %>
+  </div>
+</div>

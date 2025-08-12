@@ -1,0 +1,52 @@
+class Admin::ReviewsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_product, only: [ :index ]
+  before_action :set_review, only: [ :edit, :update, :destroy ]
+
+  def index
+    authorize [ :admin, Review ]
+
+    scope = policy_scope([ :admin, Review ])
+              .includes(:user, :product)
+              .order(created_at: :desc)
+
+    scope = scope.where(product_id: @product.id) if @product
+    scope = scope.where(rating: params[:rating]) if params[:rating].present?
+    scope = scope.joins(:user).where("users.email ILIKE ?", "%#{params[:q]}%") if params[:q].present?
+
+    @reviews = scope.page(params[:page]).per(params[:per_page] || 2)
+  end
+
+  def edit
+    authorize [ :admin, @review ]
+  end
+
+  def update
+    authorize [ :admin, @review ]
+    if @review.update(review_params)
+      redirect_to admin_reviews_path(product_id: @review.product_id), notice: "Review updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    authorize [ :admin, @review ]
+    @review.destroy
+    redirect_to admin_reviews_path(product_id: @review.product_id), notice: "Review deleted."
+  end
+
+  private
+
+  def set_product
+    @product = Product.find_by(id: params[:product_id])
+  end
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
+
+  def review_params
+    params.require(:review).permit(:rating, :comment)
+  end
+end

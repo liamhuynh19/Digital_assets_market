@@ -49,6 +49,9 @@
           <%= button_to "Publish Product", publish_admin_product_path(@product), method: :post, class: "btn btn-success ms-2" %>
         <% end %>
       </div>
+      <div class="mt-3">
+        <%= link_to "Manage Reviews", admin_reviews_path(product_id: @product.id), class: "btn btn-outline-primary btn-sm" %>
+      </div>
     </div>
   </div>
 </div>

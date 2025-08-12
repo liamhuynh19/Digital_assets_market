@@ -1,0 +1,16 @@
+<%= form_with model: [:admin, review], local: true do |f| %>
+  <div class="mb-3">
+    <label class="form-label d-block">Rating</label>
+    <%= f.select :rating, options_for_select(1.upto(5).map { |r| [r, r] }, review.rating), {}, class: "form-select w-auto" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :comment, class: "form-label" %>
+    <%= f.text_area :comment, rows: 5, class: "form-control" %>
+  </div>
+
+  <div class="d-flex gap-2">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <%= link_to "Cancel", admin_reviews_path(product_id: review.product_id), class: "btn btn-outline-secondary" %>
+  </div>
+<% end %>
