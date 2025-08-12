@@ -1,24 +1,33 @@
 class Admin::ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      return scope.all if user.admin?
-      scope.none
+      if user.admin?
+        scope.all
+      elsif user.seller?
+        scope.where(product: Product.where(user_id: user.id))
+      else
+        scope.none
+      end
     end
   end
 
   def index?
-    true
+    user.admin? || (user.seller? && record.joins(:product).where(products: { user_id: user.id }))
+  end
+
+  def show?
+    user.admin? || (user.seller? && record.product.user_id == user.id)
   end
 
   def edit?
-    true
+    user.admin?
   end
 
   def update?
-    true
+    user.admin?
   end
 
   def destroy?
-    true
+    user.admin?
   end
 end

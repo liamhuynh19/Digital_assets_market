@@ -72,7 +72,7 @@ Rails.application.routes.draw do
     resources :products do
       resources :reviews, only: [ :index ], controller: "reviews"
     end
-    resources :reviews, only: [ :index, :edit, :update, :destroy ]
+    resources :reviews, only: [ :index, :show, :edit, :update, :destroy ]
   end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)

@@ -1,7 +1,7 @@
 class Admin::ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: [ :index ]
-  before_action :set_review, only: [ :edit, :update, :destroy ]
+  before_action :set_review, only: [ :show, :edit, :update, :destroy ]
 
   def index
     authorize [ :admin, Review ]
@@ -11,10 +11,15 @@ class Admin::ReviewsController < ApplicationController
               .order(created_at: :desc)
 
     scope = scope.where(product_id: @product.id) if @product
+    scope = scope.where(product_id: params[:product_id]) if params[:product_id].present?
     scope = scope.where(rating: params[:rating]) if params[:rating].present?
     scope = scope.joins(:user).where("users.email ILIKE ?", "%#{params[:q]}%") if params[:q].present?
 
-    @reviews = scope.page(params[:page]).per(params[:per_page] || 2)
+    @reviews = scope.page(params[:page]).per(params[:per_page] || 10)
+  end
+
+  def show
+    authorize [ :admin, @review ]
   end
 
   def edit

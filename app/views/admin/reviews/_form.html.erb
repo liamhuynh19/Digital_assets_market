@@ -1,7 +1,12 @@
 <%= form_with model: [:admin, review], local: true do |f| %>
-  <div class="mb-3">
+  <div class="mb-3" id="admin-star-rating" data-initial="<%= review.rating || 0 %>">
     <label class="form-label d-block">Rating</label>
-    <%= f.select :rating, options_for_select(1.upto(5).map { |r| [r, r] }, review.rating), {}, class: "form-select w-auto" %>
+    <div class="d-flex gap-1">
+      <% 1.upto(5) do |i| %>
+        <button type="button" class="btn btn-sm btn-outline-warning admin-star" data-value="<%= i %>">★</button>
+      <% end %>
+    </div>
+    <%= f.hidden_field :rating, value: review.rating || 0 %>
   </div>
 
   <div class="mb-3">
@@ -14,3 +19,34 @@
     <%= link_to "Cancel", admin_reviews_path(product_id: review.product_id), class: "btn btn-outline-secondary" %>
   </div>
 <% end %>
+
+<script>
+  function initAdminStarRating() {
+    var container = document.getElementById("admin-star-rating");
+    if (!container) return;
+    if (container.dataset.bound === "1") return;
+    container.dataset.bound = "1";
+
+    var hidden = container.querySelector('input[name="review[rating]"]');
+    var initial = parseInt(container.dataset.initial || "0", 10);
+
+    function paint(rating) {
+      container.querySelectorAll(".admin-star").forEach(function(btn) {
+        var v = parseInt(btn.dataset.value, 10);
+        btn.classList.toggle("btn-warning", v <= rating);
+        btn.classList.toggle("btn-outline-warning", v > rating);
+      });
+    }
+    paint(initial);
+
+    container.addEventListener("click", function(e) {
+      if (!e.target.classList.contains("admin-star")) return;
+      var v = parseInt(e.target.dataset.value, 10);
+      hidden.value = v;
+      paint(v);
+    });
+  }
+  document.addEventListener("turbo:load", initAdminStarRating);
+  document.addEventListener("turbo:frame-load", initAdminStarRating);
+  document.addEventListener("DOMContentLoaded", initAdminStarRating);
+</script>

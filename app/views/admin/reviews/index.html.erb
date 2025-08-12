@@ -73,6 +73,14 @@
                 <td><%= truncate(review.comment.to_s, length: 120) %></td>
                 <td>
                   <div class="d-flex gap-2">
+                    <% if policy([:admin, review]).show?%>
+                    <%= link_to admin_review_path(review),
+                        class: "btn btn-sm btn-primary",
+                        title: "Show" do %>
+                      <i class="fas fa-eye"></i>
+                    <% end %>
+                    <% end %>
+                    <% if policy([:admin, review]).edit? %>
                     <%= link_to edit_admin_review_path(review),
                         class: "btn btn-sm btn-primary",
                         title: "Edit" do %>
@@ -83,6 +91,7 @@
                         class: "btn btn-sm btn-danger",
                         title: "Delete" do %>
                       <i class="fas fa-trash"></i>
+                    <% end %>
                     <% end %>
                   </div>
                 </td>
