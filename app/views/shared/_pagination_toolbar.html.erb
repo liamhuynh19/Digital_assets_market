@@ -1,0 +1,60 @@
+
+<% per_page_options ||= [3, 6, 12, 24, 48, 96] %>
+<% label ||= "items" %>
+<% page_select_threshold ||= 200 %>
+
+<% total        = (collection.respond_to?(:total_count) ? collection.total_count : (collection.respond_to?(:total_entries) ? collection.total_entries : collection.size)) %>
+<% current_page = (collection.respond_to?(:current_page) ? collection.current_page : (params[:page].presence || 1).to_i) %>
+<% per_page     = (collection.respond_to?(:limit_value) ? collection.limit_value : (collection.respond_to?(:per_page) ? collection.per_page : (collection.size.nonzero? || 12))) %>
+<% start_index  = total.zero? ? 0 : ((current_page - 1) * per_page) + 1 %>
+<% end_index    = total.zero? ? 0 : [start_index + collection.length - 1, total].min %>
+<% total_pages  = (collection.respond_to?(:total_pages) ? collection.total_pages : (total.to_f / per_page).ceil) %>
+
+<div class="pagination-toolbar d-flex flex-wrap align-items-center mt-4 gap-3">
+  <div class="text-muted small">
+    <%= "Showing #{start_index}-#{end_index} of #{total} #{label}" %>
+  </div>
+
+  <div class="flex-grow-1 d-flex justify-content-center">
+    <nav aria-label="Pagination">
+      <%= paginate collection, params: request.query_parameters %>
+    </nav>
+  </div>
+
+  <div class="d-flex flex-wrap align-items-center gap-2 ms-auto">
+    <%= form_with url: request.path, method: :get, local: true, class: "d-flex align-items-center gap-2" do %>
+      <% request.query_parameters.except(:page, :per_page).each do |k, v| %>
+        <%= hidden_field_tag k, v %>
+      <% end %>
+      <label class="form-label mb-0 small text-nowrap">Per page</label>
+      <%= select_tag :per_page,
+            options_for_select(per_page_options, (params[:per_page] || per_page).to_i),
+            class: "form-select form-select-sm glass-select py-1",
+            style: "min-width: 84px;",
+            onchange: "this.form.submit()" %>
+    <% end %>
+
+    <% if total_pages > 1 %>
+      <%= form_with url: request.path, method: :get, local: true, class: "d-flex align-items-center gap-2 page-jump" do %>
+        <% request.query_parameters.except(:page).each do |k, v| %>
+          <%= hidden_field_tag k, v %>
+        <% end %>
+        <label class="form-label mb-0 small text-nowrap">Page</label>
+        <% if total_pages <= page_select_threshold %>
+          <%= select_tag :page,
+                options_for_select((1..total_pages).map { |p| ["#{p}", p] }, current_page),
+                class: "form-select form-select-sm",
+                style: "min-width: 110px;",
+                onchange: "this.form.submit()" %>
+        <% else %>
+          <%= number_field_tag :page, current_page,
+                min: 1, max: total_pages,
+                class: "form-control form-control-sm",
+                style: "width: 90px;" %>
+          <span class="text-muted small">of <%= total_pages %></span>
+          <%= submit_tag "Go", class: "btn btn-sm btn-outline-primary" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
