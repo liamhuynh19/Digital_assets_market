@@ -1,0 +1,42 @@
+<div class="container-fluid p-4">
+  <div class="row g-3 mb-4">
+    <div class="col-md-2"><div class="card"><div class="card-body"><div class="text-muted">Users</div><div class="fs-4 fw-bold"><%= total_users %></div></div></div></div>
+    <div class="col-md-2"><div class="card"><div class="card-body"><div class="text-muted">Products</div><div class="fs-4 fw-bold"><%= total_products %></div></div></div></div>
+    <div class="col-md-2"><div class="card"><div class="card-body"><div class="text-muted">Orders</div><div class="fs-4 fw-bold"><%= total_orders %></div></div></div></div>
+    <div class="col-md-2"><div class="card"><div class="card-body"><div class="text-muted">Revenue</div><div class="fs-4 fw-bold">$<%= number_with_precision(revenue, precision: 2) %></div></div></div></div>
+    <div class="col-md-2"><div class="card"><div class="card-body"><div class="text-muted">Reviews</div><div class="fs-4 fw-bold"><%= total_reviews %></div></div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header bg-light fw-semibold">Top products</div>
+    <div class="card-body p-0">
+      <table class="table table-hover mb-0">
+        <thead><tr><th>Product</th><th class="text-end">Revenue</th></tr></thead>
+        <tbody>
+          <% top_products.each do |(product_id, name), rev| %>
+            <tr>
+              <td><%= link_to name, admin_product_path(product_id) %></td>
+              <td class="text-end">$<%= number_with_precision(rev, precision: 2) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card mt-4">
+    <div class="card-header bg-light fw-semibold">Top users (by items sold)</div>
+    <div class="card-body p-0">
+      <table class="table table-hover mb-0">
+        <thead><tr><th>User</th><th class="text-end">Items sold</th></tr></thead>
+        <tbody>
+          <% (top_sellers || []).each do |seller| %>
+            <tr>
+              <td><%= link_to seller.email, (defined?(admin_user_path) ? admin_user_path(seller) : "#") %></td>
+              <td class="text-end"><%= seller.try(:items_sold).to_i %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

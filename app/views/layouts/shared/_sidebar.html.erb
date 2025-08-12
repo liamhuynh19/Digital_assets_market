@@ -34,6 +34,12 @@
             <i class="fas fa-star"></i> Reviews
           <% end %>
         </li>
+
+        <li>
+          <%= link_to admin_report_path, class: "nav-link #{current_page?(admin_report_path) ? 'active' : ''}" do %>
+            <i class="fas fa-star"></i> Report
+          <% end %>
+        </li>
         
         <li class="nav-item">
           <%= link_to admin_orders_path, class: "nav-link #{current_page?(admin_orders_path) ? 'active' : ''}" do %>

@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "users#index"
     get "dashboard", to: "dashboard#index"
+    get "report", to: "reports#show"
     resources :products do
       member do
         post :publish, to: "products#publish", as: :publish
@@ -73,6 +74,10 @@ Rails.application.routes.draw do
       resources :reviews, only: [ :index ], controller: "reviews"
     end
     resources :reviews, only: [ :index, :show, :edit, :update, :destroy ]
+  end
+
+  namespace :seller do
+    get "report", to: "/admin/reports#show"
   end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
