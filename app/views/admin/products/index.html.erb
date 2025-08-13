@@ -13,6 +13,15 @@
     <% end %>
   </div>
 
+  <% if current_user.admin? || current_user.seller? %>
+    <div class="mb-4">
+      <%= form_with url: bulk_import_admin_products_path, local: true, html: { multipart: true, class: "d-inline-block" } do |f| %>
+        <%= f.file_field :csv, accept: ".csv", class: "form-control d-inline-block w-auto me-2" %>
+        <%= f.submit "Bulk Import", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="card glass-card">
     <div class="card-body p-0">
       <div class="table-responsive">

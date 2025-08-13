@@ -1,3 +1,4 @@
+require "csv"
 class Admin::ProductsController < ApplicationController
   before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
@@ -93,6 +94,49 @@ class Admin::ProductsController < ApplicationController
     authorize [ :admin, @product ]
     @product.destroy
     redirect_to admin_products_path, notice: "Product was successfully deleted."
+  end
+
+  def bulk_import
+    if params[:csv].present?
+      results = { imported: 0, failed: [] }
+      import_failed = false
+
+      ActiveRecord::Base.transaction do
+        CSV.foreach(params[:csv].path, headers: true) do |row|
+          attrs = row.to_hash.slice("name", "description", "price", "category_id", "user_email")
+
+          user = User.find(email: attrs["user_email"])
+          if user.nil?
+            puts "User not found for email"
+            results[:failed] << { row: row.to_hash, errors: [ "User not found for email #{attrs['user_email']}" ] }
+            import_failed = true
+            next
+          else
+            attrs["user_id"] = user.id
+          end
+
+
+          product = current_user.seller? ? current_user.products.build(attrs) : Product.new(attrs)
+          unless product.save
+            results[:failed] << { row: row.to_hash, errors: product.errors.full_messages }
+            import_failed = true
+          else
+            results[:imported] += 1
+          end
+        end
+        raise ActiveRecord::Rollback if import_failed
+      end
+
+      if results[:failed].any?
+        flash[:alert] = "Import failed. No products were imported because at least one row had errors: #{results[:failed].map { |f| f[:errors].join(', ') }.join('; ')}"
+        results[:imported] = 0
+      elsif results[:imported] > 0
+        flash[:notice] = "#{results[:imported]} products imported successfully."
+      end
+    else
+      flash[:alert] = "Please upload a CSV file."
+    end
+    redirect_to admin_products_path
   end
 
   private

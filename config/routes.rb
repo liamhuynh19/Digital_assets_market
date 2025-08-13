@@ -62,6 +62,9 @@ Rails.application.routes.draw do
       member do
         post :publish, to: "products#publish", as: :publish
       end
+      collection do
+        post :bulk_import
+      end
     end
     resources :users
     resources :categories
