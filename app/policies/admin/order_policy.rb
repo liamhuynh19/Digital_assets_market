@@ -6,6 +6,7 @@ module Admin
           scope.includes([ :user, :order_items ]).all
         elsif user.role == "seller"
           scope.joins(:order_items)
+                .includes([ :user, :order_items ])
                .joins("JOIN products ON order_items.product_id = products.id")
                .where(products: { user_id: user.id })
                .distinct

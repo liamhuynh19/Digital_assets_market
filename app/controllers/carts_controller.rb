@@ -3,7 +3,7 @@ class CartsController < ApplicationController
   # before_action :set_cart, only: [ :show, :add_item, :remove_item ]
   def show
     @cart = current_user.cart
-    @cart_items = @cart.cart_items.includes(:product)
+    @cart_items = @cart.cart_items.includes(product: :thumbnail_attachment)
   end
 
   def add_item

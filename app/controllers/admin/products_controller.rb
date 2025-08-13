@@ -3,7 +3,9 @@ class Admin::ProductsController < ApplicationController
 
   def index
     authorize [ :admin, Product ]
-    @products = policy_scope([ :admin, Product ]).page(params[:page]).per(params[:per_page] || 10)
+    @products = policy_scope([ :admin, Product ])
+    .includes(:category, :thumbnail_attachment)
+    .page(params[:page]).per(params[:per_page] || 10)
   end
 
   def show
