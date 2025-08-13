@@ -103,7 +103,8 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-end mt-3">
-    <%= paginate @reviews, params: request.query_parameters %>
-  </div>
+  <%= render "shared/pagination_toolbar",
+           collection: @reviews,
+           per_page_options: [5, 10, 20, 50, 100],
+           label: "review" %>
 </div>

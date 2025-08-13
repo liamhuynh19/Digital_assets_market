@@ -90,4 +90,8 @@
       </div>
     </div>
   </div>
+  <%= render "shared/pagination_toolbar",
+           collection: @orders,
+           per_page_options: [5, 10, 20, 50, 100],
+           label: "orders" %>
 </div>
