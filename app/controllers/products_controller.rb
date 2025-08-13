@@ -9,14 +9,6 @@ class ProductsController < ApplicationController
     @products = @q.result
     .page(params[:page])
     .per(params[:per_page] || 6)
-    # .yield_self { |scope|
-    #   if params[:query].present?
-    #     scope.where("name ILIKE ?", "%#{params[:query]}%")
-    #   else
-    #     scope
-    #   end
-    # }
-    # .order(order_params)
   end
 
   # GET /products/1 or /products/1.json

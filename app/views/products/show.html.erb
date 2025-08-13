@@ -61,25 +61,22 @@
             </div>
           </div>
         </div>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-            var downloadBtn = document.getElementById("download-btn");
-            var resolutionSelect = document.getElementById("resolution");
-            
-            downloadBtn.addEventListener("click", function(e) {
-              e.preventDefault();
-              
-              var downloadUrl = "<%= download_product_path(@product) %>";
-              
-              if (resolutionSelect && resolutionSelect.value) {
-                downloadUrl += "?resolution=" + resolutionSelect.value;
-              }
-              
-              window.open(downloadUrl, '_blank');
-            });
-          });
-        </script>
+      <% else %>
+        <div class="bg-light border-bottom">
+          <div class="container-fluid px-4 py-3">
+            <div class="d-flex justify-content-end align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <%= button_to cart_add_to_cart_path(@cart, @product), 
+                      class: "btn btn-success fw-bold",
+                      style: "background: linear-gradient(90deg, #43e97b 0%, #023a30ff 100%); color: #fff; border: none;",
+                      form: { class: "d-inline-block" },
+                      data: { turbo: true } do %>
+                  <i class="fas fa-cart-plus"></i> Add to Cart
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
 
       <div class="card-body">
