@@ -1,6 +1,6 @@
 <% content_for :title, (@role == :admin ? "Admin Report" : "Seller Report") %>
 
-<% if @role == :admin %>
+<% if current_user.admin? %>
   <%= render "admin_dashboard",
              total_users: @total_users,
              total_products: @total_products,
@@ -10,7 +10,9 @@
              revenue: @revenue,
              recent_orders: @recent_orders,
              top_products: @top_products,
-             top_sellers: @top_sellers 
+             top_sellers: @top_sellers,
+              published_products: @published_products, 
+              paid_orders_count: @paid_orders_count  
              %>
 <% else %>
   <%= render "seller_dashboard",
@@ -19,5 +21,8 @@
              average_rating: @average_rating,
              total_orders: @total_orders,
              revenue: @revenue,
-             top_products: @top_products %>
+             top_products: @top_products,
+             published_products: @published_products,
+              paid_orders_count: @paid_orders_count
+             %>
 <% end %>
