@@ -3,6 +3,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[  profile edit update  ]
 
   def profile
+    @user = current_user
+    @orders = @user.orders.includes(order_items: :product).order(created_at: :desc)
+    @orders_count = @orders.count
+    @paid_orders = @user.orders.where(status: "paid")
+    @paid_orders_count = @paid_orders.count
+    @total_spent = @paid_orders.sum(:total_amount)
+    @purchased_products_count = @paid_orders.joins(:order_items).distinct.count("order_items.product_id")
   end
 
   # GET /users/new

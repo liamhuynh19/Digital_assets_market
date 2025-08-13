@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   has_one :cart, dependent: :destroy
   has_many :products
+  has_many :orders
 
   def admin?
     role == "admin"

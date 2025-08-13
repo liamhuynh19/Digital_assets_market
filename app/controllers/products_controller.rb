@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     .includes(:thumbnail_attachment, :category, :reviews)
     .where(status: "published")
     .ransack(params[:q])
+
     @products = @q.result
     .page(params[:page])
     .per(params[:per_page] || 6)
