@@ -1,12 +1,26 @@
 require "csv"
+require "set"
 class Admin::ProductsController < ApplicationController
   before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
     authorize [ :admin, Product ]
     @products = policy_scope([ :admin, Product ])
-    .includes(:category, :thumbnail_attachment)
-    .page(params[:page]).per(params[:per_page] || 10)
+                 .includes(:category, :thumbnail_attachment)
+                 .order(created_at: :desc)
+                 .page(params[:page]).per(params[:per_page] || 10)
+
+    cache_key = "bulk_import_products:result:user:#{current_user.id}"
+    res = Rails.cache.read(cache_key)
+    puts "Cache value: #{res.inspect}"
+    if res
+      if res[:aborted]
+        flash.now[:alert] = build_import_error_message(res)
+      else
+        flash.now[:notice] = "Bulk import completed: #{res[:imported]} products created."
+      end
+      Rails.cache.delete(cache_key)
+    end
   end
 
   def show
@@ -102,49 +116,11 @@ class Admin::ProductsController < ApplicationController
       return redirect_to admin_products_path
     end
 
-    results        = { imported: 0, failed: [] }
-    import_failed  = false
+    file_data = params[:csv].read
 
-    ActiveRecord::Base.transaction do
-      CSV.foreach(params[:csv].path, headers: true).with_index(2) do |row, line_no|
-        raw = row.to_hash
-        attrs = raw.slice("name", "description", "price", "category_id", "user_email").compact
+    ImportProductJob.perform_later(current_user.id, file_data)
 
-
-        if current_user.seller?
-          product_owner = current_user
-        else
-          email = attrs["user_email"].to_s.strip
-          product_owner = User.find_by(email: email)
-          if product_owner.nil?
-            results[:failed] << { line: line_no, row: raw, errors: [ "User with email '#{email}' not found" ] }
-            import_failed = true
-            next
-          end
-        end
-
-        build_attrs = attrs.except("user_email")
-        build_attrs["user_id"] = product_owner.id
-        product = Product.new(build_attrs)
-
-        unless product.save
-          results[:failed] << { line: line_no, row: raw, errors: product.errors.full_messages }
-          import_failed = true
-        else
-          results[:imported] += 1
-        end
-      end
-
-      raise ActiveRecord::Rollback if import_failed
-    end
-
-    if import_failed
-      flash[:alert] = "Import aborted. No products created. Errors: " +
-        results[:failed].map { |f| "Line #{f[:line]}: #{f[:errors].join(', ')}" }.join(" | ")
-    else
-      flash[:notice] = "#{results[:imported]} products imported successfully."
-    end
-
+    flash[:notice] = "Import job has been queued. You will be notified when it completes."
     redirect_to admin_products_path
   end
 
@@ -156,5 +132,18 @@ class Admin::ProductsController < ApplicationController
 
   def product_params
     params.expect(product: [ :name, :description, :price, :category_id, :status, :asset ])
+  end
+
+  def build_import_error_message(res)
+    base = "Bulk import failed. No products created."
+    details = res[:errors].first(5).map { |e|
+      line = e[:line] ? "Line #{e[:line]}: " : ""
+      "#{line}#{e[:errors].join(', ')}"
+    }.join(" | ")
+    if res[:errors].size > 5
+      "#{base} #{details} ... (+#{res[:errors].size - 5} more)"
+    else
+      "#{base} #{details}"
+    end
   end
 end

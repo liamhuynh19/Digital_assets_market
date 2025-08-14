@@ -26,7 +26,7 @@ Rails.application.configure do
   end
 
   # Change to :null_store to avoid any caching.
-  config.cache_store = :memory_store
+  config.cache_store = :redis_cache_store, { url: ENV.fetch("REDIS_URL", "redis://localhost:6379/1") }
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :minio
@@ -103,4 +103,6 @@ Rails.application.configure do
   # Disable SSL/TLS verification in development (only for development!)
   config.action_controller.default_url_options = { protocol: "http" }
   config.force_ssl = false
+
+  config.active_job.queue_adapter = :async  # or :inline for debugging
 end
