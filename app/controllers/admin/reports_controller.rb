@@ -30,11 +30,11 @@ class Admin::ReportsController < ApplicationController
     @top_products = Product
       .joins(order_items: :order)
       .where(orders: { status: "paid" })
-      .select("products.*, COUNT(order_items) AS units_sold")
+      .select("products.*, COUNT(order_items.id) AS units_sold")
       .group("products.id")
       .order("units_sold DESC")
       .includes(:category, :thumbnail_attachment)
-    # .limit(3)
+      .limit(3)
     @top_sellers = User.joins(products: [ order_items: :order ])
                       .where(orders: { status: "paid" })
                        .select("users.*, COUNT(order_items.id) AS items_sold")
@@ -61,6 +61,7 @@ class Admin::ReportsController < ApplicationController
                      .select("products.*, COUNT(order_items.id) AS items_sold")
                      .group("products.id")
                      .order("items_sold DESC")
+                     .limit(3)
     @revenue = @paid_items.sum("order_items.price_at_purchase")
   end
 end
