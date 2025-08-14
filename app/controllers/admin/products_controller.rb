@@ -97,45 +97,54 @@ class Admin::ProductsController < ApplicationController
   end
 
   def bulk_import
-    if params[:csv].present?
-      results = { imported: 0, failed: [] }
-      import_failed = false
+    unless params[:csv].present?
+      flash[:alert] = "Please upload a CSV file."
+      return redirect_to admin_products_path
+    end
 
-      ActiveRecord::Base.transaction do
-        CSV.foreach(params[:csv].path, headers: true) do |row|
-          attrs = row.to_hash.slice("name", "description", "price", "category_id", "user_email")
+    results        = { imported: 0, failed: [] }
+    import_failed  = false
 
-          user = User.find(email: attrs["user_email"])
-          if user.nil?
-            puts "User not found for email"
-            results[:failed] << { row: row.to_hash, errors: [ "User not found for email #{attrs['user_email']}" ] }
+    ActiveRecord::Base.transaction do
+      CSV.foreach(params[:csv].path, headers: true).with_index(2) do |row, line_no|
+        raw = row.to_hash
+        attrs = raw.slice("name", "description", "price", "category_id", "user_email").compact
+
+
+        if current_user.seller?
+          product_owner = current_user
+        else
+          email = attrs["user_email"].to_s.strip
+          product_owner = User.find_by(email: email)
+          if product_owner.nil?
+            results[:failed] << { line: line_no, row: raw, errors: [ "User with email '#{email}' not found" ] }
             import_failed = true
             next
-          else
-            attrs["user_id"] = user.id
-          end
-
-
-          product = current_user.seller? ? current_user.products.build(attrs) : Product.new(attrs)
-          unless product.save
-            results[:failed] << { row: row.to_hash, errors: product.errors.full_messages }
-            import_failed = true
-          else
-            results[:imported] += 1
           end
         end
-        raise ActiveRecord::Rollback if import_failed
+
+        build_attrs = attrs.except("user_email")
+        build_attrs["user_id"] = product_owner.id
+        product = Product.new(build_attrs)
+
+        unless product.save
+          results[:failed] << { line: line_no, row: raw, errors: product.errors.full_messages }
+          import_failed = true
+        else
+          results[:imported] += 1
+        end
       end
 
-      if results[:failed].any?
-        flash[:alert] = "Import failed. No products were imported because at least one row had errors: #{results[:failed].map { |f| f[:errors].join(', ') }.join('; ')}"
-        results[:imported] = 0
-      elsif results[:imported] > 0
-        flash[:notice] = "#{results[:imported]} products imported successfully."
-      end
-    else
-      flash[:alert] = "Please upload a CSV file."
+      raise ActiveRecord::Rollback if import_failed
     end
+
+    if import_failed
+      flash[:alert] = "Import aborted. No products created. Errors: " +
+        results[:failed].map { |f| "Line #{f[:line]}: #{f[:errors].join(', ')}" }.join(" | ")
+    else
+      flash[:notice] = "#{results[:imported]} products imported successfully."
+    end
+
     redirect_to admin_products_path
   end
 
