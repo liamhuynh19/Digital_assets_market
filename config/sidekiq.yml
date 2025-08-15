@@ -1,4 +1,10 @@
 :verbose: false
+:concurrency: 10
+:queues:
+  - imports
+  - media
+  - default
 :pidfile: ./tmp/pids/sidekiq.pid
 :logfile: ./log/sidekiq.log
-:concurrency: 10
+:production:
+  :concurrency: 20

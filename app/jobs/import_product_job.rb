@@ -2,10 +2,9 @@ require "csv"
 require "set"
 
 class ImportProductJob < ApplicationJob
-  queue_as :default
+  queue_as :imports
 
   def perform(user_id, file_data)
-    sleep 5
     actor = User.find_by(id: user_id)
     return unless actor
 

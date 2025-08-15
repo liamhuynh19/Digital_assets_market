@@ -1,7 +1,7 @@
 require "streamio-ffmpeg"
 
 class ImageThumbnailJob < ApplicationJob
-  queue_as :default
+  queue_as :media
 
   def perform(product_id)
     product = Product.find(product_id)
