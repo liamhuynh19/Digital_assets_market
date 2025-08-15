@@ -12,7 +12,7 @@ class Admin::ProductsController < ApplicationController
 
     cache_key = "bulk_import_products:result:user:#{current_user.id}"
     res = Rails.cache.read(cache_key)
-    puts "Cache value: #{res.inspect}"
+
     if res
       if res[:aborted]
         flash.now[:alert] = build_import_error_message(res)
