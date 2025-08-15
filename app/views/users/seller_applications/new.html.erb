@@ -1,0 +1,31 @@
+<div class="container py-4">
+  <h1>Apply to Become a Seller</h1>
+  
+  <div class="alert alert-info">
+    <p>As a seller, you'll be able to list your digital products for sale on our platform. Applications are reviewed by our admin team.</p>
+  </div>
+  
+  <%= form_with(model: @seller_application, url: users_seller_application_path, local: true) do |form| %>
+    <% if @seller_application.errors.any? %>
+      <div class="alert alert-danger">
+        <h4>Please correct the following errors:</h4>
+        <ul>
+          <% @seller_application.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="mb-3">
+      <%= form.label :reason, "Why do you want to become a seller?", class: "form-label" %>
+      <%= form.text_area :reason, rows: 6, class: "form-control", placeholder: "Please describe what kind of digital assets you plan to sell and your experience in this area...", required: true %>
+      <div class="form-text">Be specific about the types of digital assets you plan to sell and your experience in creating them.</div>
+    </div>
+    
+    <div class="mt-4 d-flex gap-2">
+      <%= form.submit "Submit Application", class: "btn btn-primary" %>
+      <%= link_to "Cancel", user_profile_path, class: "btn btn-outline-secondary" %>
+    </div>
+  <% end %>
+</div>

@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   get "profile", to: "users#profile", as: :user_profile
   patch "profile", to: "users#update_profile", as: :update_user_profile
 
+  namespace :users do
+    resource :seller_application, only: [ :show, :new, :create ]
+  end
+
   get "cart", to: "carts#show", as: :cart
 
   resources :carts, only: [] do
@@ -68,6 +72,12 @@ Rails.application.routes.draw do
     end
     resources :users
     resources :categories
+    resources :seller_applications do
+      member do
+        patch :approve
+        patch :reject
+      end
+    end
     resources :orders do
       member do
         resources :order_items, only: [ :create, :update, :destroy ]

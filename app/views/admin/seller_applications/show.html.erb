@@ -1,0 +1,87 @@
+<% content_for :title, "Seller Application Details" %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1>Seller Application Details</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><%= link_to "Seller Applications", admin_seller_applications_path %></li>
+        <li class="breadcrumb-item active" aria-current="page">Application #<%= @application.id %></li>
+      </ol>
+    </nav>
+  </div>
+  <div>
+    <%= link_to admin_seller_applications_path, class: "btn btn-outline-secondary" do %>
+      <i class="fas fa-arrow-left"></i> Back to List
+    <% end %>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header">
+    Application Status: <strong><%= @application.status.upcase %></strong>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">User Information</h5>
+    <p><strong>Name:</strong> <%= @application.user.try(:name) || "N/A" %></p>
+    <p><strong>Email:</strong> <%= @application.user.email %></p>
+    <p><strong>Submitted on:</strong> <%= @application.created_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+    
+    <h5 class="card-title mt-4">Application Reason</h5>
+    <div class="p-3 bg-light">
+      <%= simple_format(@application.reason) %>
+    </div>
+    
+    <% if @application.reviewed_at.present? %>
+      <h5 class="card-title mt-4">Review Information</h5>
+      <p><strong>Reviewed by:</strong> <%= @application.reviewed_by&.email || "Unknown" %></p>
+      <p><strong>Reviewed on:</strong> <%= @application.reviewed_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+      
+      <% if @application.status == "rejected" && @application.rejection_reason.present? %>
+        <h5 class="card-title mt-4">Rejection Reason</h5>
+        <div class="p-3 bg-light">
+          <%= simple_format(@application.rejection_reason) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <% if @application.status == "pending" %>
+    <div class="card-footer">
+      <%= link_to "Approve", approve_admin_seller_application_path(@application), method: :patch, class: "btn btn-success", data: { confirm: "Are you sure you want to approve this application? This will convert the user to a seller." } %>
+      
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#rejectModal">
+        Reject
+      </button>
+    </div>
+  <% end %>
+</div>
+
+
+
+<% if @application.status == "pending" %>
+<!-- Reject Modal -->
+<div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_with(model: @application, url: reject_admin_seller_application_path(@application), method: :patch, local: true) do |form| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="rejectModalLabel">Reject Seller Application</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <%= form.label :rejection_reason, "Reason for Rejection", class: "form-label" %>
+            <%= form.text_area :rejection_reason, class: "form-control", rows: 5, required: true %>
+            <div class="form-text">Please provide a reason for rejecting this application. This will be visible to the applicant.</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <%= form.submit "Confirm Rejection", class: "btn btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>

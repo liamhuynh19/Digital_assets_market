@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_11_092638) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_15_043645) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -144,6 +144,20 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_092638) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "seller_applications", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "status", default: "pending", null: false
+    t.text "reason"
+    t.text "rejection_reason"
+    t.datetime "reviewed_at"
+    t.bigint "reviewed_by_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reviewed_by_id"], name: "index_seller_applications_on_reviewed_by_id"
+    t.index ["user_id", "status"], name: "index_seller_applications_on_user_id_and_status"
+    t.index ["user_id"], name: "index_seller_applications_on_user_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -179,4 +193,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_11_092638) do
   add_foreign_key "products", "users"
   add_foreign_key "reviews", "products"
   add_foreign_key "reviews", "users"
+  add_foreign_key "seller_applications", "users"
+  add_foreign_key "seller_applications", "users", column: "reviewed_by_id"
 end

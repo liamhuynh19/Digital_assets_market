@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_one :cart, dependent: :destroy
   has_many :products
   has_many :orders
+  has_many :seller_applications, dependent: :destroy
 
   def admin?
     role == "admin"
@@ -21,6 +22,14 @@ class User < ApplicationRecord
 
   def seller?
     role == "seller"
+  end
+
+  def buyer?
+    role == "buyer"
+  end
+
+  def can_apply_for_seller?
+    buyer? && !seller_applications.pending.exists?
   end
 
   private
