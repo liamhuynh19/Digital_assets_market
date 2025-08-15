@@ -1,6 +1,11 @@
 class SellerApplicationsController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+    @seller_application = current_user.seller_applications.order(created_at: :desc).first
+    redirect_to new_seller_application_path, alert: "You don't have any seller applications yet." unless @seller_application
+  end
+
   def new
     return redirect_to root_path, alert: "You are already a seller or have a pending application." unless current_user.can_apply_for_seller?
     @seller_application = current_user.seller_applications.build

@@ -32,6 +32,10 @@ class User < ApplicationRecord
     buyer? && !seller_applications.pending.exists?
   end
 
+  def latest_seller_application
+    seller_applications.order(created_at: :desc).first
+  end
+
   private
   def set_default_role
     self.role ||= "buyer"

@@ -18,17 +18,17 @@
               </div>
               
               <div>
-                <%= link_to "View Application Details", users_seller_application_path, 
+                <%= link_to "View Application Details", seller_application_path, 
                     class: "btn btn-sm #{application.status == 'rejected' ? 'btn-outline-danger' : 'btn-outline-primary'}" %>
                 
                 <% if application.status == 'rejected' && current_user.can_apply_for_seller? %>
-                  <%= link_to "Apply Again", new_users_seller_application_path, class: "btn btn-sm btn-primary ms-2" %>
+                  <%= link_to "Apply Again", new_seller_application_path, class: "btn btn-sm btn-primary ms-2" %>
                 <% end %>
               </div>
             </div>
           <% else %>
             <div class="mt-2">
-              <%= link_to "Apply to Become a Seller", new_users_seller_application_path, class: "btn btn-sm btn-primary" %>
+              <%= link_to "Apply to Become a Seller", new_seller_application_path, class: "btn btn-sm btn-primary" %>
             </div>
           <% end %>
         </div>

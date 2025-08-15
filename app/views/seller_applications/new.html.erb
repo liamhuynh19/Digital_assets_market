@@ -2,7 +2,7 @@
 
 <p>As a seller, you'll be able to selling your digital products on our platform.</p>
 
-<%= form_with(model: @seller_application, local: true) do |form| %>
+<%= form_with(model: @seller_application, url: seller_application_path,local: true) do |form| %>
   <% if @seller_application.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@seller_application.errors.count, "error") %> prohibited this application from being saved:</h2>

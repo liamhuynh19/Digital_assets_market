@@ -29,7 +29,7 @@
           
           <div class="mt-4">
             <% if current_user.can_apply_for_seller? %>
-              <%= link_to "Apply Again", new_users_seller_application_path, class: "btn btn-primary" %>
+              <%= link_to "Apply Again", new_seller_application_path, class: "btn btn-primary" %>
             <% end %>
           </div>
         <% end %>

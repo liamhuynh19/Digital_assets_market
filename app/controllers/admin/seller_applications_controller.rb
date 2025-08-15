@@ -4,7 +4,7 @@ class Admin::SellerApplicationsController < ApplicationController
   before_action :set_application, only: [ :show, :approve, :reject ]
 
   def index
-    @applications = SellerApplication.includes(:user, :reviewed_by).order(created_at: :desc)
+    @applications = SellerApplication.includes(:user).order(created_at: :desc)
     @applications = @applications.where(status: params[:status]) if params[:status].present?
   end
 

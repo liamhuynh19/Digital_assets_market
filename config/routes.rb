@@ -22,10 +22,7 @@ Rails.application.routes.draw do
 
   get "profile", to: "users#profile", as: :user_profile
   patch "profile", to: "users#update_profile", as: :update_user_profile
-
-  namespace :users do
-    resource :seller_application, only: [ :show, :new, :create ]
-  end
+  resource :seller_application, only: [ :show, :new, :create ]
 
   get "cart", to: "carts#show", as: :cart
 
@@ -87,10 +84,6 @@ Rails.application.routes.draw do
       resources :reviews, only: [ :index ], controller: "reviews"
     end
     resources :reviews, only: [ :index, :show, :edit, :update, :destroy ]
-  end
-
-  namespace :seller do
-    get "report", to: "/admin/reports#show"
   end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
