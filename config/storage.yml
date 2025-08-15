@@ -34,11 +34,11 @@ local:
 #   mirrors: [ amazon, google, microsoft ]
 minio:
   service: S3
-  access_key_id: minio_admin
-  secret_access_key: minio_password
-  endpoint: http://localhost:9000
-  bucket: rails-uploads
-  region: us-east-1
+  access_key_id: <%= ENV['MINIO_ACCESS_KEY'] || 'minio_admin' %>
+  secret_access_key: <%= ENV['MINIO_SECRET_KEY'] || 'minio_password' %>
+  endpoint: <%= ENV['MINIO_ENDPOINT'] || 'http://localhost:9000' %>
+  bucket: <%= ENV['MINIO_BUCKET'] || 'rails-uploads' %>
+  region: <%= ENV['MINIO_REGION'] || 'us-east-1' %>
   force_path_style: true
 
 amazon:
