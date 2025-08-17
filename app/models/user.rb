@@ -36,6 +36,12 @@ class User < ApplicationRecord
     seller_applications.order(created_at: :desc).first
   end
 
+  def purchased_products
+    Product.joins(order_items: :order)
+            .where(orders: { user_id: id, status: "paid" })
+            .distinct
+  end
+
   private
   def set_default_role
     self.role ||= "buyer"

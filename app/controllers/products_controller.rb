@@ -12,6 +12,16 @@ class ProductsController < ApplicationController
     .per(params[:per_page] || 6)
   end
 
+  def purchased
+    @q = current_user.purchased_products
+    .includes(:thumbnail_attachment, :category)
+    .ransack(params[:q])
+
+    @products = @q.result
+    .page(params[:page])
+    .per(params[:per_page] || 10)
+  end
+
   # GET /products/1 or /products/1.json
   def show
     @product = Product.find(params[:id])

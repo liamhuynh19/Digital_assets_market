@@ -1,0 +1,64 @@
+<div class="container py-5">
+  <div class="mb-4 d-flex justify-content-end">
+    <%= link_to user_profile_path, class: "btn btn-outline-primary" do %>
+      <i class="fas fa-arrow-left me-2"></i>Back to Profile
+    <% end %>
+  </div>
+
+  <div class="card shadow-lg border-0">
+    <div class="card-header text-white" style="background-color: #487ecf;">
+      <h2 class="mb-0" style="color: #fff; background: transparent;">My Purchased Products</h2>
+    </div>
+
+    <div class="card-body">
+      <% if @products.any? %>
+        <ul class="list-group mb-4">
+          <% @products.each do |product| %>
+            <li class="list-group-item d-flex align-items-center border-0 border-bottom">
+              <% if product.thumbnail.attached? %>
+                <div class="me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 8px; overflow: hidden;">
+                  <%= link_to product_path(product) do %>
+                    <%= image_tag product.thumbnail, style: "max-width: 100%; max-height: 100%; object-fit: contain;" %>
+                  <% end %>
+                </div>
+              <% end %>
+              
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="fw-semibold">
+                      <%= link_to product.name, product_path(product), class: "text-decoration-none text-reset" %>
+                    </div>
+                    <div class="text-muted small"><%= truncate(product.description, length: 60) %></div>
+                    <div class="text-muted small mt-1">
+                      <i class="fas fa-tag me-1"></i><%= product.category&.name %>
+                    </div>
+                  </div>
+                  <div class="text-end ms-3">
+                    <div class="fw-bold"><%= number_to_currency(product.price) %></div>
+                    <%= link_to download_product_path(product), class: "btn btn-sm btn-primary mt-2" do %>
+                      <i class="fas fa-download me-1"></i> Download
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+
+        <div class="d-flex justify-content-center">
+          <%= paginate @products %>
+        </div>
+      <% else %>
+        <div class="text-center py-5">
+          <div class="mb-3">
+            <i class="fas fa-shopping-bag fa-3x text-muted"></i>
+          </div>
+          <h4>No purchased products yet</h4>
+          <p class="text-muted">Start exploring our marketplace!</p>
+          <%= link_to "Browse Products", root_path, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
