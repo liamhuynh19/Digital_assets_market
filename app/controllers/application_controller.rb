@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   layout :set_layout
-  before_action :set_cart, if: -> { current_user&.role == "buyer" }
+  before_action :set_cart
   before_action :set_search
 
   private
@@ -48,6 +48,8 @@ class ApplicationController < ActionController::Base
   def set_cart
     return unless current_user
     @cart = current_user.cart || current_user.create_cart
+    puts "Cart for user #{current_user.id} is set with ID: "
+    puts @cart.id if @cart
     @cart_items = @cart.cart_items.includes(product: [ :thumbnail_attachment  ]) if @cart
   end
 
