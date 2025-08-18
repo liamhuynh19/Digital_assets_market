@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get "profile", to: "users#profile", as: :user_profile
   patch "profile", to: "users#update_profile", as: :update_user_profile
   get "purchased_products", to: "products#purchased", as: :purchased_products
-  resource :seller_application, only: [ :show, :new, :create ]
+  resource :seller_application, only: [ :show, :new, :create, :edit, :update ]
 
   get "cart", to: "carts#show", as: :cart
 

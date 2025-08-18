@@ -21,6 +21,42 @@ class SellerApplicationsController < ApplicationController
     end
   end
 
+  def edit
+    @seller_application = current_user.seller_applications.order(created_at: :desc).first
+
+    if @seller_application.nil?
+      redirect_to new_seller_application_path, alert: "You don't have any seller applications yet."
+      return
+    end
+
+    unless @seller_application.pending?
+      redirect_to seller_application_path,
+                  alert: "You can only edit pending applications."
+    end
+  end
+
+  def update
+    @seller_application = current_user.seller_applications.order(created_at: :desc).first
+
+    if @seller_application.nil?
+      redirect_to new_seller_application_path, alert: "You don't have any seller applications yet."
+      return
+    end
+
+    unless @seller_application.pending?
+      redirect_to seller_application_path,
+                  alert: "You can only edit pending applications."
+      return
+    end
+
+    if @seller_application.update(seller_application_params)
+      redirect_to seller_application_path,
+                  notice: "Your application has been updated successfully."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def seller_application_params

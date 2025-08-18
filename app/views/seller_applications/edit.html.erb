@@ -1,0 +1,36 @@
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Edit Seller Application</h1>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h5 class="mb-0">Update Your Application</h5>
+    </div>
+    <div class="card-body">
+      <%= form_with(model: @seller_application, url: seller_application_path, method: :patch, local: true) do |form| %>
+        <% if @seller_application.errors.any? %>
+          <div class="alert alert-danger">
+            <h2><%= pluralize(@seller_application.errors.count, "error") %> prohibited this application from being saved:</h2>
+            <ul>
+              <% @seller_application.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="mb-3">
+          <%= form.label :reason, "Why do you want to become a seller?", class: "form-label" %>
+          <%= form.text_area :reason, class: "form-control", rows: 5, placeholder: "Explain your reasons for becoming a seller, what products you plan to sell, etc." %>
+          <div class="form-text">Be as detailed as possible to increase your chances of approval.</div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <%= form.submit "Update Application", class: "btn btn-primary" %>
+          <%= link_to "Cancel", seller_application_path, class: "btn btn-outline-secondary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
