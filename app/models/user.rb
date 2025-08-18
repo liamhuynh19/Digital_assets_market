@@ -39,6 +39,10 @@ class User < ApplicationRecord
   def purchased_products
     Product.joins(order_items: :order)
             .where(orders: { user_id: id, status: "paid" })
+            .select("products.*, |
+            orders.id as order_id,
+            orders.created_at as purchase_date,
+            order_items.price_at_purchase as price_at_purchase")
             .distinct
   end
 
