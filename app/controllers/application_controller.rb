@@ -48,9 +48,7 @@ class ApplicationController < ActionController::Base
   def set_cart
     return unless current_user
     @cart = current_user.cart || current_user.create_cart
-    puts "Cart for user #{current_user.id} is set with ID: "
-    puts @cart.id if @cart
-    @cart_items = @cart.cart_items.includes(product: [ :thumbnail_attachment  ]) if @cart
+    @cart_items = @cart.cart_items.includes(pro duct: [ :thumbnail_attachment  ]) if @cart
   end
 
   def set_search

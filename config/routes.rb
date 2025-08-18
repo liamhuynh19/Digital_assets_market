@@ -2,9 +2,9 @@ require "sidekiq/web"
 
 
 Rails.application.routes.draw do
-  authenticate :user, lambda { |u| u.admin? } do
-    mount Sidekiq::Web => "/admin/sidekiq"
-  end
+  # authenticate :user, lambda { |u| u.admin? } do
+  mount Sidekiq::Web => "/admin/sidekiq"
+  # end
 
   devise_for :users
   resources :products do
