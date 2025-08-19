@@ -15,7 +15,8 @@ class Api::V1::ProductsController < Api::V1::BaseController
       .where(status: "published")
       .yield_self { |scope|
         if params[:query].present?
-          scope.where("name ILIKE ?", "%#{params[:query]}%")
+          query = ActiveRecord::Base.sanitize_sql_like(params[:query])
+          scope.where("name ILIKE ?", "%#{query}%")
         else
           scope
         end

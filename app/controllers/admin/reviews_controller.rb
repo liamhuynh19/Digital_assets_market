@@ -13,7 +13,8 @@ class Admin::ReviewsController < ApplicationController
     scope = scope.where(product_id: @product.id) if @product
     scope = scope.where(product_id: params[:product_id]) if params[:product_id].present?
     scope = scope.where(rating: params[:rating]) if params[:rating].present?
-    scope = scope.joins(:user).where("users.email ILIKE ?", "%#{params[:q]}%") if params[:q].present?
+    q = ActiveRecord::Base.sanitize_sql_like(params[:q]) if params[:q].present?
+    scope = scope.joins(:user).where("users.email ILIKE ?", "%#{q}%")
 
     @reviews = scope.page(params[:page]).per(params[:per_page] || 10)
   end
