@@ -1,3 +1,4 @@
+require "attr_encrypted"
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -15,6 +16,18 @@ class User < ApplicationRecord
   has_many :products
   has_many :orders
   has_many :seller_applications, dependent: :destroy
+
+  # Add encryption key to credentials
+  attr_encrypted :phone_number,
+                key: Rails.application.credentials.phone_number_encryption_key || ENV["PHONE_NUMBER_ENCRYPTION_KEY"],
+                encode: true,
+                encode_iv: true,
+                algorithm: "aes-256-gcm"
+
+  # Add phone number validation
+  validates :phone_number,
+            format: { with: /\A\+?[\d\s-]{10,}\z/, message: "must be a valid phone number" },
+            allow_blank: true
 
   def admin?
     role == "admin"

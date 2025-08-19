@@ -41,6 +41,20 @@
                 <% end %>
               </div>
 
+              <!-- Add this new phone number field -->
+              <div class="form-floating mb-3">
+                <%= f.telephone_field :phone_number,
+                    class: "form-control #{resource.errors[:phone_number].any? ? 'is-invalid' : ''}", 
+                    placeholder: "+1 (555) 555-5555",
+                    pattern: "\+?[\d\s-]{10,}",
+                    title: "Please enter a valid phone number" %>
+                <%= f.label :phone_number, "Phone Number (optional)" %>
+                <% if resource.errors[:phone_number].any? %>
+                  <div class="invalid-feedback"><%= resource.errors[:phone_number].join(", ") %></div>
+                <% end %>
+                <div class="form-text">Format: +1 (555) 555-5555</div>
+              </div>
+
               <div class="form-floating mb-3">
                 <%= f.password_field :password, autocomplete: "new-password", 
                     class: "form-control #{resource.errors[:password].any? ? 'is-invalid' : ''}", 

@@ -34,6 +34,7 @@ gem "devise-jwt"
 gem "jwt"
 gem "ransack"
 gem "dotenv-rails", groups: [ :development, :test ]
+gem "attr_encrypted", "~> 4.0"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

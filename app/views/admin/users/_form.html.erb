@@ -1,8 +1,7 @@
 <%= form_with(model: [:admin, user], local: true, html: { class: "card p-4 shadow-sm", style: "max-width: 600px; margin: auto;" }) do |form| %>
   <% if user.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
         <% user.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,13 +11,26 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :name, style: "display: block", class: "form-label" %>
+    <%= form.label :name, class: "form-label" %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :email, style: "display: block" , class: "form-label"%>
+    <%= form.label :email, class: "form-label" %>
     <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :phone_number, "Phone Number (optional)", class: "form-label" %>
+    <%= form.telephone_field :phone_number, 
+        class: "form-control #{user.errors[:phone_number].any? ? 'is-invalid' : ''}", 
+        placeholder: "+1 (555) 555-5555",
+        pattern: "\+?[\d\s-]{10,}",
+        title: "Please enter a valid phone number" %>
+    <div class="form-text">Format: +1 (555) 555-5555</div>
+    <% if user.errors[:phone_number].any? %>
+      <div class="invalid-feedback"><%= user.errors[:phone_number].join(", ") %></div>
+    <% end %>
   </div>
 
   <div class="mb-3">
@@ -30,11 +42,12 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :password, style: "display: block", class: "form-label" %>
+    <%= form.label :password, class: "form-label" %>
     <%= form.password_field :password, class: "form-control" %>
+    <div class="form-text">Leave blank if you don't want to change the password</div>
   </div>
 
   <div class="d-grid">
-    <%= form.submit class: "btn btn-primary"%>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

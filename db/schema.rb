@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_15_043645) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_19_171713) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -175,7 +175,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_15_043645) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "encrypted_phone_number"
+    t.string "encrypted_phone_number_iv"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["encrypted_phone_number_iv"], name: "index_users_on_encrypted_phone_number_iv", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

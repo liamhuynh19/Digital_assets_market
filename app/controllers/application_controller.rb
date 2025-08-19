@@ -58,4 +58,8 @@ class ApplicationController < ActionController::Base
   # def rack_mini_profiler_authorize_request?
   #   Rack::MiniProfiler.authorize_request
   # end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation, :phone_number])
+  end
 end
