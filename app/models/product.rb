@@ -21,7 +21,7 @@ class Product < ApplicationRecord
   #   asset.attached? && asset.content_type.start_with?("image/")
   # end
   STATUSES = %w[draft processing uploaded published].freeze
-
+  validate :asset_type_and_size
   validates :status, inclusion: { in: STATUSES }
   after_initialize :set_default_status
 
@@ -51,6 +51,23 @@ class Product < ApplicationRecord
     return 0.0 if reviews.empty?
     (reviews.average(:rating) || 0).to_f.round(1)
   end
+
+  ALLOWED_TYPES = %w[
+    image/png image/jpeg image/gif
+    video/mp4
+  ].freeze
+  MAX_UPLOAD_BYTES = 100.megabytes
+
+  def asset_type_and_size
+    nil unless asset.attached?
+    unless ALLOWED_TYPES.include?(asset.content_type)
+      errors.add(:asset, "type not allowed")
+    end
+    if asset.byte_size > MAX_UPLOAD_BYTES
+      errors.add(:asset, "is too large (max 100MB)")
+    end
+  end
+
 
   # Define which attributes can be searched/filtered with Ransack
   def self.ransackable_attributes(auth_object = nil)

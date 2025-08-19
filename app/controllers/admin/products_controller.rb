@@ -1,6 +1,7 @@
 require "csv"
 require "set"
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
@@ -57,7 +58,7 @@ class Admin::ProductsController < ApplicationController
       end
       redirect_to admin_product_path(@product), notice: "Product was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -89,7 +90,7 @@ class Admin::ProductsController < ApplicationController
       end
       redirect_to admin_product_path(@product), notice: "Product was successfully updated."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -131,7 +132,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def product_params
-    params.expect(product: [ :name, :description, :price, :category_id, :status, :asset ])
+    params.expect(product: [ :name, :description, :price, :category_id, :asset ])
   end
 
   def build_import_error_message(res)
