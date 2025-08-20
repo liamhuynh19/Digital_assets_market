@@ -11,8 +11,8 @@
              recent_orders: @recent_orders,
              top_products: @top_products,
              top_sellers: @top_sellers,
-              published_products: @published_products, 
-              paid_orders_count: @paid_orders_count  
+             published_products: @published_products, 
+             paid_orders_count: @paid_orders_count  
              %>
 <% else %>
   <%= render "seller_dashboard",
@@ -23,6 +23,6 @@
              revenue: @revenue,
              top_products: @top_products,
              published_products: @published_products,
-              paid_orders_count: @paid_orders_count
+             paid_orders_count: @paid_orders_count
              %>
 <% end %>
