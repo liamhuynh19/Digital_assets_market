@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product
-  before_action :set_review, only: [:edit, :update, :destroy]
-  before_action :authorize_owner!, only: [:edit, :update, :destroy]
+  before_action :set_review, only: [ :edit, :update, :destroy ]
+  before_action :authorize_owner!, only: [ :edit, :update, :destroy ]
 
   # GET /reviews or /reviews.json
   def index
@@ -29,6 +29,7 @@ class ReviewsController < ApplicationController
     @review.assign_attributes(review_params)
 
     if @review.save
+      update_product_average_rating
       redirect_to @product, notice: "Review saved."
     else
       redirect_to @product, alert: @review.errors.full_messages.to_sentence
@@ -38,6 +39,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     if @review.update(review_params)
+      update_product_average_rating
       redirect_to @product, notice: "Review updated."
     else
       render :edit, status: :unprocessable_entity
@@ -47,6 +49,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1 or /reviews/1.json
   def destroy
     @review.destroy
+    update_product_average_rating
     redirect_to @product, notice: "Review deleted."
   end
 
@@ -68,5 +71,16 @@ class ReviewsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def review_params
     params.require(:review).permit(:rating, :comment)
+  end
+
+  # Update product's average rating
+  def update_product_average_rating
+    ratings = @product.reviews.pluck(:rating).compact
+    if ratings.any?
+      average = ratings.sum.to_f / ratings.size
+      @product.update(average_rating: average.round(1))
+    else
+      @product.update(average_rating: nil)
+    end
   end
 end

@@ -71,7 +71,7 @@ class Product < ApplicationRecord
 
   # Define which attributes can be searched/filtered with Ransack
   def self.ransackable_attributes(auth_object = nil)
-    %w[name description price status category_id created_at]
+    %w[name description price status category_id created_at average_rating]
   end
 
   # Define which associations can be searched/filtered with Ransack
@@ -86,5 +86,9 @@ class Product < ApplicationRecord
 
   ransacker :price_range do |parent|
     Arel.sql("CAST(price AS DECIMAL)")
+  end
+
+  ransacker :average_rating do
+    Arel.sql("COALESCE(average_rating, 0)")
   end
 end
