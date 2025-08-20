@@ -48,8 +48,14 @@
   
   <% if @application.status == "pending" %>
     <div class="card-footer">
-      <%= link_to "Approve", approve_admin_seller_application_path(@application), method: :patch, class: "btn btn-success", data: { confirm: "Are you sure you want to approve this application? This will convert the user to a seller." } %>
-      
+      <%= link_to approve_admin_seller_application_path(@application), 
+                                  data: { 
+                                    turbo_method: :patch, 
+                                    turbo_confirm: "Are you sure you want to approve this seller application?" 
+                                  }, 
+                                  class: "btn btn-sm btn-success" do %>
+                        <i class="fas fa-check"></i> Approve
+                      <% end %>
       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#rejectModal">
         Reject
       </button>
