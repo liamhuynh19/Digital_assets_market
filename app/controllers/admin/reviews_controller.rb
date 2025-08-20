@@ -1,7 +1,7 @@
 class Admin::ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: [ :index ]
-  before_action :set_review, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_review, only: [ :show, :destroy ]
 
   def index
     authorize [ :admin, Review ]
@@ -23,18 +23,18 @@ class Admin::ReviewsController < ApplicationController
     authorize [ :admin, @review ]
   end
 
-  def edit
-    authorize [ :admin, @review ]
-  end
+  # def edit
+  #   authorize [ :admin, @review ]
+  # end
 
-  def update
-    authorize [ :admin, @review ]
-    if @review.update(review_params)
-      redirect_to admin_reviews_path(product_id: @review.product_id), notice: "Review updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   authorize [ :admin, @review ]
+  #   if @review.update(review_params)
+  #     redirect_to admin_reviews_path(product_id: @review.product_id), notice: "Review updated."
+  #   else
+  #     render :edit, status: :unprocessable_entity
+  #   end
+  # end
 
   def destroy
     authorize [ :admin, @review ]

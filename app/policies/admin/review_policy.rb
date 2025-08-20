@@ -19,10 +19,6 @@ class Admin::ReviewPolicy < ApplicationPolicy
     user.admin? || (user.seller? && record.product.user_id == user.id)
   end
 
-  def edit?
-    user.admin?
-  end
-
   def update?
     user.admin?
   end
