@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   # Add phone number validation
   validates :phone_number,
-            format: { with: /\A\+?[\d\s-]{10,}\z/, message: "must be a valid phone number" },
+            format: { with: /\A\+?[\d\s-]{10,}\z/, message: "must be valid" },
             allow_blank: true
 
   def admin?

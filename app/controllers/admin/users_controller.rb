@@ -19,7 +19,7 @@ class Admin::UsersController < ApplicationController
     else
       Rails.logger.debug "User save failed with errors: #{@user.errors.full_messages}"
 
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,10 +27,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+    end
+
     if @user.update(user_params)
       redirect_to admin_user_path(@user), notice: "User was successfully updated."
     else
-      render :edit
+      render :edit,  status: :unprocessable_entity
     end
   end
 
