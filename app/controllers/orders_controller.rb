@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
     if @order.update(order_params)
       redirect_to @order, notice: "Order was successfully updated."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

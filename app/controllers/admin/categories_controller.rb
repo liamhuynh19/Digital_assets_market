@@ -18,7 +18,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.save
       redirect_to admin_category_path(@category), notice: "Category was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to admin_category_path(@category), notice: "Category was successfully updated."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
