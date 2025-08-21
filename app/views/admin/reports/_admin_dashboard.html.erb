@@ -9,25 +9,41 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
       <div class="card h-100">
         <div class="card-body">
           <div class="text-muted">Products</div>
           <div class="d-flex align-items-baseline justify-content-between">
             <div class="fs-4 fw-bold"><%= total_products %></div>
-              <span class="badge bg-light text-secondary">Published: <%= published_products %></span>
+              <span class="badge bg-light text-success">Published: <%= published_products %></span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
       <div class="card h-100">
         <div class="card-body">
           <div class="text-muted">Orders</div>
           <div class="d-flex align-items-baseline justify-content-between">
             <div class="fs-4 fw-bold"><%= total_orders %></div>
-              <span class="badge bg-light text-secondary">Paid: <%= paid_orders_count %></span>
+              <span class="badge bg-light text-success">Paid: <%= paid_orders_count %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-2">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="text-muted">Seller Applications</div>
+          <div class="d-flex flex-column">
+            <div class="fs-4 fw-bold"><%= total_seller_applications %></div>
+            <div class="d-flex gap-1 mt-1 flex-wrap">
+              <span class="badge bg-light text-warning">Pending: <%= pending_seller_applications %></span>
+              <span class="badge bg-light text-success">Approved: <%= approved_seller_applications %></span>
+              <span class="badge bg-light text-danger">Rejected: <%= rejected_seller_applications %></span>
+            </div>
           </div>
         </div>
       </div>

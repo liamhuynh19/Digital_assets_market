@@ -1,5 +1,34 @@
 <% content_for :title, (@role == :admin ? "Admin Report" : "Seller Report") %>
-
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h5 class="mb-0">Report for <%= period_name(@period) %></h5>
+    <div>
+      <%= form_with url: admin_report_path, method: :get, class: "d-inline-block" do |f| %>
+        <%= f.select :period, 
+          options_for_select([
+            ['All Time', 'all_time'],
+            ['Today', 'today'],
+            ['Yesterday', 'yesterday'],
+            ['This Week', 'this_week'],
+            ['Last Week', 'last_week'],
+            ['This Month', 'this_month'],
+            ['Last Month', 'last_month'],
+            ['Last 30 Days', 'last_30_days'],
+            ['Last 90 Days', 'last_90_days'],
+            ['This Year', 'this_year'],
+            ['Last Year', 'last_year']
+          ], @period),
+          {}, 
+          { 
+            class: "form-select form-select-sm", 
+            style: "min-width: 150px;", 
+            onchange: "this.form.submit()" 
+          } 
+        %>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-body">
 <% if current_user.admin? %>
   <%= render "admin_dashboard",
              total_users: @total_users,
@@ -12,7 +41,11 @@
              top_products: @top_products,
              top_sellers: @top_sellers,
              published_products: @published_products, 
-             paid_orders_count: @paid_orders_count  
+             paid_orders_count: @paid_orders_count, 
+             total_seller_applications: @total_seller_applications,
+             approved_seller_applications: @approved_seller_applications,
+             rejected_seller_applications: @rejected_seller_applications,
+             pending_seller_applications: @pending_seller_applications  
              %>
 <% else %>
   <%= render "seller_dashboard",
@@ -25,4 +58,6 @@
              published_products: @published_products,
              paid_orders_count: @paid_orders_count
              %>
+             </div>
 <% end %>
+</div>
