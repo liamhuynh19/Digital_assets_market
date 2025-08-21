@@ -59,7 +59,7 @@ class Product < ApplicationRecord
   MAX_UPLOAD_BYTES = 100.megabytes
 
   def asset_type_and_size
-    nil unless asset.attached?
+    return unless asset.attached?
     unless ALLOWED_TYPES.include?(asset.content_type)
       errors.add(:asset, "type not allowed")
     end
