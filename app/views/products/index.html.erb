@@ -5,15 +5,18 @@
     <h1 class="mb-0 fw-bold gradient-text display-5">Products</h1>
     <div class="d-flex align-items-center gap-3">
       <%= search_form_for @q, class: "d-flex align-items-center" do |f| %>
-      <%= f.select :category_id_eq,
-        options_from_collection_for_select(Category.all, :id, :name, f.object.category_id_eq),
-        { include_blank: 'All Categories' },
-        { 
-          class: "form-select form-select-sm glass-select py-1",
-          style: "font-size: 0.875rem; min-width: 120px;",
-          onchange: 'this.form.submit()'
-        } 
-      %>
+        <% if params.dig(:q, :name_cont).present? %>
+          <%= f.hidden_field :name_cont, value: params.dig(:q, :name_cont) %>
+        <% end %>
+        <%= f.select :category_id_eq,
+          options_from_collection_for_select(Category.all, :id, :name, f.object.category_id_eq),
+          { include_blank: 'All Categories' },
+          { 
+            class: "form-select form-select-sm glass-select py-1",
+            style: "font-size: 0.875rem; min-width: 120px;",
+            onchange: 'this.form.submit()'
+          } 
+        %>
         <%= f.select :s,
           options_for_select([
             ['Latest', 'created_at desc'],
@@ -23,7 +26,7 @@
             ['Price: High to Low', 'price desc'],
             ['Rating: High to Low', 'average_rating desc'],
             ['Rating: Low to High', 'average_rating asc']
-          ], f.object.s),
+          ], params.dig(:q, :s) || f.object.s || 'created_at desc'),
           {},
           { 
             class: "form-select form-select-sm glass-select py-1",

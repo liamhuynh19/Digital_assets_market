@@ -17,10 +17,16 @@
               <%= search_form_for(@q || Product.ransack, 
                   url: products_path, 
                   class: "d-flex position-relative") do |f| %>
+                <% if params.dig(:q, :s).present? %>
+                  <%= f.hidden_field :s, value: params.dig(:q, :s) %>
+                <% end %>
+                <% if params.dig(:q, :category_id_eq).present? %>
+                  <%= f.hidden_field :category_id_eq, value: params.dig(:q, :category_id_eq) %>
+                <% end %>
                 <%= f.search_field :name_cont, 
                     placeholder: "Search for assets...",
                     class: "form-control search-bar pe-5",
-                    value: params.dig(:q, :name_cont) 
+                    value: params[:q].is_a?(Hash) ? params[:q][:name_cont] : nil
                 %>
                 <button class="btn position-absolute end-0 top-50 translate-middle-y me-2" type="submit">
                   <i class="fas fa-search text-muted"></i>

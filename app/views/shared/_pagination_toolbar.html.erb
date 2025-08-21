@@ -1,4 +1,3 @@
-
 <% per_page_options ||= [3, 6, 12, 24, 48, 96] %>
 <% label ||= "items" %>
 <% page_select_threshold ||= 200 %>
@@ -24,7 +23,13 @@
   <div class="d-flex flex-wrap align-items-center gap-2 ms-auto">
     <%= form_with url: request.path, method: :get, local: true, class: "d-flex align-items-center gap-2" do %>
       <% request.query_parameters.except(:page, :per_page).each do |k, v| %>
-        <%= hidden_field_tag k, v %>
+        <% if k.to_s == 'q' && v.is_a?(Hash) %>
+          <% v.each do |qk, qv| %>
+            <%= hidden_field_tag "q[#{qk}]", qv %>
+          <% end %>
+        <% else %>
+          <%= hidden_field_tag k, v %>
+        <% end %>
       <% end %>
       <label class="form-label mb-0 small text-nowrap">Per page</label>
       <%= select_tag :per_page,
@@ -37,7 +42,13 @@
     <% if total_pages > 1 %>
       <%= form_with url: request.path, method: :get, local: true, class: "d-flex align-items-center gap-2 page-jump" do %>
         <% request.query_parameters.except(:page).each do |k, v| %>
-          <%= hidden_field_tag k, v %>
+          <% if k.to_s == 'q' && v.is_a?(Hash) %>
+            <% v.each do |qk, qv| %>
+              <%= hidden_field_tag "q[#{qk}]", qv %>
+            <% end %>
+          <% else %>
+            <%= hidden_field_tag k, v %>
+          <% end %>
         <% end %>
         <label class="form-label mb-0 small text-nowrap">Page</label>
         <% if total_pages <= page_select_threshold %>
