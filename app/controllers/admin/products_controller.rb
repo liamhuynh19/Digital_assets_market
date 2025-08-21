@@ -107,8 +107,12 @@ class Admin::ProductsController < ApplicationController
 
   def destroy
     authorize [ :admin, @product ]
-    @product.destroy
-    redirect_to admin_products_path, notice: "Product was successfully deleted."
+    if [ "processing", "published" ].include?(@product.status)
+      redirect_to admin_products_path, alert: "Cannot delete product while it is processing or published."
+    else
+      @product.destroy
+      redirect_to admin_products_path, notice: "Product was successfully deleted."
+    end
   end
 
   def bulk_import

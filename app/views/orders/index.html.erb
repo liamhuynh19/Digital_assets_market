@@ -1,5 +1,9 @@
 <h2 class="mb-4"><i class="fas fa-box"></i> My Orders</h2>
-
+<div class="mb-4 d-flex justify-content-end">
+    <%= link_to user_profile_path, class: "btn btn-outline-primary" do %>
+      <i class="fas fa-arrow-left me-2"></i>Back to Profile
+    <% end %>
+  </div>
 <% if @orders.any? %>
   <div class="table-responsive">
     <table class="table table-hover align-middle shadow-sm rounded overflow-hidden">
