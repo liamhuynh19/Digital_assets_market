@@ -4,6 +4,15 @@ class Admin::ReportsController < ApplicationController
   def show
     authorize :report
     @period = params[:period] || "all_time"
+    @start_date = parse_date(params[:start_date])
+    @end_date = parse_date(params[:end_date])\
+
+    if @period == "custom" && @start_date.present? && @end_date.present?
+      if @start_date > @end_date
+        redirect_to admin_report_path(period: "all_time"), alert: "Start date cannot be after end date."
+        return
+      end
+    end
 
     if current_user.admin?
       build_admin_report
@@ -101,6 +110,10 @@ class Admin::ReportsController < ApplicationController
   end
 
   def get_date_range(period)
+    if period == "custom" && @start_date.present? && @end_date.present?
+      return @start_date.beginning_of_day..@end_date.end_of_day
+    end
+
     case period
     when "today"
       Date.today.beginning_of_day..Date.today.end_of_day
@@ -129,20 +142,7 @@ class Admin::ReportsController < ApplicationController
     end
   end
 
-  def period_name(period)
-    {
-      "today" => "Today",
-      "yesterday" => "Yesterday",
-      "this_week" => "This Week",
-      "last_week" => "Last Week",
-      "this_month" => "This Month",
-      "last_month" => "Last Month",
-      "last_30_days" => "Last 30 Days",
-      "last_90_days" => "Last 90 Days",
-      "this_year" => "This Year",
-      "last_year" => "Last Year",
-      "all_time" => "All Time"
-    }[period]
+  def parse_date(date_param)
+    Date.parse(date_param) rescue nil
   end
-  helper_method :period_name
 end

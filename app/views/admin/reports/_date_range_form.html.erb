@@ -1,0 +1,49 @@
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h5 class="mb-0">Report</h5>
+    <div class="d-flex align-items-center gap-2">
+      <%= form_with url: admin_report_path, method: :get, class: "d-flex align-items-center gap-2", id: "period-form" do |f| %>
+        <%= f.select :period, 
+          options_for_select([
+            ['All Time', 'all_time'],
+            ['Today', 'today'],
+            ['Yesterday', 'yesterday'],
+            ['This Week', 'this_week'],
+            ['Last Week', 'last_week'],
+            ['This Month', 'this_month'],
+            ['Last Month', 'last_month'],
+            ['Last 30 Days', 'last_30_days'],
+            ['Last 90 Days', 'last_90_days'],
+            ['This Year', 'this_year'],
+            ['Last Year', 'last_year'],
+            ['Custom Range', 'custom']
+          ], @period),
+          {}, 
+          { 
+            class: "form-select form-select-sm", 
+            style: "min-width: 150px;", 
+            onchange: "handlePeriodChange(this.value)" 
+          } 
+        %>
+      <% end %>
+      
+      <%= form_with url: admin_report_path, method: :get, class: "d-flex align-items-center gap-2", id: "custom-range-form", style: @period == "custom" ? "" : "display: none;" do |f| %>
+        <%= f.hidden_field :period, value: "custom" %>
+        <%= f.date_field :start_date, value: @start_date, class: "form-control form-control-sm", required: true %>
+        <span>to</span>
+        <%= f.date_field :end_date, value: @end_date, class: "form-control form-control-sm", required: true %>
+        <%= f.submit "Apply", class: "btn btn-sm btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  function handlePeriodChange(value) {
+    if (value === 'custom') {
+      document.getElementById('custom-range-form').style.display = '';
+    } else {
+      document.getElementById('period-form').submit();
+    }
+  }
+</script>
