@@ -167,7 +167,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_19_171713) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email", default: "", null: false
-    t.string "role"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -177,6 +176,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_19_171713) do
     t.datetime "remember_created_at"
     t.string "encrypted_phone_number"
     t.string "encrypted_phone_number_iv"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["encrypted_phone_number_iv"], name: "index_users_on_encrypted_phone_number_iv", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
