@@ -14,9 +14,26 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def switch_role
+    role_name = params[:role]
+    if current_user&.has_role?(role_name)
+      current_user.set_current_role(role_name)
+      redirect_back(fallback_location: root_path, notice: "Switched to #{role_name} view")
+    else
+      redirect_back(fallback_location: root_path, alert: "You don't have the #{role_name} role")
+    end
+  end
+
   def after_sign_in_path_for(resource)
-    case resource.role
-    when "admin", "seller"
+    # Set default current_role if not already set
+    if resource.current_role.nil? && resource.roles.any?
+      resource.update(current_role: resource.roles.first)
+    end
+
+    case resource.current_view
+    when "admin"
+      admin_products_path
+    when "seller"
       admin_products_path
     when "buyer"
       products_path
@@ -32,7 +49,7 @@ class ApplicationController < ActionController::Base
 
   def set_layout
     if current_user
-      case current_user.role
+      case current_user.current_view
       when "buyer"
         "buyer"
       when "seller", "admin"
@@ -47,8 +64,9 @@ class ApplicationController < ActionController::Base
 
   def set_cart
     return unless current_user
+
     @cart = current_user.cart || current_user.create_cart
-    @cart_items = @cart.cart_items.includes(product: [ :thumbnail_attachment  ]) if @cart
+    @cart_items = @cart.cart_items.includes(product: [ :thumbnail_attachment ]) if @cart
   end
 
   def set_search
@@ -60,6 +78,6 @@ class ApplicationController < ActionController::Base
   # end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation, :phone_number])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :name, :email, :password, :password_confirmation, :phone_number ])
   end
 end
