@@ -6,9 +6,12 @@ class Admin::ProductsController < ApplicationController
 
   def index
     authorize [ :admin, Product ]
-    @products = policy_scope([ :admin, Product ])
-                 .includes(:category, :thumbnail_attachment)
-                 .order(created_at: :desc)
+    @q = policy_scope([ :admin, Product ])
+           .includes(:category, :thumbnail_attachment, :reviews)
+           .ransack(params[:q])
+
+    @products = @q.result
+                 .order(params[:q].try(:[], :s) || "created_at desc")
                  .page(params[:page]).per(params[:per_page] || 10)
 
     cache_key = "bulk_import_products:result:user:#{current_user.id}"
@@ -136,7 +139,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def product_params
-    params.expect(product: [ :name, :description, :price, :category_id, :asset ])
+    params.require(:product).permit(:name, :description, :price, :category_id, :asset)
   end
 
   def build_import_error_message(res)
