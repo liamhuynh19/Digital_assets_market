@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   before_action :set_search
 
-  private
 
   def switch_role
+    puts "Checking role switch..."
     role_name = params[:role]
     if current_user&.has_role?(role_name)
       current_user.set_current_role(role_name)
@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
   def after_sign_in_path_for(resource)
     # Set default current_role if not already set
     if resource.current_role.nil? && resource.roles.any?
