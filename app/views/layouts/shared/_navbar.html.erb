@@ -103,7 +103,7 @@
                   <% current_user.roles.each do |role| %>
                     <li>
                       <%= link_to switch_role_path(role: role.name), 
-                                class: "dropdown-item d-flex align-items-center #{role.id == current_user.current_role_id ? 'active bg-light' : ''}", 
+                                class: "dropdown-item d-flex align-items-center #{role.id == current_user.current_role_id ? 'active bg-dark' : ''}", 
                                 data: { turbo_method: :post } do %>
                         <% role_icon = case role.name
                                       when "admin" then "fa-user-shield"
