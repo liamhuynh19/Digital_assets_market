@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     role_name = params[:role]
     if current_user&.has_role?(role_name)
       current_user.set_current_role(role_name)
-      redirect_back(fallback_location: root_path, notice: "Switched to #{role_name} view")
+      redirect_to after_switch_role_path_for(current_user), notice: "Switched to #{role_name} view"
     else
       redirect_back(fallback_location: root_path, alert: "You don't have the #{role_name} role")
     end
@@ -42,6 +42,10 @@ class ApplicationController < ActionController::Base
     else
       super
     end
+  end
+
+  def after_switch_role_path_for(resource)
+    after_sign_in_path_for(resource)
   end
 
   def user_not_authorized

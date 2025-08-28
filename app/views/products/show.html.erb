@@ -4,12 +4,12 @@
     <% if @product.asset.attached? %>
       <div class="bg-dark">
         <% if @product.asset.content_type.start_with?('image/') %>
-          <% if !@product.purchased_by?(current_user) && @product.preview.present?%>          
+          <% if !display_original_asset?(current_user, @product) && @product.preview.present?%>          
             <%= image_tag @product.preview, class: "card-img-top rounded-0", style: "height: 400px; object-fit: cover;" %>
           <% else %> 
             <%= image_tag @product.asset, class: "card-img-top rounded-0", style: "height: 400px; object-fit: cover;" %>
           <% end %>
-        <% elsif @product.asset.content_type.start_with?('video/') && !@product.purchased_by?(current_user) && @product.preview.present? %>
+        <% elsif @product.asset.content_type.start_with?('video/') && !display_original_asset?(current_user, @product) && @product.preview.present? %>
           <%= video_tag url_for(@product.preview), 
               controls: true, 
               autoplay: true, 
@@ -34,7 +34,7 @@
         <% end %>
       </div>
       
-      <% if @product.purchased_by?(current_user) %>
+      <% if display_original_asset?(current_user, @product) %>
         <div class="bg-light border-bottom">
           <div class="container-fluid px-4 py-3">
             <div class="d-flex justify-content-end align-items-center">
@@ -118,10 +118,7 @@
         <% if user_signed_in? && @product.purchased_by?(current_user) %>
           <hr>
           <% if @product.reviews.exists?(user_id: current_user.id) %>
-            
             <%= turbo_frame_tag "review_form" do %>
-           
-              <!-- Click "Edit" above to load the form here -->
             <% end %>
           <% else %>
             <h5 id="review-form" class="mb-3"><%= @review&.persisted? ? "Edit your review" : "Write a review" %></h5>

@@ -49,7 +49,7 @@
                 <%= link_to product_path(product), class: "btn btn-light btn-sm glass-button w-100" do %>
                   <i class="fas fa-eye"></i> View
                 <% end %>
-                <% if product.purchased_by?(current_user) %>
+                <% if display_original_asset?(current_user, product) %>
                   <%= link_to download_product_path(product),
                       class: "btn btn-primary btn-sm glass-button w-100 text-white fw-bold",
                       style: "background: linear-gradient(90deg, #6f42c1 0%, #487ecf 100%); border: none; backdrop-filter: blur(8px); opacity: 0.7;" do %>
