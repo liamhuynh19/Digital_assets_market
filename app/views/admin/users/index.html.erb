@@ -35,15 +35,17 @@
                 </td>
                 <td><%= user.email %></td>
                 <td>
-                  <% role_badge_class = case user.current_role
-                    when 'admin' then 'bg-danger'
-                    when 'seller' then 'bg-success'
-                    else 'bg-info'
-                    end %>
-                  <span class="badge <%= role_badge_class %>">
-                    <i class="fas fa-user-shield me-1"></i>
-                    <%= user.current_role&.titleize %>
-                  </span>
+                  <% user.roles.each do |role|%>
+                    <% role_badge_class = case role.name
+                      when 'admin' then 'bg-danger'
+                      when 'seller' then 'bg-success'
+                      else 'bg-info'
+                      end %>
+                    <span class="badge <%= role_badge_class %>">
+                      <i class="fas fa-user-shield me-1"></i>
+                      <%= role.name %>
+                    </span>
+                  <% end %>
                 </td>
                 
                 <td>
