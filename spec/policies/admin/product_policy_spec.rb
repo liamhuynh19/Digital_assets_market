@@ -1,10 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe Admin::ProductPolicy do
-  let(:admin) { create(:user, role: 'admin') }
-  let(:seller) { create(:user, role: 'seller') }
-  let(:other_seller) { create(:user,  role: 'seller') }
-  let(:buyer) { create(:user, role: 'buyer') }
+  let(:admin) do
+    user = create(:user)
+    user.add_role('admin')
+    user.set_current_role('admin')
+    user
+  end
+
+  let(:seller) do
+    user = create(:user, role: 'seller')
+    user.add_role('seller')
+    user.set_current_role('seller')
+    user
+  end
+  let(:other_seller) do
+    user = create(:user, role: 'seller')
+    user.add_role('seller')
+    user.set_current_role('seller')
+    user
+  end
+  let(:buyer) do
+    user = create(:user, role: 'buyer')
+    user.add_role('buyer')
+    user.set_current_role('buyer')
+    user
+  end
   let(:product) { create(:product, user: seller) }
   let(:other_seller_product) { create(:product, user: other_seller) }
 
