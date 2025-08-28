@@ -17,7 +17,9 @@ class SellerApplication < ApplicationRecord
         reviewed_by: admin_user,
         reviewed_at: Time.current
       )
-      user.update!(role: "seller") unless user.seller?
+
+      user.add_role("seller")
+      user.set_current_role("seller")
     end
   end
 
@@ -37,6 +39,6 @@ class SellerApplication < ApplicationRecord
   private
 
   def user_must_be_buyer
-    errors.add(:user, "must be a buyer") unless user&.role == "buyer"
+    errors.add(:user, "must be a buyer") unless user&.current_role&.name == "buyer"
   end
 end

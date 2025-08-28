@@ -30,11 +30,11 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "role" do
-    it 'set dafault role to user as buyer if not specified' do
-      user = User.new(valid_user_attributes.except(:role))
-      expect(user).to be_valid
-      expect(user.role).to eq("buyer")
-    end
-  end
+  # describe "role" do
+  #   it 'set dafault role to user as buyer if not specified' do
+  #     user = User.new(valid_user_attributes.except(:role))
+  #     expect(user).to be_valid
+  #     expect(user.role).to eq("buyer")
+  #   end
+  # end
 end

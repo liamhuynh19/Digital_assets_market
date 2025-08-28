@@ -56,8 +56,28 @@
           <% end %>
         </li>
       </ul>
+     
 
+    
+      
       <div class="user-menu mt-auto">
+        <% if current_user && current_user.roles.count > 1 %>
+      <div class="dropdown ms-2">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="roleDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <%= current_user.current_view.capitalize %> View
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="roleDropdown">
+          <% current_user.roles.each do |role| %>
+            <li>
+              <%= link_to "#{role.name.capitalize} View", 
+                         switch_role_path(role: role.name), 
+                         class: "dropdown-item #{role.id == current_user.current_role_id ? 'active' : ''}", 
+                         data: { turbo_method: :post } %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
         <div class="nav-item dropdown">
           <%= render 'layouts/shared/user_menu' %>
         </div>

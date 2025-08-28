@@ -9,9 +9,9 @@ module Admin
     class Scope < ApplicationPolicy::Scope
       # NOTE: Be explicit about which records you allow access to!
       def resolve
-        if user.role == "admin"
+        if user.admin?
           scope.all
-        elsif user.role == "seller"
+        elsif user.seller?
           scope.where(user_id: user.id)
         else
           scope.none
@@ -20,15 +20,15 @@ module Admin
     end
 
     def index?
-      user.present? && (user.role == "admin" || user.role == "seller")
+      user.present? && (user.admin? || user.seller?)
     end
 
     def show?
-      user.present? && (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
+      user.present? && (user.admin? || (user.seller? && record.user_id == user.id))
     end
 
     def create?
-      user.present? && (user.role == "admin" || user.role == "seller")
+      user.present? && (user.admin? || user.seller?)
     end
 
     def new?
@@ -36,15 +36,15 @@ module Admin
     end
 
     def update?
-      user.present? && (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
+      user.present? && (user.admin? || (user.seller? && record.user_id == user.id))
     end
 
     def publish?
-      record.allow_to_publish? &&  (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
+      record.allow_to_publish? &&  (user.admin? || (user.seller? && record.user_id == user.id))
     end
 
     def destroy?
-      user.present? && (user.role == "admin" || (user.role == "seller" && record.user_id == user.id))
+      user.present? && (user.admin? || (user.seller? && record.user_id == user.id))
     end
   end
 end

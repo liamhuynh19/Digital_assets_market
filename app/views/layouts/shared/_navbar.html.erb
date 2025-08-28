@@ -88,7 +88,43 @@
             <li class="nav-item dropdown">
               <%= render 'layouts/shared/user_menu' %>
             </li>
+            <% if current_user && current_user.roles.count > 1 %>
+              <li class="nav-item dropdown ms-2">
+                <button class="btn btn-outline-primary btn-sm dropdown-toggle d-flex align-items-center" 
+                        type="button" 
+                        id="roleDropdown" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false">
+                  <i class="fas fa-exchange-alt me-1"></i>
+                  <span><%= current_user.current_view.capitalize %></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="roleDropdown">
+                  <li><h6 class="dropdown-header">Switch Role</h6></li>
+                  <% current_user.roles.each do |role| %>
+                    <li>
+                      <%= link_to switch_role_path(role: role.name), 
+                                class: "dropdown-item d-flex align-items-center #{role.id == current_user.current_role_id ? 'active bg-dark' : ''}", 
+                                data: { turbo_method: :post } do %>
+                        <% role_icon = case role.name
+                                      when "admin" then "fa-user-shield"
+                                      when "seller" then "fa-store"
+                                      when "buyer" then "fa-shopping-bag"
+                                      else "fa-user"
+                                      end %>
+                        <i class="fas <%= role_icon %> me-2 <%= role.id == current_user.current_role_id ? 'text-primary' : 'text-muted' %>"></i>
+                        <span><%= role.name.capitalize %> View</span>
+                        <% if role.id == current_user.current_role_id %>
+                          <i class="fas fa-check ms-auto text-primary"></i>
+                        <% end %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
     </nav>
+
+

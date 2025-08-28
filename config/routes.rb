@@ -93,4 +93,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "root#index"
+
+  # Add role switcher route
+  post "switch_role", to: "application#switch_role"
 end

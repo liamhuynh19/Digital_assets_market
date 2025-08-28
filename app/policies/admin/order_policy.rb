@@ -2,9 +2,9 @@ module Admin
   class OrderPolicy < ApplicationPolicy
     class Scope < ApplicationPolicy::Scope
       def resolve
-        if user.role == "admin"
+        if user.has_role?("admin")
           scope.includes([ :user, :order_items ]).all
-        elsif user.role == "seller"
+        elsif user.has_role?("seller")
           scope.joins(:order_items)
                 .includes([ :user, :order_items ])
                .joins("JOIN products ON order_items.product_id = products.id")
@@ -17,14 +17,14 @@ module Admin
     end
 
     def index?
-      user.present? && (user.role == "admin" || user.role == "seller")
+      user.present? && (user.has_role?("admin") || user.has_role?("seller"))
     end
 
     def show?
       return false unless user.present?
-      return true if user.role == "admin"
+      return true if user.has_role?("admin")
 
-      if user.role == "seller"
+      if user.has_role?("seller")
         record.order_items.joins(:product).exists?(products: { user_id: user.id })
       else
         false
@@ -32,7 +32,7 @@ module Admin
     end
 
     def create?
-      user.present? && user.role == "admin"
+      user.present? && user.has_role?("admin")
     end
 
     def new?
@@ -40,7 +40,7 @@ module Admin
     end
 
     def update?
-      user.present? && user.role == "admin"
+      user.present? && user.has_role?("admin")
     end
 
     def edit?
@@ -48,7 +48,7 @@ module Admin
     end
 
     def destroy?
-      user.present? && user.role == "admin"
+      user.present? && user.has_role?("admin")
     end
   end
 end

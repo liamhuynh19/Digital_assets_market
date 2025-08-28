@@ -10,15 +10,15 @@
 #
 # Create default users
 users = [
-  { email: "admin@gmail.com",  password: "admin123",  role: "admin" },
-  { email: "buyer@gmail.com",  password: "buyer123",  role: "buyer" },
-  { email: "seller@gmail.com", password: "seller123", role: "seller" }
+  { email: "admin@gmail.com",  password: "admin123",  role: 1 },
+  { email: "buyer@gmail.com",  password: "buyer123",  role: 2 },
+  { email: "seller@gmail.com", password: "seller123", role: 3 }
 ]
 
 users.each do |attrs|
   user = User.find_or_initialize_by(email: attrs[:email])
   user.password = attrs[:password]
-  user.role = attrs[:role]
+  user.roles = [ attrs[:role] ]
   user.save!
 end
 
