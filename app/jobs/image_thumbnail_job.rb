@@ -5,8 +5,10 @@ class ImageThumbnailJob < ApplicationJob
 
   def perform(product_id)
     product = Product.find(product_id)
-    return unless product.asset.attached? && product.asset.content_type.start_with?("image/")
-
+    unless product.asset.attached? && product.asset.content_type.start_with?("image/")
+      product.update(status: "failed")
+      return
+    end
     product.asset.open do |file|
       thumbnail_path = Rails.root.join("tmp", "#{product.id}_thumbnail.jpg").to_s
       create_thumbnail_with_ffmpeg(file.path, thumbnail_path)

@@ -20,7 +20,7 @@ class Product < ApplicationRecord
   # def image?
   #   asset.attached? && asset.content_type.start_with?("image/")
   # end
-  STATUSES = %w[draft processing uploaded published].freeze
+  STATUSES = %w[draft processing uploaded published failed].freeze
   validate :asset_type_and_size
   validates :status, inclusion: { in: STATUSES }
   after_initialize :set_default_status

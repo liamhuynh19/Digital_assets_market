@@ -104,5 +104,5 @@ Rails.application.configure do
   config.action_controller.default_url_options = { protocol: "http" }
   config.force_ssl = false
 
-  config.active_job.queue_adapter = :async  # or :inline for debugging
+  config.active_job.queue_adapter = :sidekiq
 end
