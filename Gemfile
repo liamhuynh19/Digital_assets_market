@@ -35,6 +35,8 @@ gem "jwt"
 gem "ransack"
 gem "dotenv-rails", groups: [ :development, :test ]
 gem "attr_encrypted", "~> 4.0"
+gem "wicked_pdf"
+gem "wkhtmltopdf-binary"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

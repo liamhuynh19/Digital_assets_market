@@ -46,10 +46,12 @@ class OrdersController < ApplicationController
 
   def mark_as_paid
     @order = Order.find(params[:order_id])
-    @order.update(status: "paid")
-
-    redirect_to @order, notice: "Your order has been paid successfully."
-
+    if @order.update(status: "paid")
+      OrderMailer.invoice_email(@order).deliver_later
+      redirect_to @order, notice: "Your order has been paid successfully."
+    else
+      redirect_to @order, alert: "Could not process payment. Please try again."
+    end
   rescue ActiveRecord::RecordNotFound
     redirect_to orders_path, alert: "Order not found."
   end

@@ -1,0 +1,39 @@
+<h1>Your Invoice for Order #<%= @order.id %></h1>
+
+<p>Dear <%= @user.name || @user.email %>,</p>
+
+<p>Thank you for your purchase from Digital Assets Market. Your order has been successfully paid.</p>
+
+<h3>Order Details</h3>
+<p><strong>Order ID:</strong> <%= @order.id %></p>
+<p><strong>Order Date:</strong> <%= @order.created_at.strftime('%B %d, %Y') %></p>
+<p><strong>Payment Date:</strong> <%= @order.updated_at.strftime('%B %d, %Y') %></p>
+
+<h3>Items Purchased</h3>
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Product</th>
+      <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order_items.each do |item| %>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;"><%= item.product.name %></td>
+        <td style="padding: 8px; border: 1px solid #ddd; text-align: right;"><%= number_to_currency(item.price_at_purchase) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr style="background-color: #f2f2f2; font-weight: bold;">
+      <td style="padding: 8px; border: 1px solid #ddd;">Total</td>
+      <td style="padding: 8px; border: 1px solid #ddd; text-align: right;"><%= number_to_currency(@order.total_amount) %></td>
+    </tr>
+  </tfoot>
+</table>
+
+<p>You can download your purchased assets from your <a href="<%= order_url(@order) %>">order page</a>.</p>
+
+<p>Thank you for your business!</p>
+<p>The Digital Assets Market Team</p>
