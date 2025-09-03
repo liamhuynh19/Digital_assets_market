@@ -59,7 +59,7 @@ class Admin::ReportsController < ApplicationController
       .select("products.*, COUNT(order_items.id) AS units_sold")
       .group("products.id")
       .order("units_sold DESC")
-      .includes(:category, :thumbnail_attachment)
+      .includes(:category, :thumbnail_attachment, :user)
       .limit(3)
 
     @top_sellers = User.joins(products: [ order_items: :order ])
@@ -100,7 +100,7 @@ class Admin::ReportsController < ApplicationController
                      .joins(order_items: :order)
                      .where(orders: { status: "paid" })
                      .where(date_range.present? ? { orders: { created_at: date_range } } : {})
-                     .includes(:category, :thumbnail_attachment)
+                     .includes(:category, :thumbnail_attachment, :user)
                      .select("products.*, COUNT(order_items.id) AS items_sold")
                      .group("products.id")
                      .order("items_sold DESC")

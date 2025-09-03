@@ -76,6 +76,7 @@
           <tr>
             <th scope="col" style="width: 80px">Image</th>
             <th scope="col">Name</th>
+            <th scope="col">Seller</th>
             <th scope="col">Category</th>
             <th scope="col" class="text-end">Price</th>
             <th scope="col" class="text-end">Unit sold</th>
@@ -94,6 +95,12 @@
                   <%= link_to product.name, admin_product_path(product) %>
                 </div>
                 <small class="text-muted"><%= truncate(product.description.to_s, length: 60) %></small>
+              </td>
+              <td>
+                <span class="badge rounded-pill bg-light text-dark">
+                  <i class="fas fa-store me-1"></i>
+                  <%= product.user&.email || "Unknown Seller" %>
+                </span>
               </td>
               <td>
                 <span class="badge rounded-pill bg-light text-dark">
