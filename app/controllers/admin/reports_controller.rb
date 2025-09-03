@@ -5,7 +5,7 @@ class Admin::ReportsController < ApplicationController
     authorize :report
     @period = params[:period] || "all_time"
     @start_date = parse_date(params[:start_date])
-    @end_date = parse_date(params[:end_date])\
+    @end_date = parse_date(params[:end_date])
 
     if @period == "custom" && @start_date.present? && @end_date.present?
       if @start_date > @end_date
