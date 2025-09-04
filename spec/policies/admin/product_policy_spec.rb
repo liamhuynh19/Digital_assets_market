@@ -26,8 +26,8 @@ RSpec.describe Admin::ProductPolicy do
     user.set_current_role('buyer')
     user
   end
-  let(:product) { create(:product, user: seller) }
-  let(:other_seller_product) { create(:product, user: other_seller) }
+  let(:product) { create(:product, name: "Seller's product", user: seller) }
+  let(:other_seller_product) { create(:product, name: "Other seller's product", user: other_seller) }
 
   describe '#index?' do
     it "denies access to buyers" do

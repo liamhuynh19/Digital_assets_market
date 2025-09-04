@@ -20,15 +20,15 @@ module Admin
     end
 
     def index?
-      user.present? && (user.admin? || user.seller?)
+      user.present? && user_has_permission?("product", "index") && (user.admin? || user.seller?)
     end
 
     def show?
-      user.present? && (user.admin? || (user.seller? && record.user_id == user.id))
+      user_has_permission?("product", "show") && (user.admin? || record.user_id == user.id)
     end
 
     def create?
-      user.present? && (user.admin? || user.seller?)
+      user.present? && user_has_permission?("product", "create")
     end
 
     def new?
@@ -36,7 +36,7 @@ module Admin
     end
 
     def update?
-      user.present? && (user.admin? || (user.seller? && record.user_id == user.id))
+      user.present? && user_has_permission?("product", "update") && (user.admin? || (record.user_id == user.id))
     end
 
     def publish?
@@ -44,7 +44,7 @@ module Admin
     end
 
     def destroy?
-      user.present? && (user.admin? || (user.seller? && record.user_id == user.id))
+      user.present? && user_has_permission?("product", "destroy") && (user.admin? || (user.seller? && record.user_id == user.id))
     end
   end
 end
