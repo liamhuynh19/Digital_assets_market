@@ -12,16 +12,13 @@ class Admin::ReviewPolicy < ApplicationPolicy
   end
 
   def index?
-    user.admin? || (user.seller? && record.joins(:product).where(products: { user_id: user.id }))
+    user.admin? || user.seller?
   end
 
   def show?
     user.admin? || (user.seller? && record.product.user_id == user.id)
   end
 
-  def update?
-    user.admin?
-  end
 
   def destroy?
     user.admin?
