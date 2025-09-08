@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_21_000002) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_08_035628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -73,6 +73,27 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_21_000002) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id", "seller_id"], name: "index_conversations_on_buyer_id_and_seller_id", unique: true
+    t.index ["buyer_id"], name: "index_conversations_on_buyer_id"
+    t.index ["seller_id"], name: "index_conversations_on_seller_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "conversation_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id", "created_at"], name: "index_messages_on_conversation_id_and_created_at"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -228,6 +249,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_21_000002) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "products"
   add_foreign_key "carts", "users"
+  add_foreign_key "conversations", "users", column: "buyer_id"
+  add_foreign_key "conversations", "users", column: "seller_id"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "users"

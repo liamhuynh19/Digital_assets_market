@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     post "add/:product_id", to: "carts#add_item", as: :add_to_cart
     delete "remove_item/:id", to: "carts#remove_item", as: :remove_from_cart
   end
+
+  resources :conversations, only: [ :index, :show, :create ] do
+    resources :messages, only: [ :create ]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Reveal health status on /up that returns 20
   # 0 if the app boots with no exceptions, otherwise 500.

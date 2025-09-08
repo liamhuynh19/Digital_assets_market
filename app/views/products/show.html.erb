@@ -73,6 +73,8 @@
                       data: { turbo: true } do %>
                   <i class="fas fa-cart-plus"></i> Add to Cart
                 <% end %>
+                
+                
               </div>
             </div>
           </div>
@@ -80,6 +82,14 @@
       <% end %>
 
       <div class="card-body">
+        <% if user_signed_in? && current_user.id != @product.user_id %>
+                  <%= button_to conversations_path, 
+                        method: :post,
+                        class: "btn btn-primary fw-bold",
+                        params: { conversation: { buyer_id: current_user.id, seller_id: @product.user_id } } do %>
+                    <i class="fas fa-comments"></i> Chat with Seller
+                  <% end %>
+                <% end %>
         <h2 class="card-title mb-3 fw-bold"><%= @product.name %></h2>
         <p class="card-text text-muted"><%= @product.description %></p>
 
