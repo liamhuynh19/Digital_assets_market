@@ -2,7 +2,7 @@ class Admin::ReportsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    authorize :report
+    authorize :report, policy_class: Admin::ReportPolicy
     @period = params[:period] || "all_time"
     @start_date = parse_date(params[:start_date])
     @end_date = parse_date(params[:end_date])
@@ -100,7 +100,7 @@ class Admin::ReportsController < ApplicationController
                      .joins(order_items: :order)
                      .where(orders: { status: "paid" })
                      .where(date_range.present? ? { orders: { created_at: date_range } } : {})
-                     .includes(:category, :thumbnail_attachment, :user)
+                     .includes(:category, :thumbnail_attachment)
                      .select("products.*, COUNT(order_items.id) AS items_sold")
                      .group("products.id")
                      .order("items_sold DESC")
