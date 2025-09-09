@@ -1,0 +1,16 @@
+<%= form_with model: [conversation, message], 
+              class: "message-form", 
+              id: "message_form",
+              data: { controller: "reset-form" } do |f| %>
+  <div class="input-group">
+    <%= f.text_field :content, 
+                     class: "form-control", 
+                     id: "message_content", 
+                     placeholder: "Type your message here...", 
+                     required: true,
+                     autocomplete: "off" %>
+    <button type="submit" class="btn btn-primary">
+      <i class="fas fa-paper-plane"></i> Send
+    </button>
+  </div>
+<% end %>

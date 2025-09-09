@@ -17,16 +17,19 @@ class MessagesController < ApplicationController
 
     # authorize @message
     if @message.save
-      # redirect_to conversation_path(@conversation), notice: "message sent"
-
-      # ActionCable.server.broadcast "conversation_#{@conversation.id}", message: render_message(@message)
-      # head :ok
       ChatChannel.broadcast_to(@conversation, message: render_message(@message, current_user))
+      respond_to do |format|
+        format.turbo_stream {
+          render turbo_stream: turbo_stream.append("messages",
+          partial: "messages/message",
+          locals: { message: @message, current_user: current_user }
+          )
+        }
+        format.json { head :ok }
+        format.html { redirect_to conversation_path(@conversation) }
+      end
     else
       render json: { error: @message.errors.full_messages }, status: :unprocessable_entity
-
-      # Rails.logger.debug "Message save failed with errors: #{message.errors.full_messages}"
-      # redirect_to conversation_path(@conversation), alert: "Failed to send message"
     end
   end
 

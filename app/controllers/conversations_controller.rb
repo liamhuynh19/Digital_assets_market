@@ -7,7 +7,7 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
-    @messages = @conversation.messages.order(created_at: :asc)
+    @messages = @conversation.messages.includes(:user).order(created_at: :asc)
     @message = Message.new
     # authorize @conversation
   end

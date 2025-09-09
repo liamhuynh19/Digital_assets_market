@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/admin/sidekiq"
   end
 
+  mount ActionCable.server => "/cable"
+
   devise_for :users
   resources :products do
     member do
