@@ -18,6 +18,8 @@ class MessagesController < ApplicationController
     # authorize @message
     if @message.save
       ChatChannel.broadcast_to(@conversation, message: render_message(@message, current_user))
+      @conversation.touch
+
       respond_to do |format|
         format.turbo_stream {
           render turbo_stream: turbo_stream.append("messages",

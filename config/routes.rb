@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   end
 
   resources :conversations, only: [ :index, :show, :create ] do
+    member do
+      get :load_more
+    end
     resources :messages, only: [ :create ]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,16 @@
+<%= turbo_stream.prepend "messages" do %>
+  <%= render @messages %>
+<% end %>
+
+<% if @messages.any? %>
+  <%= turbo_stream.replace "messages" do %>
+    <div id="messages" 
+         data-conversation-id="<%= params[:id] %>"
+         data-oldest-message-id="<%= @messages.first.id %>"
+         data-loading="false" 
+         class="mb-4" 
+         style="height: 400px; overflow-y: auto;">
+      <%= render @conversation.messages.where("id >= ?", @messages.first.id).includes(:user).order(created_at: :asc) %>
+    </div>
+  <% end %>
+<% end %>

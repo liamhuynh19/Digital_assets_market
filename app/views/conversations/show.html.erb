@@ -13,13 +13,26 @@
     
     <div class="card-body">
       <%= turbo_stream_from "conversation_#{@conversation.id}_messages" %>
-      <div id="messages" data-conversation-id="<%= @conversation.id %>" class="mb-4" style="height: 400px; overflow-y: auto;">
-        <%= render @messages %>
+      <div id="messages-container">
+        <div id="loading-indicator" class="text-center py-2 d-none">
+          <div class="spinner-border spinner-border-sm text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <span class="ms-2">Loading older messages...</span>
+        </div>
+        <div id="messages" 
+             data-conversation-id="<%= @conversation.id %>"
+             data-oldest-message-id="<%= @oldest_message_id %>"
+             data-loading="false" 
+             class="mb-4" 
+             style="height: 400px; overflow-y: auto;">
+          <%= render @messages %>
+        </div>
       </div>
       
       <%= form_with model: [@conversation, @message], local: false, class: "message-form", id: "message_form" do |f| %>
         <div class="input-group">
-          <%= f.text_field :content, class: "form-control", id: "message_content", placeholder: "Type your message here...", required: true %>
+          <%= f.text_field :content, class: "form-control", id: "message_content", placeholder: "Type your message here...", required: true, autocomplete: "off" %>
           <button type="submit" class="btn btn-primary">
             <i class="fas fa-paper-plane"></i> Send
           </button>
@@ -28,3 +41,96 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('turbo:load', setupScrolling);
+  document.addEventListener('DOMContentLoaded', setupScrolling);
+
+  function setupScrolling() {
+    const messagesContainer = document.getElementById('messages');
+    if (!messagesContainer) return;
+    
+    // Auto-scroll to bottom on load
+    scrollToBottom(messagesContainer);
+    
+    // Set up infinite scroll for loading older messages
+    messagesContainer.addEventListener('scroll', handleScroll);
+    
+    // Auto-scroll on new messages
+    const observer = new MutationObserver(mutations => {
+      // Only auto-scroll if user is already at the bottom
+      if (isUserNearBottom(messagesContainer)) {
+        scrollToBottom(messagesContainer);
+      }
+    });
+    
+    observer.observe(messagesContainer, { childList: true });
+  }
+  
+  function handleScroll(event) {
+    const container = event.target;
+    const isLoading = container.dataset.loading === 'true';
+    
+    // Check if user has scrolled to the top
+    if (container.scrollTop < 100 && !isLoading) {
+      const oldestId = container.dataset.oldestMessageId;
+      if (!oldestId) return;
+      
+      loadOlderMessages(container);
+    }
+  }
+  
+  function loadOlderMessages(container) {
+    const oldestId = container.dataset.oldestMessageId;
+    const conversationId = container.dataset.conversationId;
+    const loadingIndicator = document.getElementById('loading-indicator');
+    
+    container.dataset.loading = 'true';
+    loadingIndicator.classList.remove('d-none');
+    
+    fetch(`/conversations/${conversationId}/load_more?oldest_message_id=${oldestId}`, {
+      headers: {
+        'Accept': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.messages && data.messages.length > 0) {
+        // Calculate scroll position to maintain after adding content
+        const scrollHeight = container.scrollHeight;
+        const scrollPosition = container.scrollTop;
+        
+        // Insert older messages at the top
+        const messagesHTML = data.messages.map(message => {
+          // This would need to match your message partial rendering
+          // This is just a placeholder
+          return `<div class="message">${message.content}</div>`;
+        }).join('');
+        
+        container.insertAdjacentHTML('afterbegin', messagesHTML);
+        
+        // Update oldest message ID
+        container.dataset.oldestMessageId = data.oldest_id || '';
+        
+        // Adjust scroll position to account for new content
+        container.scrollTop = container.scrollHeight - scrollHeight + scrollPosition;
+      }
+    })
+    .catch(error => console.error('Error loading messages:', error))
+    .finally(() => {
+      container.dataset.loading = 'false';
+      loadingIndicator.classList.add('d-none');
+    });
+  }
+  
+  function scrollToBottom(container) {
+    container.scrollTop = container.scrollHeight;
+  }
+  
+  function isUserNearBottom(container) {
+    const threshold = 150; // pixels from bottom
+    const position = container.scrollHeight - container.scrollTop - container.clientHeight;
+    return position < threshold;
+  }
+</script>

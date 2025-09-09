@@ -12,6 +12,23 @@ class ConversationsController < ApplicationController
     # authorize @conversation
   end
 
+  def load_more
+    @conversation = Conversation.find(params[:id])
+
+    @messages = @conversation.messages
+    .includes(:user)
+    .where("id < ?", params[:oldest_message_id])
+    .order(created_at: :desc)
+    .limit(10)
+    .reverse
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html { render partial: "messages/message", collection: @messages }
+      format.json { render json: { messages: @messages, oldest_id: @messages.any? ? @messages.first.id : nil } }
+    end
+  end
+
   def create
     @conversation = Conversation.find_or_create_by(buyer_id: conversation_params[:buyer_id], seller_id: conversation_params[:seller_id])
     # @conversation = Conversation.new(conversation_params)
