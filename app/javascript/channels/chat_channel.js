@@ -24,19 +24,27 @@ function setupChatChannel() {
       { channel: "ChatChannel", conversation_id: conversationId },
       {
         connected() {
-          console.log("Connected to ChatChannel for conversation:", conversationId)
+          console.log("Connected to ChatChannel for conversation:", conversationId);
         },
         
         disconnected() {
-          console.log("Disconnected from ChatChannel")
+          console.log("Disconnected from ChatChannel");
         },
         
         received(data) {
-          console.log("Received message:", data)
-          messagesContainer.insertAdjacentHTML("beforeend", data.message)
+          console.log("Received message:", data);
+        
           
-          // Auto-scroll to the bottom of the messages container
-          messagesContainer.scrollTop = messagesContainer.scrollHeight
+          // Find the message element if it already exists (prevent duplicates)
+          const existingMessage = document.getElementById(`message-${data.message_id}`);
+          if (!existingMessage) {
+            messagesContainer.insertAdjacentHTML("beforeend", data.message);
+            
+            // Auto-scroll to the bottom of the messages container if user was near bottom
+            if (isUserNearBottom(messagesContainer)) {
+              scrollToBottom(messagesContainer);
+            }
+          }
         }
       }
     )

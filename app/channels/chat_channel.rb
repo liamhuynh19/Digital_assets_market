@@ -3,6 +3,8 @@ class ChatChannel < ApplicationCable::Channel
     # stream_from "some_channel"
     conversation = Conversation.find(params[:conversation_id])
     stream_for conversation
+    @current_user_id = current_user.id
+    puts "User #{@current_user_id} subscribed to ChatChannel for Conversation #{conversation.id}"
   end
 
   def unsubscribed

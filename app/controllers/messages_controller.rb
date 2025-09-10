@@ -17,19 +17,8 @@ class MessagesController < ApplicationController
 
     # authorize @message
     if @message.save
-      ChatChannel.broadcast_to(@conversation, message: render_message(@message, current_user))
       @conversation.touch
-
-      respond_to do |format|
-        format.turbo_stream {
-          render turbo_stream: turbo_stream.append("messages",
-          partial: "messages/message",
-          locals: { message: @message, current_user: current_user }
-          )
-        }
-        format.json { head :ok }
-        format.html { redirect_to conversation_path(@conversation) }
-      end
+      head :ok
     else
       render json: { error: @message.errors.full_messages }, status: :unprocessable_entity
     end

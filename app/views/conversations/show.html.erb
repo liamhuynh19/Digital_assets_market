@@ -45,6 +45,15 @@
 <script>
   document.addEventListener('turbo:load', setupScrolling);
   document.addEventListener('DOMContentLoaded', setupScrolling);
+  document.addEventListener('turbo:submit-end', function(event){
+    if (event.detail.success){
+      const messageForm = document.getElementById('message_form');
+      if (messageForm) {
+        messageForm.reset();
+        document.getElementById('message_content').focus();
+      }
+    }
+  });
 
   function setupScrolling() {
     const messagesContainer = document.getElementById('messages');

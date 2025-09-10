@@ -9,6 +9,7 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @messages = @conversation.messages.includes(:user).order(created_at: :asc)
     @message = Message.new
+    @current_user_id = current_user.id
     # authorize @conversation
   end
 

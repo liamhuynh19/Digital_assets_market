@@ -1,9 +1,12 @@
-<div class="message mb-3 <%= message.user_id == current_user&.id ? 'text-end' : '' %>">
-  <div class="d-inline-block p-3 rounded <%= message.user_id == current_user&.id ? 'bg-primary text-white' : 'bg-light' %>" 
+<% current_user_id = @current_user_id || local_assigns[:current_user_id] %>
+<% Rails.logger.debug "Message debugging: message.user_id = #{message.user_id.inspect}, @current_user_id = #{@current_user_id.inspect} and current_user_id = #{current_user_id.inspect}"%>
+<div class="message mb-3 <%= message.user_id == current_user_id ? 'text-end' : '' %>">
+  
+  <div class="d-inline-block p-3 rounded <%= message.user_id == current_user_id ? 'bg-primary text-white' : 'bg-light' %>" 
        style="max-width: 80%;">
-    <div class="small mb-1 <%= message.user_id == current_user&.id ? 'text-white-50' : 'text-muted' %>">
+    <div class="small mb-1 <%= message.user_id == current_user_id ? 'text-white-50' : 'text-muted' %>">
       <%= message.user.email %> • <%= time_ago_in_words(message.created_at) %> ago
     </div>
     <div><%= message.content %></div>
-  </div>
+</div>
 </div>
