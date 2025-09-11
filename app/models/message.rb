@@ -8,16 +8,12 @@ class Message < ApplicationRecord
 
   private
   def broadcast!
-    rendered_message = ApplicationController.renderer.render(
-      partial: "messages/message",
-      locals: {
-        message: self,
-        current_user_id: self.user_id
-      }
-    )
-
     ChatChannel.broadcast_to(self.conversation, {
-      message: rendered_message,
+      content: self.content,
+      user_email: self.user.email,
+      user_id: self.user_id,
+      created_at: self.created_at.to_i,
+      conversation_id: self.conversation_id,
       message_id: self.id,
       sender_id: self.user_id
     })
